@@ -1,0 +1,62 @@
+[
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_login_activity_layout.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_login_activity_layout.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_list_row.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_list_row.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_search_box.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_search_box.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_activity_circle_row.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_activity_circle_row.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_image.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_image.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_title_bar.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_title_bar.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_usersettingsfragment.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_usersettingsfragment.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_checkbox.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_checkbox.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_search_bar_layout.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_search_bar_layout.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_title_bar_stub.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_title_bar_stub.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_tooltip_bubble.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_tooltip_bubble.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_friendpickerfragment.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_friendpickerfragment.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_placepickerfragment.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_placepickerfragment.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_picker_list_section_header.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_picker_list_section_header.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_placepickerfragment_list_row.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\facebookSDK\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_placepickerfragment_list_row.xml"
+    }
+]

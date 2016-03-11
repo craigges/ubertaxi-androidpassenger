@@ -1,0 +1,62 @@
+[
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\anim\\destaddbottomtop.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\anim\\destaddbottomtop.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\anim\\abc_fade_out.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_in_bottom.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\anim\\top_bottom_button.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\anim\\top_bottom_button.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_in_top.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_out_bottom.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\anim\\destaddtopbottom.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\anim\\destaddtopbottom.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\anim\\top_bottom.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\anim\\top_bottom.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\anim\\abc_fade_in.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\anim\\slide_out_left.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\anim\\slide_out_left.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\anim\\slide_in_left.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\anim\\slide_in_left.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\anim\\slide_out_right.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\anim\\slide_out_right.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\anim\\bottom_top.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\anim\\bottom_top.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\anim\\slide_in_right.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\anim\\slide_in_right.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_out_top.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\anim\\abc_slide_out_top.xml"
+    }
+]

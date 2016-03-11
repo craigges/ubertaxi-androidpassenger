@@ -1,0 +1,366 @@
+[
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\com_facebook_picker_checkbox.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\layout\\com_facebook_picker_checkbox.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\preference_widget_switch.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\androidswitchbackport\\unspecified\\res\\layout\\preference_widget_switch.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\com_facebook_tooltip_bubble.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\layout\\com_facebook_tooltip_bubble.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\view_payment_list_item.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\view_payment_list_item.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\progress_bar_cancel.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\progress_bar_cancel.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\fragment_driver_list.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\fragment_driver_list.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\history_item.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\history_item.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\activity_history.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\activity_history.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\preference.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\androidswitchbackport\\unspecified\\res\\layout\\preference.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\crop__activity_crop.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\cropLibrary\\unspecified\\res\\layout\\crop__activity_crop.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\popup_notification_window.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\popup_notification_window.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\include_detail_view.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\include_detail_view.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\register.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\register.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\my_thing.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\my_thing.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\history_date_layout.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\history_date_layout.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\activity_main.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\activity_profile.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\activity_profile.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\com_facebook_picker_title_bar_stub.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\layout\\com_facebook_picker_title_bar_stub.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\login.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\login.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\com_facebook_picker_list_row.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\layout\\com_facebook_picker_list_row.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\destinationadressbar.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\destinationadressbar.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_decor_include.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_bar_decor_include.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_mode_close_item.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_mode_close_item.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\fareestimate.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\fareestimate.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_icon.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\ratecardcustomtitle.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\ratecardcustomtitle.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\menu_desc_activity.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\menu_desc_activity.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\custom_action_bar.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\custom_action_bar.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\fragment_payment.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\fragment_payment.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\ratecard.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\ratecard.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\com_facebook_picker_image.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\layout\\com_facebook_picker_image.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_menu_layout.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\ref_code_fragment.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\ref_code_fragment.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\bill_layout.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\bill_layout.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_decor.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_bar_decor.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_mode_bar.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\activity_view_payment.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\activity_view_payment.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\fragment_trip.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\fragment_trip.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\com_facebook_placepickerfragment_list_row.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\layout\\com_facebook_placepickerfragment_list_row.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\com_facebook_login_activity_layout.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\layout\\com_facebook_login_activity_layout.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\com_facebook_friendpickerfragment.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\layout\\com_facebook_friendpickerfragment.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\com_facebook_placepickerfragment.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\layout\\com_facebook_placepickerfragment.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\progressbar.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\progressbar.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\crop__layout_done_cancel.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\cropLibrary\\unspecified\\res\\layout\\crop__layout_done_cancel.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_radio.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_expanded_menu_layout.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\register_activity.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\register_activity.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\promocard.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\promocard.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_title_item.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\popup_notification_status_window.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\popup_notification_status_window.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\com_facebook_picker_activity_circle_row.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\layout\\com_facebook_picker_activity_circle_row.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_search_view.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_home.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_bar_home.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\com_facebook_picker_list_section_header.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\layout\\com_facebook_picker_list_section_header.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\ref_code_layout.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\ref_code_layout.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_activity_chooser_view.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\com_facebook_picker_title_bar.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\layout\\com_facebook_picker_title_bar.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\activity_map.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\activity_map.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\feedback.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\feedback.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\forget_pass_fragment.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\forget_pass_fragment.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\contactslist.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\contactslist.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_layout.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\info_window_layout.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\info_window_layout.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\activity_fare_calculator.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\activity_fare_calculator.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_tab.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_bar_tab.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\promocodecustomtitle.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\promocodecustomtitle.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_menu_item_layout.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\com_facebook_usersettingsfragment.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\layout\\com_facebook_usersettingsfragment.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\pickuppop.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\pickuppop.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\menu_drawer.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\menu_drawer.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_tabbar.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_bar_tabbar.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_screen.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_screen.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\autocomplete_list_text.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\autocomplete_list_text.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\list_item_type.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\list_item_type.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\promotions.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\promotions.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\fragment_map.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\fragment_map.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\drawer_item.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\drawer_item.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\include_feedback_view.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\include_feedback_view.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\fareestimatecustomtitle.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\fareestimatecustomtitle.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\my_marker.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\my_marker.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\list_item.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\layout\\list_item.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\com_facebook_picker_search_box.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\layout\\com_facebook_picker_search_box.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_decor_overlay.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_action_bar_decor_overlay.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\com_facebook_search_bar_layout.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\layout\\com_facebook_search_bar_layout.xml"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\layout\\abc_activity_chooser_view_include.xml",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\layout\\abc_activity_chooser_view_include.xml"
+    }
+]

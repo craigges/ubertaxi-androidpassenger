@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\values-sw720dp-w1280dp-v13\\values-sw720dp-w1280dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 54,
+                    "endOffset": 105
+                },
+                "from": {
+                    "file": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\androidswitchbackport\\unspecified\\res\\values-sw720dp-w1280dp-v13\\values-sw720dp-w1280dp-v13.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 54,
+                        "endOffset": 105
+                    }
+                }
+            }
+        ]
+    }
+]

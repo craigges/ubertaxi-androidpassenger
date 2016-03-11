@@ -1,0 +1,930 @@
+[
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_menu.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_menu.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\button_limo_pressed.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\button_limo_pressed.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\btn_google.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\btn_google.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ub__button_blue_normal.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\ub__button_blue_normal.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\com_facebook_button_blue_normal.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\drawable-mdpi-v4\\com_facebook_button_blue_normal.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\history_header_line_white.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\history_header_line_white.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_icon_disabled_focus_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_icon_disabled_focus_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_list_longpressed_holo.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\crop__ic_done.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\cropLibrary\\unspecified\\res\\drawable-mdpi-v4\\crop__ic_done.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\com_facebook_tooltip_black_bottomnub.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\drawable-mdpi-v4\\com_facebook_tooltip_black_bottomnub.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ab_stacked_transparent_dark_holo.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ab_stacked_transparent_dark_holo.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_spinner_ab_focused_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_spinner_ab_focused_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\check_box.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\check_box.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\switch_bg_disabled_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\androidswitchbackport\\unspecified\\res\\drawable-mdpi-v4\\switch_bg_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ub__creditcard_delegate.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\ub__creditcard_delegate.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_text_disabled_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_text_disabled_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\com_facebook_tooltip_blue_background.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\drawable-mdpi-v4\\com_facebook_tooltip_blue_background.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ab_transparent_light_holo.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ab_transparent_light_holo.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_list_pressed_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_search.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_search.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_ab_back_holo_dark.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_ab_back_holo_dark.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\or.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\or.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_menu_moreoverflow_normal_holo_light.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_menu_moreoverflow_normal_holo_light.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_menu_hardkey_panel_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_menu_hardkey_panel_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\com_facebook_tooltip_black_background.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\drawable-mdpi-v4\\com_facebook_tooltip_black_background.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\promo.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\promo.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\btn_register.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\btn_register.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ab_bottom_transparent_dark_holo.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ab_bottom_transparent_dark_holo.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ic_payment.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\ic_payment.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ab_transparent_dark_holo.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ab_transparent_dark_holo.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\com_facebook_inverse_icon.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\drawable-mdpi-v4\\com_facebook_inverse_icon.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_textfield_search_selected_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_textfield_search_selected_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ub__creditcard_amex.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\ub__creditcard_amex.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\btn_fb.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\btn_fb.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ub__nav_history.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\ub__nav_history.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ab_share_pack_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ab_share_pack_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\switch_bg_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\androidswitchbackport\\unspecified\\res\\drawable-mdpi-v4\\switch_bg_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\taxi.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\taxi.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\no_trips.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\no_trips.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\switch_bg_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\androidswitchbackport\\unspecified\\res\\drawable-mdpi-v4\\switch_bg_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\task_1.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\task_1.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\selected_service.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\selected_service.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_list_pressed_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_profile.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_profile.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_cab_background_bottom_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_cab_background_bottom_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ub__creditcard_paypal.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\ub__creditcard_paypal.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_textfield_search_right_default_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_textfield_search_right_default_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ic_plusone_standard_off_client.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\ic_plusone_standard_off_client.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\com_facebook_tooltip_blue_xout.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\drawable-mdpi-v4\\com_facebook_tooltip_blue_xout.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ab_solid_light_holo.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ab_solid_light_holo.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\switch_thumb_pressed_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\androidswitchbackport\\unspecified\\res\\drawable-mdpi-v4\\switch_thumb_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ab_bottom_transparent_light_holo.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ab_bottom_transparent_light_holo.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\btn_fromaddress.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\btn_fromaddress.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_menu_hardkey_panel_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_menu_hardkey_panel_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\switch_thumb_pressed_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\androidswitchbackport\\unspecified\\res\\drawable-mdpi-v4\\switch_thumb_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ab_bottom_solid_light_holo.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ab_bottom_solid_light_holo.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_icon_focus_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_icon_focus_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_text_focus_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_text_focus_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_text_pressed_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_text_pressed_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_list_focused_holo.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bill_paper.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bill_paper.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\notification_box.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\notification_box.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\pin_client.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\pin_client.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\icon.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\devsmartAndroid\\unspecified\\res\\drawable-mdpi-v4\\icon.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_medium.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_medium.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\pin_detail_bg.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\pin_detail_bg.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\switch_thumb_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\androidswitchbackport\\unspecified\\res\\drawable-mdpi-v4\\switch_thumb_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_clear_disabled.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_clear_disabled.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_menu_share_holo_dark.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_menu_share_holo_dark.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\switch_thumb_activated_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\androidswitchbackport\\unspecified\\res\\drawable-mdpi-v4\\switch_thumb_activated_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_tab_unselected_pressed_holo.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_tab_unselected_pressed_holo.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_cab_background_top_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_cab_background_top_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ub__creditcard_alipay.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\ub__creditcard_alipay.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_cab_background_top_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_cab_background_top_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_large.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_large.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\btn_toaddress.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\btn_toaddress.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\popup.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\popup.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\com_facebook_button_blue_focused.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\drawable-mdpi-v4\\com_facebook_button_blue_focused.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ub__creditcard_visa.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\ub__creditcard_visa.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\nav_about.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\nav_about.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_list_divider_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_list_divider_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\camera.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\camera.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_textfield_search_right_selected_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_textfield_search_right_selected_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_spinner_ab_default_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_spinner_ab_default_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\blank_star.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\blank_star.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_menu_dropdown_panel_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_menu_dropdown_panel_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\no_items.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\no_items.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ic_menu_close_clear_cancel.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\ic_menu_close_clear_cancel.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ab_solid_dark_holo.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ab_solid_dark_holo.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\no_cards.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\no_cards.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_spinner_ab_default_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_spinner_ab_default_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_voice_search.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_voice_search.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\switch_bg_disabled_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\androidswitchbackport\\unspecified\\res\\drawable-mdpi-v4\\switch_bg_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_spinner_ab_disabled_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_spinner_ab_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_edittext1.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_edittext1.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_splash.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_splash.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_btn_small.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_btn_small.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_icon_focus_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_icon_focus_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_feedback.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_feedback.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\nav_payment.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\nav_payment.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_text_disabled_focus_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_text_disabled_focus_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_clear_search_api_holo_light.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_clear_search_api_holo_light.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_time_mile.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_time_mile.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_star.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_star.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_spinner_ab_pressed_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_spinner_ab_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\fill_star.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\fill_star.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\com_facebook_tooltip_black_topnub.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\drawable-mdpi-v4\\com_facebook_tooltip_black_topnub.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\create_contact.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\create_contact.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\star_feedback.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\star_feedback.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\cover_image.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\cover_image.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\mile.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\mile.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_menu_moreoverflow_normal_holo_dark.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_menu_moreoverflow_normal_holo_dark.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_white_process.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_white_process.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\app_name.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\app_name.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_edittext_payment_small.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_edittext_payment_small.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\nav_support.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\nav_support.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_icon_normal_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_icon_normal_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\pin_driver_car.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\pin_driver_car.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ic_plusone_small_off_client.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\ic_plusone_small_off_client.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_text_focus_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_text_focus_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\pin_driver.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\pin_driver.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_actionbar.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_actionbar.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\nav_referral.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\nav_referral.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\add_credit.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\add_credit.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_bill_trans.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_bill_trans.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_text_disabled_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_text_disabled_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ub__button_black_disabled.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\ub__button_black_disabled.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_bill.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_bill.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\task_2.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\task_2.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ub__nav_logout.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\ub__nav_logout.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ub__button_black_normal.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\ub__button_black_normal.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\switch_bg_focused_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\androidswitchbackport\\unspecified\\res\\drawable-mdpi-v4\\switch_bg_focused_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ub__creditcard_mastercard.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\ub__creditcard_mastercard.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ub__creditcard_googlewallet.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\ub__creditcard_googlewallet.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_go.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_go.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_tab_selected_holo.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_tab_selected_holo.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ab_stacked_transparent_light_holo.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ab_stacked_transparent_light_holo.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\switch_thumb_disabled_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\androidswitchbackport\\unspecified\\res\\drawable-mdpi-v4\\switch_thumb_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_spinner_ab_focused_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_spinner_ab_focused_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\crop__divider.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\cropLibrary\\unspecified\\res\\drawable-mdpi-v4\\crop__divider.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\powered_by_google_light.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\powered_by_google_light.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ub__button_blue_pressed.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\ub__button_blue_pressed.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\switch_thumb_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\androidswitchbackport\\unspecified\\res\\drawable-mdpi-v4\\switch_thumb_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\star_feedback_blank.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\star_feedback_blank.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_select_service.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_select_service.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_text_normal_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_text_normal_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_commit_search_api_holo_light.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_commit_search_api_holo_light.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ab_stacked_solid_dark_holo.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ab_stacked_solid_dark_holo.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\switch_thumb_activated_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\androidswitchbackport\\unspecified\\res\\drawable-mdpi-v4\\switch_thumb_activated_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_text_disabled_focus_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_text_disabled_focus_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_icon_normal_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_icon_normal_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\btn_pickpop.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\btn_pickpop.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\loading_1.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\loading_1.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_icon_disabled_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_icon_disabled_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\default_user.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\default_user.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\icon_camera.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\icon_camera.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_clear_search_api_disabled_holo_light.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_clear_search_api_disabled_holo_light.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_cab_done_holo_light.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_cab_done_holo_light.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ab_stacked_solid_light_holo.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ab_stacked_solid_light_holo.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_textfield_search_selected_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_textfield_search_selected_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_textfield_search_default_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_textfield_search_default_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_commit_search_api_holo_dark.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_commit_search_api_holo_dark.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\history_header_line_green.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\history_header_line_green.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_clear_normal.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_clear_normal.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\btn_farebox.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\btn_farebox.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\switch_thumb_disabled_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\androidswitchbackport\\unspecified\\res\\drawable-mdpi-v4\\switch_thumb_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\big_popup.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\big_popup.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\btn_bill.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\btn_bill.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_icon_disabled_focus_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_icon_disabled_focus_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\line.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\line.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\line_divider.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\line_divider.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_name_menu.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_name_menu.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\clock.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\clock.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_textfield_search_right_selected_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_textfield_search_right_selected_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_tab_selected_focused_holo.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_tab_selected_focused_holo.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ic_plusone_medium_off_client.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\ic_plusone_medium_off_client.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_menu_share_holo_light.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_menu_share_holo_light.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\notification_box_arrived.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\notification_box_arrived.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\com_facebook_tooltip_blue_bottomnub.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\drawable-mdpi-v4\\com_facebook_tooltip_blue_bottomnub.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_spinner_ab_disabled_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_spinner_ab_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_text_normal_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_text_normal_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ab_share_pack_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ab_share_pack_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_voice_search_api_holo_light.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_voice_search_api_holo_light.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\com_facebook_picker_magnifier.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\drawable-mdpi-v4\\com_facebook_picker_magnifier.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_list_divider_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_list_divider_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ab_bottom_solid_dark_holo.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ab_bottom_solid_dark_holo.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\icon_header.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\icon_header.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_textfield_search_default_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_textfield_search_default_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_ab_back_holo_light.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_ab_back_holo_light.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\loading_3.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\loading_3.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_cab_background_bottom_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_cab_background_bottom_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\nav_profile.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\nav_profile.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\com_facebook_tooltip_black_xout.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\drawable-mdpi-v4\\com_facebook_tooltip_black_xout.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_icon_pressed_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_icon_pressed_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\loading_2.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\loading_2.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\switch_bg_focused_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\androidswitchbackport\\unspecified\\res\\drawable-mdpi-v4\\switch_bg_focused_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_search_api_holo_light.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_search_api_holo_light.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\btn_signin.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\btn_signin.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_text_pressed_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_text_pressed_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\arrow.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\arrow.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\com_facebook_tooltip_blue_topnub.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\drawable-mdpi-v4\\com_facebook_tooltip_blue_topnub.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ic_plusone_tall_off_client.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\ic_plusone_tall_off_client.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_tab_selected_pressed_holo.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_tab_selected_pressed_holo.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\nav_share.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\nav_share.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_icon_pressed_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_icon_pressed_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ub__creditcard_discover.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\ub__creditcard_discover.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\back.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\back.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\powered_by_google_dark.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\powered_by_google_dark.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\notification_line.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\notification_line.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_go_search_api_holo_light.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_go_search_api_holo_light.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\pin_client_org.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\pin_client_org.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\un_checkbox.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\un_checkbox.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\crop__ic_cancel.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\cropLibrary\\unspecified\\res\\drawable-mdpi-v4\\crop__ic_cancel.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_small.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_small.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_textfield_search_right_default_holo_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_textfield_search_right_default_holo_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_cab_done_holo_dark.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_ic_cab_done_holo_dark.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\btn_pickup.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\btn_pickup.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ub__creditcard_uber.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\ub__creditcard_uber.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\com_facebook_button_blue_pressed.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\Jozibear\\facebookSDK\\unspecified\\res\\drawable-mdpi-v4\\com_facebook_button_blue_pressed.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\menu.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\menu.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\nav_divider_line.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\nav_divider_line.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_edittext.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_edittext.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_menu_dropdown_panel_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_menu_dropdown_panel_holo_dark.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\divider_white.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\divider_white.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\another_card.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\another_card.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\bg_name.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\bg_name.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\button_limo.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\src\\main\\res\\drawable-mdpi\\button_limo.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_icon_disabled_light.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services\\6.1.71\\res\\drawable-mdpi\\common_signin_btn_icon_disabled_light.9.png"
+    },
+    {
+        "merged": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_spinner_ab_pressed_holo_dark.9.png",
+        "source": "E:\\Upwork\\Jozibear247_Craig\\Code\\Jozibear\\jozibear\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\18.0.0\\res\\drawable-mdpi\\abc_spinner_ab_pressed_holo_dark.9.png"
+    }
+]

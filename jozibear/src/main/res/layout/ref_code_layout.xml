@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/progressLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_centerInParent="true"
+    android:background="@drawable/bg_white_process"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="visible" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_btn_small"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="Free Rides"
+            android:paddingLeft="40dp"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imageView_share"
+            android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+             android:layout_gravity="center_vertical|right"
+            android:src="@android:drawable/ic_menu_share" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin" >
+
+        <!-- <ImageView -->
+        <!-- android:id="@+id/pBar" -->
+        <!-- android:layout_width="wrap_content" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:background="@drawable/loading" -->
+        <!-- android:visibility="gone" > -->
+        <!-- </ImageView> -->
+
+        <com.jozibear247_cab.component.MyFontTextView
+            android:id="@+id/blinkingtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:gravity="top"
+            android:paddingBottom="60dp"
+            android:text="CREATE YOUR REFERRAL CODE"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/color_text"
+            android:visibility="invisible" />
+
+        <com.jozibear247_cab.component.MyFontEdittextView
+            android:id="@+id/edit_referal_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@drawable/bg_edittext"
+            android:capitalize="characters"
+            android:ems="10"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:hint="Enter Referral code"
+            android:maxLength="8"
+            android:singleLine="true" >
+
+            <requestFocus />
+        </com.jozibear247_cab.component.MyFontEdittextView>
+
+        <com.jozibear247_cab.component.MyFontTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:gravity="center"
+            android:text="@string/text_ref_code"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/color_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <com.jozibear247_cab.component.MyFontButton
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_btn_small"
+            android:gravity="center"
+            android:text="@string/text_cancel"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/white" />
+
+        <com.jozibear247_cab.component.MyFontButton
+            android:id="@+id/btnupdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_btn_small"
+            android:gravity="center"
+            android:text="@string/text_update"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>
