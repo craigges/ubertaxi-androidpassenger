@@ -803,7 +803,7 @@ public class UberMapFragment extends UberBaseFragment implements
 		etSource.setFocusableInTouchMode(false);
 		CameraUpdate cameraUpdate = null;
 
-		cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 17);
+		cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, Const.MAP_ZOOM);
 		map.animateCamera(cameraUpdate);
 		etSource.setFocusable(true);
 		etSource.setFocusableInTouchMode(true);

@@ -85,6 +85,7 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 	public static boolean popon = false;
 	private boolean doubleBackToExitPressedOnce;
 	private Context context=this;
+	private UberTripFragment tripFrag = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -476,11 +477,15 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 	}
 
 	public void gotoTripFragment(Driver driver) {
-		UberTripFragment tripFrag = new UberTripFragment();
-		Bundle bundle = new Bundle();
-		bundle.putParcelable(Const.DRIVER, driver);
-		tripFrag.setArguments(bundle);
-		addFragment(tripFrag, false, Const.FRAGMENT_TRIP);
+		if(tripFrag == null) {
+			tripFrag = new UberTripFragment();
+			Bundle bundle = new Bundle();
+			bundle.putParcelable(Const.DRIVER, driver);
+			tripFrag.setArguments(bundle);
+			addFragment(tripFrag, false, Const.FRAGMENT_TRIP);
+		} else {
+			tripFrag.onResume();
+		}
 	}
 
 	public void gotoRateFragment(Driver driver) {

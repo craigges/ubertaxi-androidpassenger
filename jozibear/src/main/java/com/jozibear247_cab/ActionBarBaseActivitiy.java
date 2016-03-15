@@ -461,7 +461,7 @@ abstract public class ActionBarBaseActivitiy extends ActionBarActivity
 				.parseDouble(timeCost)));
 		
 		String actualtotal = String.valueOf(decimalFormat.format(actual_total));
-		double yousave=Math.abs(actual_total-Double.parseDouble(totalTmp));
+		double yousave=Math.abs(actual_total-Double.parseDouble(total));
 		
 		
 
