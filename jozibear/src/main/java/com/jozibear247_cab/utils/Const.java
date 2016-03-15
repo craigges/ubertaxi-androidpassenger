@@ -9,11 +9,10 @@ public class Const {
 
 	public static final String PLACES_AUTOCOMPLETE_API_KEY = "AIzaSyC72wvYWYT3lI8B9Z0aPU8rRpwucJqE0uQ";
 
-	public static final int MAP_ZOOM = 20;
+	public static final int MAP_ZOOM = 17;
 
 	// card io
-	// public static final String PUBLISHABLE_KEY =
-	// "pk_test_cVsZQmsqJYwAxWhEqDyifcaL";
+	// public static final String PUBLISHABLE_KEY = "pk_test_cVsZQmsqJYwAxWhEqDyifcaL";
 	public static final String PUBLISHABLE_KEY = "pk_test_AXOWbW77nqnft02AfhkhOBtK";
 	public static final String MY_CARDIO_APP_TOKEN = "c15fa417f757415c9d750d1ef5ee5fd8";
 
