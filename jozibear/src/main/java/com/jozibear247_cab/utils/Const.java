@@ -29,7 +29,7 @@ public class Const {
 		// "http://192.168.0.19/uber_auto/public/";
 
 		//private static final String HOST_URL = "http://52.25.104.97/";
-		private static final String HOST_URL = "http://www.jozibear247.com/";
+		public static final String HOST_URL = "http://www.jozibear247.com/";
 
 		private static final String BASE_URL = HOST_URL + "user/";
 		public static final String LOGIN = BASE_URL + "login";
@@ -73,13 +73,11 @@ public class Const {
 		public static final String GOOGLE_ADDRESS = "http://maps.googleapis.com/maps/api/geocode/json?address=";
 
 		public static final String FARE_CALCULATOR = BASE_URL + "fare";
-		public static final String GETPROVIDER_ALL = BASE_URL
-				+ "getnearbyproviders";
-		public static final String GET_PROMO_REQUEST = BASE_URL
-				+ "check_promo_code?";
+		public static final String GETPROVIDER_ALL = BASE_URL + "getnearbyproviders";
+		public static final String GET_PROMO_REQUEST = BASE_URL + "check_promo_code?";
 
-		public static final String SEND_PAYPAL_RESPONSE = BASE_URL
-				+ "paybypaypal";
+		public static final String SEND_PAYPAL_RESPONSE = BASE_URL + "paybypaypal";
+		public static final String SEND_CASH_RESPONSE = BASE_URL + "paybycash";
 		public static final String GET_CREDITS = BASE_URL + "credits?";
 		// http://uberforxapi.provenlogic.com/provider/rating";
 
@@ -142,6 +140,8 @@ public class Const {
 		public static final int GET_LOCATION = 38;
 		public static final int PAYGATE_URL = 39;
 
+		public static final int UPDATE_PAYMENT = 40;
+		public static final int FINISH_PAYMENT = 41;
 	}
 
 	// service parameters
@@ -240,5 +240,8 @@ public class Const {
 	// notification
 	public static final String INTENT_WALKER_STATUS = "walker_status";
 	public static final String EXTRA_WALKER_STATUS = "walker_status_extra";
+
+	public static final String INTENT_PAYMENT_RESULT = "pay_result";
+	public static final String EXTRA_PAYMENT_RESULT = "pay_result_extra";
 
 }

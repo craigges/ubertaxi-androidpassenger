@@ -858,7 +858,6 @@ public class UberTripFragment extends UberBaseFragment {
 	class TrackLocation extends TimerTask {
 
 		public void run() {
-
 			if (isContinueDriverRequest) {
 				isContinueDriverRequest = false;
 				getDriverLocation();
@@ -867,7 +866,6 @@ public class UberTripFragment extends UberBaseFragment {
 	}
 
 	private void getDriverLocation() {
-
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put(Const.URL,
 				Const.ServiceType.GET_REQUEST_LOCATION + Const.Params.ID + "="
@@ -885,13 +883,11 @@ public class UberTripFragment extends UberBaseFragment {
 						+ PreferenceHelper.getInstance(activity).getRequestId());
 		new HttpRequester(activity, map,
 				Const.ServiceCode.GET_REQUEST_LOCATION, true, this);
-
 	}
 
 	private void setdestinationmarker(LatLng latlng) {
 		if (latlng != null) {
 			if (map != null && this.isVisible()) {
-
 				if (destinationmarker == null) {
 					MarkerOptions opt = new MarkerOptions();
 					opt.position(latlng);
@@ -901,22 +897,17 @@ public class UberTripFragment extends UberBaseFragment {
 
 					destinationmarker = map.addMarker(opt);
 					// animateCameraToMarkerWithZoom(latLng);
-
 				} else {
 					destinationmarker.setPosition(latlng);
 					// animateCameraToMarker(latLng);
 				}
-
 			}
-
 		}
 	}
 
 	private void setMarker(LatLng latLng) {
 		if (latLng != null) {
-
 			if (map != null && this.isVisible()) {
-
 				if (myMarker == null) {
 					MarkerOptions opt = new MarkerOptions();
 					opt.position(latLng);
@@ -926,44 +917,34 @@ public class UberTripFragment extends UberBaseFragment {
 
 					myMarker = map.addMarker(opt);
 					// animateCameraToMarkerWithZoom(latLng);
-
 				} else {
 					myMarker.setPosition(latLng);
 					// animateCameraToMarker(latLng);
 				}
-
 			}
 
 			if (!(driver.getD_latitude() == 0.0 && driver.getD_longitude() == 0.0)) {
 				getTime();
 			}
-
 		}
-
 	}
 
 	private void setDriverMarker(LatLng latLng) {
 		if (latLng != null) {
 			if (map != null && this.isVisible()) {
-
 				if (markerDriver == null) {
-
 					MarkerOptions opt = new MarkerOptions();
 					opt.position(latLng);
 					opt.icon(BitmapDescriptorFactory
 							.fromResource(R.drawable.pin_driver));
 					opt.title(getString(R.string.text_drive_location));
 					markerDriver = map.addMarker(opt);
-
 				} else {
 					markerDriver.setPosition(latLng);
-
 				}
 				// animateCameraToMarker(latLng);
 			}
-
 		}
-
 	}
 
 	private void startUpdateDriverLocation() {
@@ -979,11 +960,9 @@ public class UberTripFragment extends UberBaseFragment {
 			timerDriverLocation.cancel();
 			timerDriverLocation = null;
 		}
-
 	}
 
 	private void animateCameraToMarkerWithZoom(LatLng latLng) {
-
 		CameraUpdate cameraUpdate = null;
 		cameraUpdate = CameraUpdateFactory
 				.newLatLngZoom(latLng, Const.MAP_ZOOM);
@@ -991,7 +970,6 @@ public class UberTripFragment extends UberBaseFragment {
 	}
 
 	private void animateCameraToMarker(LatLng latLng) {
-
 		CameraUpdate cameraUpdate = null;
 		cameraUpdate = CameraUpdateFactory.newLatLng(latLng);
 		map.animateCamera(cameraUpdate);
@@ -1035,11 +1013,9 @@ public class UberTripFragment extends UberBaseFragment {
 						.valueOf(PreferenceHelper.getInstance(activity).getRequestId()));
 			}
 		}
-
 	}
 
 	private void getRequestStatus(String requestId) {
-
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put(Const.URL,
 				Const.ServiceType.GET_REQUEST_STATUS + Const.Params.ID + "="
@@ -1070,9 +1046,7 @@ public class UberTripFragment extends UberBaseFragment {
 	}
 
 	private void drawTrip(LatLng latlng) {
-
 		if (map != null && this.isVisible()) {
-			
 			points.add(latlng);
 			lineOptions = new PolylineOptions();
 			lineOptions.addAll(points);
@@ -1081,14 +1055,12 @@ public class UberTripFragment extends UberBaseFragment {
 
 			map.addPolyline(lineOptions);
 		}
-
 	}
 
 	class WalkerStatusReceiver extends BroadcastReceiver {
 
 		@Override
 		public void onReceive(Context context, Intent intent) {
-
 			String response = intent.getStringExtra(Const.EXTRA_WALKER_STATUS);
 			Log.d("hey", response);
 			AppLog.Log("Response ---- Trip", response);
@@ -1097,10 +1069,8 @@ public class UberTripFragment extends UberBaseFragment {
 			stopCheckingStatusUpdate();
 
 			if (activity.pContent.isSuccess(response)) {
-
 //				if (selector == activity.pContent.checkRequestStatus(response)) {
 //					selector++;
-
 					switch (activity.pContent.checkRequestStatus(response)) {
 					case Const.IS_WALK_STARTED:
 						tvStatus.setText(Html
@@ -1164,10 +1134,7 @@ public class UberTripFragment extends UberBaseFragment {
 						activity.gotoRateFragment(driver);
 						break;
 
-					default:
-
-						break;
-
+					default: break;
 					}
 //				}
 			}

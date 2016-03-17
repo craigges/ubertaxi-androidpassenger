@@ -10,9 +10,8 @@ import android.webkit.WebViewClient;
 import com.jozibear247_cab.utils.Const;
 import com.jozibear247_cab.utils.PreferenceHelper;
 
-public class paygate_webview extends Activity{
+public class PayGateWebView extends Activity {
 	private WebView mWebView;
-	private PreferenceHelper preferenceHelper;
 	 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,7 +37,7 @@ public class paygate_webview extends Activity{
     public void onBackPressed() {
     	// TODO Auto-generated method stub
     	super.onBackPressed();
-    	Intent i= new Intent(paygate_webview.this, MainDrawerActivity.class);
+    	Intent i= new Intent(PayGateWebView.this, MainDrawerActivity.class);
 		startActivity(i);
 		finish();
     }

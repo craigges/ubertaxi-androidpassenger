@@ -51,3 +51,5 @@ captures/
 
 ### Android Patch ###
 gen-external-apklibs
+androidswitchbackport/build/intermediates/bundles/debug/classes.jar
+androidswitchbackport/build/intermediates/incremental/mergeReleaseAssets/merger.xml

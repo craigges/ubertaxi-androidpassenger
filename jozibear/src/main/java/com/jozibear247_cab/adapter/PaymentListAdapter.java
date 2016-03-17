@@ -3,8 +3,6 @@
  */
 package com.jozibear247_cab.adapter;
 
-import java.util.ArrayList;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +13,8 @@ import android.widget.TextView;
 
 import com.jozibear247_cab.R;
 import com.jozibear247_cab.models.Card;
-import com.stripe.android.util.TextUtils;
+
+import java.util.ArrayList;
 
 /**
  * @author Hardik A Bhalodi

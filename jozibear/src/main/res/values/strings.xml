@@ -42,6 +42,7 @@
     <string name="text_canceling_request">Canceling Request...</string>
     <string name="text_registering">Registering...</string>
     <string name="text_signing">Logging In...</string>
+    <string name="text_waiting_finish_payment">Waiting Finish Payment from Driver...</string>
     <string name="text_rating">Rating...</string>
     <string name="text_cancel">CANCEL</string>
     <string name="text_pickmeup">Pick me up</string>
@@ -188,6 +189,7 @@
     <string name="text_forget_pass_small">Forgot Password</string>
     <string name="text_continue">CONTINUE</string>
     <string name="text_feedback_completed">Thank you for feedback!</string>
+    <string name="text_account_blocked">Your account has been blocked. Please contact support@jozibear247.com for a prompt resulution!</string>
     <string name="text_empty_feedback">Please Enter Feedback</string>
     <string name="text_estimate_fare">Estimated Fare</string>
     <string name="pay_with_paypal">Pay With PayPal</string>

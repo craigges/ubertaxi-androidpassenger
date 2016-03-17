@@ -30,9 +30,9 @@ dependencies {
     compile project(':devsmartAndroid')
     compile project(':facebookSDK')
     compile project(':googleplayservices_lib_new')
-    compile project(':stripeLibrary')
     compile project(':library_pinnlistivew')
     compile project(':menudrawer')
+    compile project(':stripeLibrary')
     compile 'com.android.support:support-v4:19.1.0'
     compile 'com.google.android.gms:play-services:6.1.+'
     compile 'com.android.support:appcompat-v7:18.0.0'

@@ -85,13 +85,19 @@ public class GCMIntentService extends GCMBaseIntentService {
 		// String message = getString(R.string.gcm_message);
 		AppLog.Log(Const.TAG, intent.getExtras() + "");
 		Log.d("pavan", "intent "+intent.getExtras());
-		String message = intent.getExtras().getString("message");
-		String team = intent.getExtras().getString("team");
+		String message = intent.getExtras().getString("message"); // title
+		String team = intent.getExtras().getString("team"); // message
 		AppLog.Log("Notificaton", message);
 		AppLog.Log("Team", team);
-		String title = intent.getExtras().getString("title");
-		Intent pushIntent = new Intent(Const.INTENT_WALKER_STATUS);
-		pushIntent.putExtra(Const.EXTRA_WALKER_STATUS, team);
+//		String title = intent.getExtras().getString("title");
+		Intent pushIntent;
+		if(message.indexOf("paid") > 0) {
+			pushIntent = new Intent(Const.INTENT_PAYMENT_RESULT);
+			pushIntent.putExtra(Const.EXTRA_PAYMENT_RESULT, team);
+		} else {
+			pushIntent = new Intent(Const.INTENT_WALKER_STATUS);
+			pushIntent.putExtra(Const.EXTRA_WALKER_STATUS, team);
+		}
 		CommonUtilities.displayMessage(context, message);
 		// notifies user
 		generateNotification(context, message);

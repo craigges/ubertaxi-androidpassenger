@@ -11,11 +11,9 @@ import android.content.res.Configuration;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
-import android.provider.Settings.SettingNotFoundException;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
@@ -57,6 +55,7 @@ import net.simonvt.menudrawer.MenuDrawer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * @author Hardik A Bhalodi
@@ -81,6 +80,8 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 	private MyFontPopUpTextView tvMenuName;
 	private ImageOptions imageOptions;
 
+//	private Driver driverInfo;
+	private String payment_mode[] = { "Pay By Cash", "Pay By Card/EFT" };
 
 	public static boolean popon = false;
 	private boolean doubleBackToExitPressedOnce;
@@ -150,7 +151,7 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 					startActivity(new Intent(MainDrawerActivity.this,
 							HistoryActivity.class));
 				} else if (position == 3) {
-					getReffrelaCode();
+					getReferralCode();
 
 				} else if (position == 4) {
 					startActivity(new Intent(MainDrawerActivity.this,
@@ -428,11 +429,11 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 			if (pContent.isSuccess(response)) {
 				Referral ref = pContent.parseReffrelCode(response);
 				if (ref != null) {
-					showRefferelDialog(ref.getReferralCode());
+					showReferralDialog(ref.getReferralCode());
 				}
 
 			} else {
-				showRefferelDialog("");
+				showReferralDialog("");
 
 			}
 			AndyUtils.removeCustomProgressDialog();
@@ -443,7 +444,7 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 
 			AndyUtils.removeCustomProgressDialog();
 			Log.d("yyy", "kumar " + response);
-			getReffrelaCode();
+			getReferralCode();
 			if (pContent.isSuccess(response)) {
 				
 				Toast.makeText(
@@ -488,22 +489,56 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 		}
 	}
 
-	public void gotoRateFragment(Driver driver) {
+	public void gotoRateFragment(final Driver driver) {
 		try {
 			if (TextUtils.isEmpty(driver.getLastTime()))
 				driver.setLastTime(0 + " " + getString(R.string.text_mins));
 			if (TextUtils.isEmpty(driver.getLastDistance()))
 				driver.setLastDistance(0.0 + " "
 						+ getString(R.string.text_miles));
-			UberFeedbackFragment feedBack = new UberFeedbackFragment();
-			Bundle bundle = new Bundle();
-			bundle.putParcelable(Const.DRIVER, driver);
-			feedBack.setArguments(bundle);
-			addFragmentWithStateLoss(feedBack, false, Const.FRAGMENT_FEEDBACK);
+//			driverInfo = driver;
+
+			List<String> paymentoption = new ArrayList<String>();
+			paymentoption.add(payment_mode[0]); // Pay By Cash
+			paymentoption.add(payment_mode[1]); // Pay By Card/EFT
+			final CharSequence[] paymentoptions = paymentoption
+					.toArray(new CharSequence[paymentoption.size()]);
+
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setTitle("Payment Mode");
+			builder.setItems(paymentoptions,
+					new DialogInterface.OnClickListener() {
+						@Override
+						public void onClick(DialogInterface optiondialog, int which) {
+							Log.d("mahi", "payment type"
+									+ paymentoptions[which].toString());
+							if (paymentoptions[which].toString().equals(
+									payment_mode[0])) { // Pay By Cash
+								driver.getBill().setPayment_mode("1");
+							} else if (paymentoptions[which].toString()
+									.equals(payment_mode[1])) { // Pay By Card/EFT(PayGate)
+								driver.getBill().setPayment_mode("2");
+							}
+							UberFeedbackFragment feedBack = new UberFeedbackFragment();
+							Bundle bundle = new Bundle();
+							bundle.putParcelable(Const.DRIVER, driver);
+							feedBack.setArguments(bundle);
+							addFragmentWithStateLoss(feedBack, false, Const.FRAGMENT_FEEDBACK);
+						}
+					});
+//			builder.setNegativeButton("Cancel",
+//					new DialogInterface.OnClickListener() {
+//						@Override
+//						public void onClick(DialogInterface arg0, int arg1) {
+//							arg0.dismiss();
+//						}
+//					});
+			AlertDialog alert = builder.create();
+			alert.setCancelable(true);
+			alert.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	private void login() {
@@ -692,7 +727,6 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 		if (locationAlertDialog != null && locationAlertDialog.isShowing()) {
 			locationAlertDialog.dismiss();
 			locationAlertDialog = null;
-
 		}
 	}
 
@@ -701,7 +735,6 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 			gpsAlertDialog.dismiss();
 			isGpsDialogShowing = false;
 			gpsAlertDialog = null;
-
 		}
 	}
 
@@ -710,7 +743,6 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 			internetDialog.dismiss();
 			isNetDialogShowing = false;
 			internetDialog = null;
-
 		}
 	}
 
@@ -765,11 +797,9 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 			unregisterReceiver(internetConnectionReciever);
 			unregisterReceiver(GpsChangeReceiver);
 		}
-
 	}
 
-	private void showRefferelDialog(final String refCode) {
-
+	private void showReferralDialog(final String refCode) {
 		final Dialog mDialog = new Dialog(this, R.style.MyDialog);
 		mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 //		mDialog.getWindow().setBackgroundDrawable(
@@ -785,7 +815,6 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 		final TextView blinkingtext = (TextView) mDialog.findViewById(R.id.blinkingtext);
 
 		if (TextUtils.isEmpty(edit_referal_code.getText().toString())) {
-
 			blinkingtext.setVisibility(View.VISIBLE);
 			Animation anim = new AlphaAnimation(0.0f, 1.0f);
 			anim.setDuration(500);
@@ -796,8 +825,7 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 		}
 
 		Button btnCancel = (Button) mDialog.findViewById(R.id.btnCancel);
-		ImageView btnShare = (ImageView) mDialog
-				.findViewById(R.id.imageView_share);
+		ImageView btnShare = (ImageView) mDialog.findViewById(R.id.imageView_share);
 
 		btnShare.setOnClickListener(new View.OnClickListener() {
 
@@ -817,10 +845,9 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 										+ ", and get exciting offers "+System.getProperty("line.separator")+" https://play.google.com/store/apps/details?id=com.automated.taxinow");
 				startActivity(Intent.createChooser(sharingIntent,
 						"Share Referral Code"));
-				}else{
+				} else {
 					Toast.makeText(context, "Please add a Referral Code", Toast.LENGTH_LONG).show();
 				}
-
 			}
 		});
 
@@ -830,14 +857,10 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 			@Override
 			public void onClick(View v) {
 
-				String update_refCode = edit_referal_code.getText().toString();
-
-				UpdateReffrelaCode(update_refCode);
-		if(blinkingtext.getVisibility()==View.VISIBLE)
-//			blinkingtext.setVisibility(View.INVISIBLE);
-			
-				mDialog.dismiss();
-
+		String update_refCode = edit_referal_code.getText().toString();
+		UpdateReferralCode(update_refCode);
+		if(blinkingtext.getVisibility() == View.VISIBLE)
+			mDialog.dismiss();
 			}
 		});
 
@@ -845,16 +868,14 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				mDialog.dismiss();
 			}
 		});
 
 		mDialog.show();
-
 	}
 
-	private void getReffrelaCode() {
+	private void getReferralCode() {
 		AndyUtils.showCustomProgressDialog(this,
 				getString(R.string.text_getting_ref_code), false, null);
 		HashMap<String, String> map = new HashMap<String, String>();
@@ -865,75 +886,24 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 		new HttpRequester(this, map, Const.ServiceCode.GET_REFERREL, true, this);
 	}
 
-	private void UpdateReffrelaCode(String code) {
-
-		/*
-		 * AndyUtils.showCustomProgressDialog(this,
-		 * getString(R.string.text_getting_ref_code), false, null);
-		 * HashMap<String, String> map = new HashMap<String, String>();
-		 * map.put(Const.URL, Const.ServiceType.GET_REFERRAL + Const.Params.ID +
-		 * "=" + pHelper.getUserId() + "&" + Const.Params.TOKEN + "=" +
-		 * pHelper.getSessionToken());
-		 * 
-		 * new HttpRequester(this, map, Const.ServiceCode.GET_REFERREL, true,
-		 * this);
-		 */
+	private void UpdateReferralCode(String code) {
 		if (!AndyUtils.isNetworkAvailable(this)) {
-			AndyUtils.showToast(getResources().getString(R.string.no_internet),
-					this);
+			AndyUtils.showToast(getResources().getString(R.string.no_internet), this);
 			return;
 		}
 		AndyUtils.showCustomProgressDialog(this,
-				getResources().getString(R.string.text_referral_code), false,
-				null);
+				getResources().getString(R.string.text_referral_code), false, null);
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put(Const.URL, Const.ServiceType.GET_REFERRAL);
 		map.put(Const.Params.ID, PreferenceHelper.getInstance(this).getUserId());
 		map.put(Const.Params.TOKEN, PreferenceHelper.getInstance(this).getSessionToken());
 		if (TextUtils.isEmpty(edit_referal_code.getText().toString())) {
 			map.put(Const.Params.REFERRAL_CODE, " ");
-		}else
-		map.put(Const.Params.REFERRAL_CODE, code);
+		} else
+			map.put(Const.Params.REFERRAL_CODE, code);
 		Log.d("pavan", "Request  " + map);
-		new HttpRequester(this, map, Const.ServiceCode.UPDATE_REFFRAL_CODE,
-				false, this);
 
+		new HttpRequester(this, map, Const.ServiceCode.UPDATE_REFFRAL_CODE, false, this);
 	}
-
-	public boolean isLocationEnabled(Context context) {
-		int locationMode = 0;
-		String locationProviders;
-
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-			try {
-				locationMode = Settings.Secure.getInt(
-						context.getContentResolver(),
-						Settings.Secure.LOCATION_MODE);
-
-			} catch (SettingNotFoundException e) {
-				e.printStackTrace();
-				return false;
-			}
-
-			return locationMode != Settings.Secure.LOCATION_MODE_OFF;
-
-		} else {
-			locationProviders = Settings.Secure.getString(
-					context.getContentResolver(),
-					Settings.Secure.LOCATION_PROVIDERS_ALLOWED);
-			return !TextUtils.isEmpty(locationProviders);
-		}
-
-	}
-
-	/*
-	 * @Override public void onActivityResult(int requestCode, int resultCode,
-	 * Intent data) { // TODO Auto-generated method stub
-	 * super.onActivityResult(requestCode, resultCode, data);
-	 * android.support.v4.app.Fragment
-	 * frag=getSupportFragmentManager().findFragmentByTag(Const.FRAGMENT_TRIP);
-	 * frag.onActivityResult(requestCode, resultCode, data); Log.d("xxx",
-	 * "in parent activity"); }
-	 */
 
 }
