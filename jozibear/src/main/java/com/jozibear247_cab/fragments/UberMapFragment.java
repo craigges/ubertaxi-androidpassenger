@@ -126,16 +126,13 @@ public class UberMapFragment extends UberBaseFragment implements
 	// private Animation topToBottomAnimation, bottomToTopAnimation,
 	// buttonTopToBottomAnimation;
 
-	private MyFontButton btnSelectService, btnconfirmservice, btnpayment,
+	private MyFontButton btnSelectService, btnconfirmservice,
 			btnratecard, btnfareestimate, btnpromocard;
 	private static MyFontButton bubble;
 	private static SlidingDrawer drawer;
 	private static LinearLayout markers;
 	private static RelativeLayout pickuppop;
 	private static ImageButton btnadddestination;
-	int payment_type = -1;// no payment selected
-	private String payment_mode[] = { "By Credit Card", "By Cash", "By PayPal",
-			"By PayGate" };
 	private ArrayList<Walkerinfo> walkerlist;
 	private TextView eta;
 	private RelativeLayout destaddlayout;
@@ -209,8 +206,8 @@ public class UberMapFragment extends UberBaseFragment implements
 		btnconfirmservice = (MyFontButton) mapView
 				.findViewById(R.id.btnconfirmservice);
 		btnconfirmservice.setOnClickListener(this);
-		btnpayment = (MyFontButton) mapView.findViewById(R.id.btnpayment);
-		btnpayment.setOnClickListener(this);
+//		btnpayment = (MyFontButton) mapView.findViewById(R.id.btnpayment);
+//		btnpayment.setOnClickListener(this);
 		enterdestination = (AutoCompleteTextView) mapView
 				.findViewById(R.id.EnterDestination);
 		destaddlayout = (RelativeLayout) mapView
@@ -579,7 +576,7 @@ public class UberMapFragment extends UberBaseFragment implements
 
 			// getCards(); modified by amal
 			/*
-			 * if (isValidate()) { pickMeUp(); //modified by amal }
+			 * if (isValidate()) { requestCaps(); //modified by amal }
 			 */
 
 			break;
@@ -594,8 +591,8 @@ public class UberMapFragment extends UberBaseFragment implements
 			break;
 
 		case R.id.btnconfirmservice:
-			payment_type = 3; // PayGate
-			Log.d("amal", Integer.toString(payment_type));
+//			payment_type = 3; // PayGate
+//			Log.d("amal", Integer.toString(payment_type));
 			btnconfirmservice.setEnabled(false);
 			btnconfirmservice.postDelayed(new Runnable() {
 				@Override
@@ -603,29 +600,29 @@ public class UberMapFragment extends UberBaseFragment implements
 					btnconfirmservice.setEnabled(true);
 				}
 			}, 3000);
-			if (payment_type == -1) {
-				new AlertDialog.Builder(getActivity())
-						.setTitle("No Payment option selected")
-						.setMessage(
-								"Please select any given payment option to request a ride")
-						.setPositiveButton(android.R.string.ok,
-								new DialogInterface.OnClickListener() {
-									public void onClick(DialogInterface dialog,
-											int which) {
-										// continue with delete
-									}
-								}).setIcon(android.R.drawable.ic_dialog_alert)
-						.show();
-			}
-			if (payment_type == 0)
-				getCards();
-			if (payment_type == 1
+//			if (payment_type == -1) {
+//				new AlertDialog.Builder(getActivity())
+//						.setTitle("No Payment option selected")
+//						.setMessage(
+//								"Please select any given payment option to request a ride")
+//						.setPositiveButton(android.R.string.ok,
+//								new DialogInterface.OnClickListener() {
+//									public void onClick(DialogInterface dialog,
+//											int which) {
+//										// continue with delete
+//									}
+//								}).setIcon(android.R.drawable.ic_dialog_alert)
+//						.show();
+//			}
+//			if (payment_type == 0)
+//				getCards();
+			if (/*payment_type == 1
 					|| payment_type == 2
 					|| payment_type == 3
-					&& !TextUtils
+					&& */!TextUtils
 							.isEmpty(enterdestination.getText().toString())) {
 				Log.d("amal", "going to pick up");
-				pickMeUp();
+				requestCaps();
 			} else {
 				AndyUtils.showToast(
 						getResources().getString(
@@ -633,9 +630,9 @@ public class UberMapFragment extends UberBaseFragment implements
 						activity);
 			}
 			break;
-		case R.id.btnpayment:
+//		case R.id.btnpayment:
 //			selectPayment();
-			break;
+//			break;
 		case R.id.btnAdddestination:
 
 			destaddlayout.setVisibility(View.VISIBLE);
@@ -906,7 +903,7 @@ public class UberMapFragment extends UberBaseFragment implements
 
 	}
 
-	private void pickMeUp() {
+	private void requestCaps() {
 		if (!AndyUtils.isNetworkAvailable(activity)) {
 			AndyUtils.showToast(getResources().getString(R.string.no_internet),
 					activity);
@@ -944,7 +941,7 @@ public class UberMapFragment extends UberBaseFragment implements
 			map.put(Const.Params.PROMO_CODE,
 					promopref.getString("promocode", ""));
 		}
-		map.put(Const.Params.COD, String.valueOf(payment_type));
+//		map.put(Const.Params.COD, String.valueOf(payment_type));
 		map.put(Const.Params.DISTANCE, "1");
 		Log.d("xxx", "map " + map.toString());
 		new HttpRequester(activity, map, Const.ServiceCode.CREATE_REQUEST, this);
@@ -1129,7 +1126,7 @@ public class UberMapFragment extends UberBaseFragment implements
 						paydebt();
 						paydebt_indicator = 0;
 					} else
-						pickMeUp();
+						requestCaps();
 
 				}
 				adapter.notifyDataSetChanged();
@@ -1151,100 +1148,6 @@ public class UberMapFragment extends UberBaseFragment implements
 			} else
 				Toast.makeText(activity, "Debt not cleared successfully",
 						Toast.LENGTH_LONG).show();
-			AndyUtils.removeCustomProgressDialog();
-			break;
-		case Const.ServiceCode.PAYMENT_OPTIONS:
-			Log.d("amal", response);
-			if (activity.pContent.isSuccess(response)) {
-				List<String> paymentoption = new ArrayList<String>();
-				paymentoption.clear();
-				// String[] paymentoptions=new String[2];
-				int inter = 0;
-				try {
-					JSONObject jsonobject = new JSONObject(response);
-					JSONObject obj = jsonobject
-							.getJSONObject("payment_options");
-					// if (obj.getInt("stored_cards") == 1) {
-					// paymentoption.add("By Credit Card");
-					// /*
-					// * paymentoptions[inter]="By Card"; inter++;
-					// */
-					// }
-					// if (obj.getInt("cod") == 1) {
-					// paymentoption.add("By Cash");
-					// /*
-					// * paymentoptions[inter]="By Cash"; inter++;
-					// */
-					// }
-					// if (obj.getInt("paypal") == 1) {
-					// paymentoption.add("By PayPal");
-					// /*
-					// * paymentoptions[inter]="By PayPal"; inter++;
-					// */
-					// }
-					if (obj.getInt("paygate") == 1) {
-						paymentoption.add("By PayGate");
-						/*
-						 * paymentoptions[inter]="By paygate"; inter++;
-						 */
-					}
-				} catch (JSONException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				final CharSequence[] paymentoptions = paymentoption
-						.toArray(new CharSequence[paymentoption.size()]);
-
-				AlertDialog.Builder builder = new AlertDialog.Builder(
-						getActivity());
-				builder.setTitle("Pay");
-
-				builder.setItems(paymentoptions,
-						new DialogInterface.OnClickListener() {
-
-							@Override
-							public void onClick(DialogInterface optiondialog,
-									int which) {
-								Log.d("mahi", "payment type"
-										+ paymentoptions[which].toString());
-								if (paymentoptions[which].toString().equals(
-										payment_mode[0])) {
-
-									payment_type = 0;
-									btnpayment.setText("Pay by Credit Card");
-								} else if (paymentoptions[which].toString()
-										.equals(payment_mode[1])) {
-
-									payment_type = 1;
-									btnpayment.setText("Pay by Cash");
-
-								} else if (paymentoptions[which].toString()
-										.equals(payment_mode[2])) {
-
-									payment_type = 2;
-									btnpayment.setText("Pay by PayPal");
-								} else if (paymentoptions[which].toString()
-										.equals(payment_mode[3])) {
-
-									payment_type = 3;
-									btnpayment.setText("Pay by PayGate");
-								}
-
-							}
-						});
-				builder.setNegativeButton("Cancel",
-						new DialogInterface.OnClickListener() {
-
-							@Override
-							public void onClick(DialogInterface arg0, int arg1) {
-								arg0.dismiss();
-							}
-						});
-				AlertDialog alert = builder.create();
-				alert.setCancelable(true);
-				alert.show();
-
-			}
 			AndyUtils.removeCustomProgressDialog();
 			break;
 		case Const.ServiceCode.GET_MAP_DETAILS:
@@ -1817,28 +1720,6 @@ public class UberMapFragment extends UberBaseFragment implements
 				+ PreferenceHelper.getInstance(activity).getSessionToken());
 		new HttpRequester(getActivity(), map, Const.ServiceCode.GET_CARDS,
 				true, this);
-	}
-
-	private void selectPayment() {
-		if (!AndyUtils.isNetworkAvailable(activity)) {
-			AndyUtils.showToast(
-					getResources().getString(R.string.dialog_no_inter_message),
-					activity);
-			return;
-		}
-
-		AndyUtils.showCustomProgressDialog(getActivity(),
-				getString(R.string.progress_loading), false, null);
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put(Const.URL,
-				Const.ServiceType.PAYMENT_OPTIONS + Const.Params.ID + "="
-						+ PreferenceHelper.getInstance(activity).getUserId() + "&"
-						+ Const.Params.TOKEN + "="
-						+ PreferenceHelper.getInstance(activity).getSessionToken());
-
-		new HttpRequester(activity, map, Const.ServiceCode.PAYMENT_OPTIONS,
-				true, this);
-
 	}
 
 	private void getDistance() {

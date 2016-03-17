@@ -115,18 +115,13 @@ public class HistoryActivity extends ActionBarBaseActivitiy implements
 		if (mSeparatorsSet.contains(position))
 			return;
 		History history = historyListOrg.get(position);
-
-		showBillDialog(history.getTimecost(), history.getTotal(),
+		showHistoryBillDialog(history.getTimecost(), history.getTotal(),
 				history.getDistanceCost(), history.getBasePrice(),
-
 				history.getTime(), history.getDistance(),
 				history.getCurrency(), null, "", "", "", "", "",history.getActual_total(),""); // any prob
 																	// keep only
 																	// till null
 																	// and check,
-
-		// TODO Auto-generated method stub
-
 	}
 
 	/*

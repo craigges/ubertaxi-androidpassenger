@@ -100,6 +100,7 @@ public class ParseContent {
 	private final String CARD_ID = "card_id";
 
 	private final String PAYMENTS = "payments";
+	private final String PAYMENT_RESULT = "pay_result";
 
 	private final String REQUESTS = "requests";
 	private final String WALKER = "walker";
@@ -352,6 +353,25 @@ public class ParseContent {
 		return false;
 	}
 
+	public boolean checkPaymentResult(String response) {
+		if (TextUtils.isEmpty(response))
+			return false;
+		try {
+			AppLog.Log(Const.TAG, response);
+			JSONObject jsonObject = new JSONObject(response);
+
+			if (jsonObject.getInt(PAYMENT_RESULT) == 0) {
+				return false;
+			} else {
+				return true;
+			}
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+
 	public DriverLocation getDriverLocation(String response) {
 		DriverLocation driverLocation = null;
 		LatLng latLng = null;
@@ -535,16 +555,8 @@ public class ParseContent {
 						.parseDouble(jsonObjectBill.getString(DISTANCE))));
 				bill.setTime(jsonObjectBill.getString(TIME));
 				bill.setBasePrice(jsonObjectBill.getString(BASE_PRICE));
-				bill.setPayment_mode(jsonObjectBill.getString(PAYMENT_MODE));
-
-				if (jsonObjectBill.getString(PAYMENT_MODE).equals("2")) {
-					JSONObject ja_primary = jsonObjectBill.getJSONObject("walker");
-					bill.setPrimary_id(ja_primary.getString("email"));
-					bill.setPrimary_amount(ja_primary.getString("amount"));
-
-					JSONObject ja_secoundry = jsonObjectBill.getJSONObject("admin");
-					bill.setSecoundry_id(ja_secoundry.getString("email"));
-					bill.setSecoundry_amount(ja_secoundry.getString("amount"));
+				if(jsonObjectBill.has(PAYMENT_MODE)) {
+					bill.setPayment_mode(jsonObjectBill.getString(PAYMENT_MODE));
 				}
 				bill.setActual_total(jsonObjectBill.getDouble("actual_total"));
 				bill.setDiscounted_amount(jsonObjectBill.getDouble("promo_discount"));

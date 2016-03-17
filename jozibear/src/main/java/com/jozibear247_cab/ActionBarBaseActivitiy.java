@@ -33,7 +33,6 @@ import com.jozibear247_cab.fragments.UberBaseFragmentRegister;
 import com.jozibear247_cab.parse.AsyncTaskCompleteListener;
 import com.jozibear247_cab.parse.HttpRequester;
 import com.jozibear247_cab.utils.AndyUtils;
-import com.jozibear247_cab.utils.AppLog;
 import com.jozibear247_cab.utils.Const;
 import com.jozibear247_cab.utils.PreferenceHelper;
 import com.paypal.android.MEP.PayPal;
@@ -423,23 +422,16 @@ abstract public class ActionBarBaseActivitiy extends ActionBarActivity
 
 	Button btnConfirm;
 
-	public void showBillDialog(String timeCost, String total, String distCost,
-			String basePrice, String time, String distance, String currency,
-			String btnTitle, final String payment_mode, final String primary_id,
-			final String secoundry_id, final String primary_amount,
-			final String secoundry_amount, double actual_total, String is_paid) {
+	public void showHistoryBillDialog(String timeCost, String total, String distCost,
+							   String basePrice, String time, String distance, String currency,
+							   String btnTitle, final String payment_mode, final String primary_id,
+							   final String secoundry_id, final String primary_amount,
+							   final String secoundry_amount, double actual_total, String is_paid) {
 
 		initLibrary();
-		// if (_paypalLibraryInit) {
-		// showPayPalButton();
-		// } else {
-		// // finish();
-		// }
 
-		Log.d("mahi", "primary_amount " + primary_amount);
-		Log.d("mahi", "secoundry_amount " + secoundry_amount);
-		Log.d("mahi", "Payment mode " + payment_mode);
-		
+		Log.d("mahi", "primary_amount:" + primary_amount + ", secoundry_amount:" + secoundry_amount +
+				", Payment mode:" + payment_mode);
 
 		final Dialog mDialog = new Dialog(this,
 				android.R.style.Theme_Translucent_NoTitleBar);
@@ -451,69 +443,49 @@ abstract public class ActionBarBaseActivitiy extends ActionBarActivity
 		DecimalFormat decimalFormat = new DecimalFormat("0.00");
 		DecimalFormat perHourFormat = new DecimalFormat("0.0");
 		//
-		String basePricetmp = String.valueOf(decimalFormat.format(Double
-				.parseDouble(basePrice)));
+//		String basePricetmp = String.valueOf(decimalFormat.format(Double
+//				.parseDouble(basePrice)));
 		String totalTmp = String.valueOf(decimalFormat.format(Double
 				.parseDouble(total)));
 		String distCostTmp = String.valueOf(decimalFormat.format(Double
 				.parseDouble(distCost)));
 		String timeCostTmp = String.valueOf(decimalFormat.format(Double
 				.parseDouble(timeCost)));
-		
+
 		String actualtotal = String.valueOf(decimalFormat.format(actual_total));
 		double yousave=Math.abs(actual_total-Double.parseDouble(total));
-		
-		
-
-		AppLog.Log("Distance", distance);
-		AppLog.Log("Time", time);
 
 		((TextView) mDialog.findViewById(R.id.tvBasePrice)).setText(currency
 				+ " " + basePrice);
-		Log.d("mahi", "distance" + distance);
 		if (distance.equals("0.00") || distance.equals("0")) {
 			((TextView) mDialog.findViewById(R.id.tvBillDistancePerMile))
 					.setText(currency
-							+ "0 "
-							+ getResources().getString(
-									R.string.text_cost_per_mile));
+							+ "0 " + getResources().getString(R.string.text_cost_per_mile));
 		} else
 			((TextView) mDialog.findViewById(R.id.tvBillDistancePerMile))
 					.setText(currency
 							+ String.valueOf(perHourFormat.format((Double
-									.parseDouble(distCost) / Double
-									.parseDouble(distance))))
+							.parseDouble(distCost) / Double
+							.parseDouble(distance))))
 							+ " "
 							+ getResources().getString(
-									R.string.text_cost_per_mile));
+							R.string.text_cost_per_mile));
 
-		Log.d("hey",
-				"distance per mile"
-						+ String.valueOf(perHourFormat.format((Double
-								.parseDouble(distCost) / Double
-								.parseDouble(distance)))));
-		Log.d("hey",
-				"time per min"
-						+ String.valueOf(perHourFormat.format((Double
-								.parseDouble(timeCost) / Double
-								.parseDouble(time)))));
-
-		Log.d("mahi", "time" + time);
 		if (time.equals("0.00") || time.equals("0")) {
 			((TextView) mDialog.findViewById(R.id.tvBillTimePerHour))
 					.setText(currency
 							+ "0 "
 							+ getResources().getString(
-									R.string.text_cost_per_min));
+							R.string.text_cost_per_min));
 		} else
 			((TextView) mDialog.findViewById(R.id.tvBillTimePerHour))
 					.setText(currency
 							+ String.valueOf(perHourFormat.format((Double
-									.parseDouble(timeCost) / Double
-									.parseDouble(time))))
+							.parseDouble(timeCost) / Double
+							.parseDouble(time))))
 							+ " "
 							+ getResources().getString(
-									R.string.text_cost_per_min));
+							R.string.text_cost_per_min));
 		((TextView) mDialog.findViewById(R.id.tvDis1)).setText(currency + " "
 				+ distCostTmp);
 
@@ -530,87 +502,17 @@ abstract public class ActionBarBaseActivitiy extends ActionBarActivity
 				+ String.valueOf(decimalFormat.format(yousave)));
 
 		btnConfirm = (Button) mDialog.findViewById(R.id.btnBillDialogClose);
-		
-		if (!TextUtils.isEmpty(btnTitle)) {
-			btnConfirm.setText(btnTitle);
-		}
-
-		if (payment_mode.equals("2") && !is_paid.equals("1")) {
-         
-			Log.d("mahi","pay by paypal"+payment_mode+" "+is_paid);
-			
-			btnConfirm.setText(getString(R.string.pay_with_paypal));
-			Log.d("mahi","pay by paypal 1");
-		} else if (payment_mode.equals("3") && !is_paid.equals("1")) {
-
-			btnConfirm.setText(getString(R.string.pay_with_paygate));
-		}
-		Log.d("mahi","pay by paypa 2");
-		
+		btnConfirm.setText("CLOSE");
 		btnConfirm.setOnClickListener(new View.OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Log.d("mahi","pay by paypal 3");
-				Log.d("mahi","pay by paypal 5"+payment_mode);
-				if(payment_mode.equals("2")) {
-					Log.d("mahi","pay by paypal 4");
-					initLibrary();
-
-					PayPalButtonClick(primary_id, primary_amount, secoundry_id,
-							secoundry_amount);
-
-				} else if (payment_mode.equals("3")) {
-						// if confirm button press show paygate webview here 
-						Intent i= new Intent(ActionBarBaseActivitiy.this, paygate_webview.class);
-						startActivity(i);
-						finish();
-				}
-				else
-					mDialog.dismiss();
-				}
-
-				// config accourding to payment types
-
-			
+				mDialog.dismiss();
+			}
 		});
 
 		mDialog.setCancelable(false);
 		mDialog.show();
-	
-	
-	if (!TextUtils.isEmpty(btnTitle)) {
-		btnConfirm.setText(btnTitle);
-		Log.d("mahi","button title"+btnTitle);
 	}
-
-	
-
-//	btnConfirm.setOnClickListener(new View.OnClickListener() {
-//
-//		@Override
-//		public void onClick(View v) {
-//			// TODO Auto-generated method stub
-//
-//			if (btnConfirm.getText().toString()
-//					.equals(getString(R.string.pay_with_paygate))) {
-//				// if confirm button press show paygate webview here 
-//				Intent i= new Intent(ActionBarBaseActivitiy.this, paygate_webview.class);
-//				startActivity(i);
-//				finish();
-//			} else {
-//				mDialog.dismiss();
-//			}
-//
-//			// config accourding to payment types
-//
-//		}
-//	});
-
-	mDialog.setCancelable(false);
-	mDialog.show();
-}
 
 	public void setTitle(String str) {
 		tvTitle.setText(str);
