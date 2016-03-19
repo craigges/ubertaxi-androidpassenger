@@ -832,19 +832,16 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 			@Override
 			public void onClick(View v) {
 				if(!TextUtils.isEmpty(edit_referal_code.getText().toString())){
-				// TODO Auto-generated method stub
-
-				String update_refCode = edit_referal_code.getText().toString();
-				Intent sharingIntent = new Intent(Intent.ACTION_SEND);
-				sharingIntent.setType("text/plain");
-				sharingIntent
-						.putExtra(
-								android.content.Intent.EXTRA_TEXT,
-								"Use my promo code, "
-										+ update_refCode
-										+ ", and get exciting offers "+System.getProperty("line.separator")+" https://play.google.com/store/apps/details?id=com.automated.taxinow");
-				startActivity(Intent.createChooser(sharingIntent,
-						"Share Referral Code"));
+					String update_refCode = edit_referal_code.getText().toString();
+					Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+					sharingIntent.setType("text/plain");
+					sharingIntent.putExtra(Intent.EXTRA_HTML_TEXT,
+							"Use my promo code, "+ update_refCode
+									+ ", and get exciting offers "
+									+ System.getProperty("line.separator")
+									+ " https://play.google.com/store/apps/details?id=com.jozibear247_cab");
+					startActivity(Intent.createChooser(sharingIntent,
+							"Share Referral Code"));
 				} else {
 					Toast.makeText(context, "Please add a Referral Code", Toast.LENGTH_LONG).show();
 				}

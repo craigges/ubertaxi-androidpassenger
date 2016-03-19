@@ -48,7 +48,6 @@ public class MainActivity extends Activity implements OnClickListener {
 		// .findViewById(R.id.tvMainBottomView);
 		btnSignIn.setOnClickListener(this);
 		btnRegister.setOnClickListener(this);
-		Mint.initAndStartSession(MainActivity.this, "bb18f697");
 		if (TextUtils.isEmpty(PreferenceHelper.getInstance(this).getDeviceToken())) {
 			isReceiverRegister = true;
 			registerGcmReceiver(mHandleMessageReceiver);
