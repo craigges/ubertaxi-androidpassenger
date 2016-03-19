@@ -29,6 +29,7 @@ public class Const {
 		// "http://192.168.0.19/uber_auto/public/";
 
 		//private static final String HOST_URL = "http://52.25.104.97/";
+//		public static final String HOST_URL = "http://52.49.122.63/";
 		public static final String HOST_URL = "http://www.jozibear247.com/";
 
 		private static final String BASE_URL = HOST_URL + "user/";
