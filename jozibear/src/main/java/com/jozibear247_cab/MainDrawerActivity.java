@@ -55,7 +55,6 @@ import net.simonvt.menudrawer.MenuDrawer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * @author Hardik A Bhalodi
@@ -496,36 +495,41 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 			if (TextUtils.isEmpty(driver.getLastDistance()))
 				driver.setLastDistance(0.0 + " "
 						+ getString(R.string.text_miles));
-//			driverInfo = driver;
+			driver.getBill().setPayment_mode("1");
+			UberFeedbackFragment feedBack = new UberFeedbackFragment();
+			Bundle bundle = new Bundle();
+			bundle.putParcelable(Const.DRIVER, driver);
+			feedBack.setArguments(bundle);
+			addFragmentWithStateLoss(feedBack, false, Const.FRAGMENT_FEEDBACK);
 
-			List<String> paymentoption = new ArrayList<String>();
-			paymentoption.add(payment_mode[0]); // Pay By Cash
-			paymentoption.add(payment_mode[1]); // Pay By Card/EFT
-			final CharSequence[] paymentoptions = paymentoption
-					.toArray(new CharSequence[paymentoption.size()]);
-
-			AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			builder.setTitle("Payment Mode");
-			builder.setItems(paymentoptions,
-					new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface optiondialog, int which) {
-							Log.d("mahi", "payment type"
-									+ paymentoptions[which].toString());
-							if (paymentoptions[which].toString().equals(
-									payment_mode[0])) { // Pay By Cash
-								driver.getBill().setPayment_mode("1");
-							} else if (paymentoptions[which].toString()
-									.equals(payment_mode[1])) { // Pay By Card/EFT(PayGate)
-								driver.getBill().setPayment_mode("2");
-							}
-							UberFeedbackFragment feedBack = new UberFeedbackFragment();
-							Bundle bundle = new Bundle();
-							bundle.putParcelable(Const.DRIVER, driver);
-							feedBack.setArguments(bundle);
-							addFragmentWithStateLoss(feedBack, false, Const.FRAGMENT_FEEDBACK);
-						}
-					});
+//			List<String> paymentoption = new ArrayList<String>();
+//			paymentoption.add(payment_mode[0]); // Pay By Cash
+//			paymentoption.add(payment_mode[1]); // Pay By Card/EFT
+//			final CharSequence[] paymentoptions = paymentoption
+//					.toArray(new CharSequence[paymentoption.size()]);
+//
+//			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//			builder.setTitle("Payment Mode");
+//			builder.setItems(paymentoptions,
+//					new DialogInterface.OnClickListener() {
+//						@Override
+//						public void onClick(DialogInterface optiondialog, int which) {
+//							Log.d("mahi", "payment type"
+//									+ paymentoptions[which].toString());
+//							if (paymentoptions[which].toString().equals(
+//									payment_mode[0])) { // Pay By Cash
+//								driver.getBill().setPayment_mode("1");
+//							} else if (paymentoptions[which].toString()
+//									.equals(payment_mode[1])) { // Pay By Card/EFT(PayGate)
+//								driver.getBill().setPayment_mode("2");
+//							}
+//							UberFeedbackFragment feedBack = new UberFeedbackFragment();
+//							Bundle bundle = new Bundle();
+//							bundle.putParcelable(Const.DRIVER, driver);
+//							feedBack.setArguments(bundle);
+//							addFragmentWithStateLoss(feedBack, false, Const.FRAGMENT_FEEDBACK);
+//						}
+//					});
 //			builder.setNegativeButton("Cancel",
 //					new DialogInterface.OnClickListener() {
 //						@Override
@@ -533,9 +537,9 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 //							arg0.dismiss();
 //						}
 //					});
-			AlertDialog alert = builder.create();
-			alert.setCancelable(true);
-			alert.show();
+//			AlertDialog alert = builder.create();
+//			alert.setCancelable(true);
+//			alert.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

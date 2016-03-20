@@ -137,14 +137,14 @@ public class UberFeedbackFragment extends UberBaseFragment {
 			break;
 		case R.id.btnSkip:
 			PreferenceHelper.getInstance(activity).clearRequestData();
-			if(m_bPayResult) {
+//			if(m_bPayResult) {
 				activity.gotoMapFragment();
-			} else {
-				AndyUtils.showToast(
-						getString(R.string.text_account_blocked), activity);
-				PreferenceHelper.getInstance(activity).Logout();
-				activity.goToMainActivity();
-			}
+//			} else {
+//				AndyUtils.showToast(
+//						getString(R.string.text_account_blocked), activity);
+//				PreferenceHelper.getInstance(activity).Logout();
+//				activity.goToMainActivity();
+//			}
 		default:
 			break;
 		}
@@ -282,29 +282,30 @@ public class UberFeedbackFragment extends UberBaseFragment {
 				+ " " + String.valueOf(decimalFormat.format(yousave)));
 
 		Button btnConfirm = (Button) m_invoiceDlg.findViewById(R.id.btnBillDialogClose);
-		if (bill.getPayment_mode().equals("1")) {
-			btnConfirm.setText("PAY BY CASH NOW");
-		} else {
-			btnConfirm.setText("PAY BY CARD/EFT NOW");
-		}
+//		if (bill.getPayment_mode().equals("1")) {
+//			btnConfirm.setText("PAY BY CASH NOW");
+//		} else {
+//			btnConfirm.setText("PAY BY CARD/EFT NOW");
+//		}
+		btnConfirm.setText("CLOSE");
 		btnConfirm.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				if (bill.getPayment_mode().equals("1")) { // Pay by Cash
-					sendPayByCash();
+//				if (bill.getPayment_mode().equals("1")) { // Pay by Cash
+//					sendPayByCash();
+//					m_invoiceDlg.dismiss();
+//				} else if (bill.getPayment_mode().equals("2")) { // Pay by Card/EFT
+//					// if confirm button press show paygate webview here
+////					Intent i= new Intent(activity, PayGateWebView.class);
+////					startActivity(i);
+////					activity.finish();
+//					showBillWebDialog();
+//					m_invoiceDlg.dismiss();
+//
+//				} else {
 					m_invoiceDlg.dismiss();
-				} else if (bill.getPayment_mode().equals("2")) { // Pay by Card/EFT
-					// if confirm button press show paygate webview here
-//					Intent i= new Intent(activity, PayGateWebView.class);
-//					startActivity(i);
-//					activity.finish();
-					showBillWebDialog();
-					m_invoiceDlg.dismiss();
-
-				} else {
-					m_invoiceDlg.dismiss();
-				}
+//				}
 			}
 		});
 
