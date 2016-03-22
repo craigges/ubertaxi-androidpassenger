@@ -10,18 +10,15 @@ import com.jozibear247_cab.fragments.UberRegisterFragment;
 import com.jozibear247_cab.fragments.UberSignInFragment;
 import com.jozibear247_cab.utils.AndyUtils;
 import com.jozibear247_cab.utils.Const;
-import com.sromku.simple.fb.Permission;
-import com.sromku.simple.fb.SimpleFacebook;
-import com.sromku.simple.fb.SimpleFacebookConfiguration;
 
 /**
  * @author Hardik A Bhalodi
  */
 public class RegisterActivity extends ActionBarBaseActivitiy {
 
-	Permission[] permissions = new Permission[] { Permission.EMAIL };
-	SimpleFacebookConfiguration configuration = new SimpleFacebookConfiguration.Builder()
-			.setPermissions(permissions).build();
+//	Permission[] permissions = new Permission[] { Permission.EMAIL };
+//	SimpleFacebookConfiguration configuration = new SimpleFacebookConfiguration.Builder()
+//			.setPermissions(permissions).build();
 //	public PreferenceHelper phelper;
 
 	@Override
@@ -30,7 +27,7 @@ public class RegisterActivity extends ActionBarBaseActivitiy {
 		super.onCreate(savedInstanceState);
 		// actionBar.hide();
 		setContentView(R.layout.register_activity);
-		SimpleFacebook.setConfiguration(configuration);
+//		SimpleFacebook.setConfiguration(configuration);
 //		phelper = new PreferenceHelper(this);
 		// actionBar.setDisplayShowHomeEnabled(true);
 		// actionBar.setDisplayHomeAsUpEnabled(true);

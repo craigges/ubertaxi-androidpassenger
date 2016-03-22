@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.IntentSender.SendIntentException;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -20,17 +19,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.androidquery.AQuery;
 import com.androidquery.callback.ImageOptions;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.Scope;
-import com.google.android.gms.plus.Plus;
-import com.google.android.gms.plus.model.people.Person;
 import com.jozibear247_cab.R;
 import com.jozibear247_cab.component.MyFontTextView;
 import com.jozibear247_cab.parse.MultiPartRequester;
@@ -41,14 +33,6 @@ import com.jozibear247_cab.utils.Const;
 import com.jozibear247_cab.utils.PreferenceHelper;
 import com.mikhaellopez.circularimageview.CircleImageView;
 import com.soundcloud.android.crop.Crop;
-import com.sromku.simple.fb.Permission;
-import com.sromku.simple.fb.Permission.Type;
-import com.sromku.simple.fb.SimpleFacebook;
-import com.sromku.simple.fb.SimpleFacebookConfiguration;
-import com.sromku.simple.fb.entities.Profile;
-import com.sromku.simple.fb.entities.Profile.Properties;
-import com.sromku.simple.fb.listeners.OnLoginListener;
-import com.sromku.simple.fb.listeners.OnProfileListener;
 
 import java.io.File;
 import java.io.IOException;
@@ -62,36 +46,36 @@ import java.util.TimeZone;
  * @author Hardik A Bhalodi
  */
 public class UberRegisterFragment extends UberBaseFragmentRegister
-		implements
+		/*implements
 		com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks,
-		com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener {
+		com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener*/ {
 
 	private Button btnNext;
-	private ImageButton btnGPlush, btnFb;
+//	private ImageButton btnGPlush, btnFb;
 	private EditText etFName, etLName, etEmail, etBio, etZipCode, etAddress,
 			etPassword, etNumber;
 	private CircleImageView ivProPic;
 
 	// Gplus
-	private ConnectionResult mConnectionResult;
-	private GoogleApiClient mGoogleApiClient;
-	private boolean mIntentInProgress;
+//	private ConnectionResult mConnectionResult;
+//	private GoogleApiClient mGoogleApiClient;
+//	private boolean mIntentInProgress;
 	private static final int RC_SIGN_IN = 0;
 	private boolean mSignInClicked;
 	private Uri uri = null;
 	private String imageFilePath;
 	private String filePath = null;
 	private Bitmap bmp;
-	private SimpleFacebook mSimpleFacebook;
+//	private SimpleFacebook mSimpleFacebook;
 	private TextView spCCode;
 	private ParseContent pContent;
 	private String type = Const.MANUAL;
-	private String socialId;
-	private String socialUrl;
+//	private String socialId;
+//	private String socialUrl;
 	ArrayList<String> list;
 	private String country;
-	private SimpleFacebookConfiguration facebookConfiguration;
-	Permission[] facebookPermission = new Permission[] { Permission.EMAIL };
+//	private SimpleFacebookConfiguration facebookConfiguration;
+//	Permission[] facebookPermission = new Permission[] { Permission.EMAIL };
 
 	private MyFontTextView ettimezone;
 	int timezone_pos = -1;
@@ -101,13 +85,13 @@ public class UberRegisterFragment extends UberBaseFragmentRegister
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		Scope scope = new Scope("https://www.googleapis.com/auth/plus.login");
+//		Scope scope = new Scope("https://www.googleapis.com/auth/plus.login");
 		// Scope scopePro = new
 		// Scope("https://www.googleapis.com/auth/plus.me");
-		mGoogleApiClient = new GoogleApiClient.Builder(activity)
-				.addConnectionCallbacks(this)
-				.addOnConnectionFailedListener(this).addApi(Plus.API, Plus.PlusOptions.builder().build())
-				.addScope(scope).build();
+//		mGoogleApiClient = new GoogleApiClient.Builder(activity)
+//				.addConnectionCallbacks(this)
+//				.addOnConnectionFailedListener(this).addApi(Plus.API, Plus.PlusOptions.builder().build())
+//				.addScope(scope).build();
 		country = Locale.getDefault().getDisplayCountry();
 		timezone_display = getResources().getStringArray(R.array.time_zone);
 		timezone_value = getResources().getStringArray(R.array.time_zone_value);
@@ -123,18 +107,18 @@ public class UberRegisterFragment extends UberBaseFragmentRegister
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		facebookConfiguration = new SimpleFacebookConfiguration.Builder()
-				.setAppId(getResources().getString(R.string.applicationId))
-				.setNamespace(getResources().getString(R.string.app_name))
-				.setPermissions(facebookPermission).build();
-		SimpleFacebook.setConfiguration(facebookConfiguration);
+//		facebookConfiguration = new SimpleFacebookConfiguration.Builder()
+//				.setAppId(getResources().getString(R.string.applicationId))
+//				.setNamespace(getResources().getString(R.string.app_name))
+//				.setPermissions(facebookPermission).build();
+//		SimpleFacebook.setConfiguration(facebookConfiguration);
 		activity.setTitle(getResources()
 				.getString(R.string.text_register_small));
 		activity.setIconMenu(R.drawable.taxi);
 		View view = inflater.inflate(R.layout.register, container, false);
 		btnNext = (Button) view.findViewById(R.id.btnNext);
-		btnGPlush = (ImageButton) view.findViewById(R.id.btnGplus);
-		btnFb = (ImageButton) view.findViewById(R.id.btnFb);
+//		btnGPlush = (ImageButton) view.findViewById(R.id.btnGplus);
+//		btnFb = (ImageButton) view.findViewById(R.id.btnFb);
 		etEmail = (EditText) view.findViewById(R.id.etEmail);
 		etFName = (EditText) view.findViewById(R.id.etFName);
 		etLName = (EditText) view.findViewById(R.id.etLName);
@@ -159,8 +143,8 @@ public class UberRegisterFragment extends UberBaseFragmentRegister
 		}
 		spCCode.setOnClickListener(this);
 		ivProPic.setOnClickListener(this);
-		btnGPlush.setOnClickListener(this);
-		btnFb.setOnClickListener(this);
+//		btnGPlush.setOnClickListener(this);
+//		btnFb.setOnClickListener(this);
 		btnNext.setOnClickListener(this);
 
 		return view;
@@ -196,74 +180,74 @@ public class UberRegisterFragment extends UberBaseFragmentRegister
 		activity.currentFragment = Const.FRAGMENT_REGISTER;
 		super.onResume();
 		activity.actionBar.setTitle(getString(R.string.text_register_small));
-		mSimpleFacebook = SimpleFacebook.getInstance(activity);
+//		mSimpleFacebook = SimpleFacebook.getInstance(activity);
 	}
 
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		socialUrl = null;
+//		socialUrl = null;
 		switch (v.getId()) {
-		case R.id.btnFb:
-
-			if (!mSimpleFacebook.isLogin()) {
-				activity.setFbTag(Const.FRAGMENT_REGISTER);
-				mSimpleFacebook.login(new OnLoginListener() {
-
-					@Override
-					public void onFail(String arg0) {
-						// TODO Auto-generated method stub
-						Toast.makeText(
-								activity,
-								getString(R.string.toast_facebook_login_failed),
-								Toast.LENGTH_SHORT).show();
-					}
-
-					@Override
-					public void onException(Throwable arg0) {
-						// TODO Auto-generated method stub
-
-					}
-
-					@Override
-					public void onThinking() {
-						// TODO Auto-generated method stub
-
-					}
-
-					@Override
-					public void onNotAcceptingPermissions(Type arg0) {
-						// TODO Auto-generated method stub
-						Log.w("UBER",
-								String.format(
-										"You didn't accept %s permissions",
-										arg0.name()));
-					}
-
-					@Override
-					public void onLogin() {
-						// TODO Auto-generated method stub
-
-					}
-				});
-			} else {
-				getProfile();
-			}
-			break;
-		case R.id.btnGplus:
-
-			mSignInClicked = true;
-			if (!mGoogleApiClient.isConnecting()) {
-				AndyUtils.showCustomProgressDialog(activity,
-						getString(R.string.text_getting_info), true, null);
-				mGoogleApiClient.connect();
-			}
-			break;
+//		case R.id.btnFb:
+//
+//			if (!mSimpleFacebook.isLogin()) {
+//				activity.setFbTag(Const.FRAGMENT_REGISTER);
+//				mSimpleFacebook.login(new OnLoginListener() {
+//
+//					@Override
+//					public void onFail(String arg0) {
+//						// TODO Auto-generated method stub
+//						Toast.makeText(
+//								activity,
+//								getString(R.string.toast_facebook_login_failed),
+//								Toast.LENGTH_SHORT).show();
+//					}
+//
+//					@Override
+//					public void onException(Throwable arg0) {
+//						// TODO Auto-generated method stub
+//
+//					}
+//
+//					@Override
+//					public void onThinking() {
+//						// TODO Auto-generated method stub
+//
+//					}
+//
+//					@Override
+//					public void onNotAcceptingPermissions(Type arg0) {
+//						// TODO Auto-generated method stub
+//						Log.w("UBER",
+//								String.format(
+//										"You didn't accept %s permissions",
+//										arg0.name()));
+//					}
+//
+//					@Override
+//					public void onLogin() {
+//						// TODO Auto-generated method stub
+//
+//					}
+//				});
+//			} else {
+//				getProfile();
+//			}
+//			break;
+//		case R.id.btnGplus:
+//
+//			mSignInClicked = true;
+//			if (!mGoogleApiClient.isConnecting()) {
+//				AndyUtils.showCustomProgressDialog(activity,
+//						getString(R.string.text_getting_info), true, null);
+//				mGoogleApiClient.connect();
+//			}
+//			break;
 		case R.id.btnNext:
 
 			if (isValidate()) {
 
-				register(type, socialId);
+				register(type/*, socialId*/);
 
 			}
 			break;
@@ -330,99 +314,99 @@ public class UberRegisterFragment extends UberBaseFragmentRegister
 		dialog.show();
 	}
 
-	private void resolveSignInError() {
+//	private void resolveSignInError() {
+//
+//		if (mConnectionResult.hasResolution()) {
+//			try {
+//				mIntentInProgress = true;
+//				activity.startIntentSenderForResult(mConnectionResult
+//						.getResolution().getIntentSender(), RC_SIGN_IN, null,
+//						0, 0, 0, Const.FRAGMENT_REGISTER);
+//			} catch (SendIntentException e) {
+//				// The intent was canceled before it was sent. Return to the
+//				// default
+//				// state and attempt to connect to get an updated
+//				// ConnectionResult.
+//				mIntentInProgress = false;
+//				mGoogleApiClient.connect();
+//			}
+//		}
+//	}
 
-		if (mConnectionResult.hasResolution()) {
-			try {
-				mIntentInProgress = true;
-				activity.startIntentSenderForResult(mConnectionResult
-						.getResolution().getIntentSender(), RC_SIGN_IN, null,
-						0, 0, 0, Const.FRAGMENT_REGISTER);
-			} catch (SendIntentException e) {
-				// The intent was canceled before it was sent. Return to the
-				// default
-				// state and attempt to connect to get an updated
-				// ConnectionResult.
-				mIntentInProgress = false;
-				mGoogleApiClient.connect();
-			}
-		}
-	}
+//	@Override
+//	public void onConnectionFailed(ConnectionResult result) {
+//		// TODO Auto-generated method stub
+//
+//		if (!mIntentInProgress) {
+//			// Store the ConnectionResult so that we can use it later when the
+//			// user clicks
+//			// 'sign-in'.
+//
+//			mConnectionResult = result;
+//
+//			if (mSignInClicked) {
+//				// The user has already clicked 'sign-in' so we attempt to
+//				// resolve all
+//
+//				// errors until the user is signed in, or they cancel.
+//				resolveSignInError();
+//			}
+//		}
+//	}
 
-	@Override
-	public void onConnectionFailed(ConnectionResult result) {
-		// TODO Auto-generated method stub
+//	@Override
+//	public void onConnected(Bundle arg0) {
+//		// TODO Auto-generated method stub
+//		AndyUtils.removeCustomProgressDialog();
+//		mSignInClicked = false;
+//		btnGPlush.setEnabled(false);
+//		btnFb.setEnabled(false);
+//		String email = Plus.AccountApi.getAccountName(mGoogleApiClient);
+//		Person currentPerson = Plus.PeopleApi
+//				.getCurrentPerson(mGoogleApiClient);
+//
+//		String personName = currentPerson.getDisplayName();
+//
+//		String personPhoto = currentPerson.getImage().toString();
+//		String personGooglePlusProfile = currentPerson.getUrl();
+//		socialId = currentPerson.getId();
+//		// etPassword.setEnabled(false);
+//		etPassword.setVisibility(View.GONE);
+//		etEmail.setText(email);
+//		type = Const.SOCIAL_GOOGLE;
+//		// etFName.setText(personName);
+//		if (personName.contains(" ")) {
+//			String[] split = personName.split(" ");
+//			etFName.setText(split[0]);
+//			etLName.setText(split[1]);
+//		} else {
+//			etFName.setText(personName);
+//		}
+//		if (!TextUtils.isEmpty(personPhoto)
+//				|| !personPhoto.equalsIgnoreCase("null")) {
+//			socialUrl = personPhoto;
+//			AQuery aQuery = new AQuery(activity);
+//			aQuery.id(ivProPic).image(personPhoto, getAqueryOption());
+//		} else {
+//			socialUrl = null;
+//		}
+//
+//	}
 
-		if (!mIntentInProgress) {
-			// Store the ConnectionResult so that we can use it later when the
-			// user clicks
-			// 'sign-in'.
-
-			mConnectionResult = result;
-
-			if (mSignInClicked) {
-				// The user has already clicked 'sign-in' so we attempt to
-				// resolve all
-
-				// errors until the user is signed in, or they cancel.
-				resolveSignInError();
-			}
-		}
-	}
-
-	@Override
-	public void onConnected(Bundle arg0) {
-		// TODO Auto-generated method stub
-		AndyUtils.removeCustomProgressDialog();
-		mSignInClicked = false;
-		btnGPlush.setEnabled(false);
-		btnFb.setEnabled(false);
-		String email = Plus.AccountApi.getAccountName(mGoogleApiClient);
-		Person currentPerson = Plus.PeopleApi
-				.getCurrentPerson(mGoogleApiClient);
-
-		String personName = currentPerson.getDisplayName();
-
-		String personPhoto = currentPerson.getImage().toString();
-		String personGooglePlusProfile = currentPerson.getUrl();
-		socialId = currentPerson.getId();
-		// etPassword.setEnabled(false);
-		etPassword.setVisibility(View.GONE);
-		etEmail.setText(email);
-		type = Const.SOCIAL_GOOGLE;
-		// etFName.setText(personName);
-		if (personName.contains(" ")) {
-			String[] split = personName.split(" ");
-			etFName.setText(split[0]);
-			etLName.setText(split[1]);
-		} else {
-			etFName.setText(personName);
-		}
-		if (!TextUtils.isEmpty(personPhoto)
-				|| !personPhoto.equalsIgnoreCase("null")) {
-			socialUrl = personPhoto;
-			AQuery aQuery = new AQuery(activity);
-			aQuery.id(ivProPic).image(personPhoto, getAqueryOption());
-		} else {
-			socialUrl = null;
-		}
-
-	}
-
-	@Override
-	public void onConnectionSuspended(int arg0) {
-		// TODO Auto-generated method stub
-		mGoogleApiClient.connect();
-	}
+//	@Override
+//	public void onConnectionSuspended(int arg0) {
+//		// TODO Auto-generated method stub
+//		mGoogleApiClient.connect();
+//	}
 
 	@Override
 	public void onStop() {
 		// TODO Auto-generated method stub
 		super.onStop();
 
-		if (mGoogleApiClient.isConnected()) {
-			mGoogleApiClient.disconnect();
-		}
+//		if (mGoogleApiClient.isConnected()) {
+//			mGoogleApiClient.disconnect();
+//		}
 
 	}
 
@@ -435,22 +419,22 @@ public class UberRegisterFragment extends UberBaseFragmentRegister
 				AndyUtils.removeCustomProgressDialog();
 			}
 
-			mIntentInProgress = false;
-
-			if (!mGoogleApiClient.isConnecting()) {
-				mGoogleApiClient.connect();
-			}
+//			mIntentInProgress = false;
+//
+//			if (!mGoogleApiClient.isConnecting()) {
+//				mGoogleApiClient.connect();
+//			}
 			break;
 
 		default:
-			mSimpleFacebook.onActivityResult(activity, requestCode, resultCode,
-					data);
-			if (mSimpleFacebook.isLogin()) {
-				getProfile();
-			} else {
-				Toast.makeText(activity, "facebook login failed",
-						Toast.LENGTH_SHORT).show();
-			}
+//			mSimpleFacebook.onActivityResult(activity, requestCode, resultCode,
+//					data);
+//			if (mSimpleFacebook.isLogin()) {
+//				getProfile();
+//			} else {
+//				Toast.makeText(activity, "facebook login failed",
+//						Toast.LENGTH_SHORT).show();
+//			}
 
 			super.onActivityResult(requestCode, resultCode, data);
 			break;
@@ -569,13 +553,13 @@ public class UberRegisterFragment extends UberBaseFragmentRegister
 			return false;
 
 		}
-		if (etPassword.getVisibility() == View.GONE) {
-			if (!TextUtils.isEmpty(socialUrl)) {
-				filePath = null;
-				filePath = new AQuery(activity).getCachedFile(socialUrl)
-						.getAbsolutePath();
-			}
-		}
+//		if (etPassword.getVisibility() == View.GONE) {
+//			if (!TextUtils.isEmpty(socialUrl)) {
+//				filePath = null;
+//				filePath = new AQuery(activity).getCachedFile(socialUrl)
+//						.getAbsolutePath();
+//			}
+//		}
 		if (TextUtils.isEmpty(etNumber.getText().toString())) {
 			msg = getString(R.string.text_enter_number);
 			etNumber.requestFocus();
@@ -593,45 +577,45 @@ public class UberRegisterFragment extends UberBaseFragmentRegister
 		return false;
 	}
 
-	private void getProfile() {
-		AndyUtils.showCustomProgressDialog(activity,
-				getString(R.string.text_getting_info), true, null);
-		Profile.Properties properties = new Profile.Properties.Builder()
-				.add(Properties.ID).add(Properties.FIRST_NAME)
-				.add(Properties.GENDER).add(Properties.EMAIL)
-				.add(Properties.LAST_NAME).add(Properties.BIRTHDAY)
-				.add(Properties.EDUCATION).add(Properties.PICTURE).build();
+//	private void getProfile() {
+//		AndyUtils.showCustomProgressDialog(activity,
+//				getString(R.string.text_getting_info), true, null);
+//		Profile.Properties properties = new Profile.Properties.Builder()
+//				.add(Properties.ID).add(Properties.FIRST_NAME)
+//				.add(Properties.GENDER).add(Properties.EMAIL)
+//				.add(Properties.LAST_NAME).add(Properties.BIRTHDAY)
+//				.add(Properties.EDUCATION).add(Properties.PICTURE).build();
+//
+//		mSimpleFacebook.getProfile(properties, new OnProfileListener() {
+//			@Override
+//			public void onComplete(Profile profile) {
+//				AndyUtils.removeCustomProgressDialog();
+//				Log.i("Uber", "My profile id = " + profile.getId());
+//				btnGPlush.setEnabled(false);
+//				btnFb.setEnabled(false);
+//				etEmail.setText(profile.getEmail());
+//				etFName.setText(profile.getFirstName());
+//				etLName.setText(profile.getLastName());
+//				socialId = profile.getId();
+//				type = Const.SOCIAL_FACEBOOK;
+//				// etPassword.setEnabled(false);
+//				etPassword.setVisibility(View.GONE);
+//
+//				if (!TextUtils.isEmpty(profile.getPicture())
+//						|| !profile.getPicture().equalsIgnoreCase("null")) {
+//					socialUrl = profile.getPicture();
+//					AQuery aQuery = new AQuery(activity);
+//					aQuery.id(ivProPic).image(profile.getPicture(),
+//							getAqueryOption());
+//				} else {
+//					socialUrl = null;
+//				}
+//
+//			}
+//		});
+//	}
 
-		mSimpleFacebook.getProfile(properties, new OnProfileListener() {
-			@Override
-			public void onComplete(Profile profile) {
-				AndyUtils.removeCustomProgressDialog();
-				Log.i("Uber", "My profile id = " + profile.getId());
-				btnGPlush.setEnabled(false);
-				btnFb.setEnabled(false);
-				etEmail.setText(profile.getEmail());
-				etFName.setText(profile.getFirstName());
-				etLName.setText(profile.getLastName());
-				socialId = profile.getId();
-				type = Const.SOCIAL_FACEBOOK;
-				// etPassword.setEnabled(false);
-				etPassword.setVisibility(View.GONE);
-
-				if (!TextUtils.isEmpty(profile.getPicture())
-						|| !profile.getPicture().equalsIgnoreCase("null")) {
-					socialUrl = profile.getPicture();
-					AQuery aQuery = new AQuery(activity);
-					aQuery.id(ivProPic).image(profile.getPicture(),
-							getAqueryOption());
-				} else {
-					socialUrl = null;
-				}
-
-			}
-		});
-	}
-
-	private void register(String type, String id) {
+	private void register(String type/*, String id*/) {
 
 		if (!AndyUtils.isNetworkAvailable(activity)) {
 			AndyUtils.showToast(
@@ -667,44 +651,44 @@ public class UberRegisterFragment extends UberBaseFragmentRegister
 			new MultiPartRequester(activity, map, Const.ServiceCode.REGISTER,
 					this);
 		} else {
-			registerSocial(id, type);
+//			registerSocial(id, type);
 		}
 	}
 
-	private void registerSocial(final String id, final String type) {
-
-		if (!AndyUtils.isNetworkAvailable(activity)) {
-			AndyUtils.showToast(
-					getResources().getString(R.string.dialog_no_inter_message),
-					activity);
-			return;
-		}
-
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put(Const.URL, Const.ServiceType.REGISTER);
-		map.put(Const.Params.FIRSTNAME, etFName.getText().toString());
-		map.put(Const.Params.LAST_NAME, etLName.getText().toString());
-		map.put(Const.Params.EMAIL, etEmail.getText().toString());
-		map.put(Const.Params.SOCIAL_UNIQUE_ID, id);
-		// map.put(Const.Params.PICTURE, filePath);
-		map.put(Const.Params.PHONE, spCCode.getText().toString().trim()
-				+ etNumber.getText().toString());
-		map.put(Const.Params.DEVICE_TOKEN, PreferenceHelper.getInstance(activity).getDeviceToken());
-		map.put(Const.Params.DEVICE_TYPE, Const.DEVICE_TYPE_ANDROID);
-		map.put(Const.Params.ADDRESS, etAddress.getText().toString());
-		map.put(Const.Params.BIO, etBio.getText().toString());
-		map.put(Const.Params.ZIPCODE, etZipCode.getText().toString());
-		map.put(Const.Params.STATE, "");
-		map.put(Const.Params.COUNTRY, "");
-		map.put(Const.Params.LOGIN_BY, type);
-		// if(!TextUtils.isEmpty(ettimezone.getText())&&timezone_pos!=-1)
-		// map.put(Const.Params.TIMEZONE, ettimezone.getText().toString());
-		map.put(Const.Params.TIMEZONE, timezone_value[timezone_pos]);
-
-		AndyUtils.showCustomProgressDialog(activity,
-				getString(R.string.text_registering), true, null);
-		new MultiPartRequester(activity, map, Const.ServiceCode.REGISTER, this);
-	}
+//	private void registerSocial(final String id, final String type) {
+//
+//		if (!AndyUtils.isNetworkAvailable(activity)) {
+//			AndyUtils.showToast(
+//					getResources().getString(R.string.dialog_no_inter_message),
+//					activity);
+//			return;
+//		}
+//
+//		HashMap<String, String> map = new HashMap<String, String>();
+//		map.put(Const.URL, Const.ServiceType.REGISTER);
+//		map.put(Const.Params.FIRSTNAME, etFName.getText().toString());
+//		map.put(Const.Params.LAST_NAME, etLName.getText().toString());
+//		map.put(Const.Params.EMAIL, etEmail.getText().toString());
+//		map.put(Const.Params.SOCIAL_UNIQUE_ID, id);
+//		// map.put(Const.Params.PICTURE, filePath);
+//		map.put(Const.Params.PHONE, spCCode.getText().toString().trim()
+//				+ etNumber.getText().toString());
+//		map.put(Const.Params.DEVICE_TOKEN, PreferenceHelper.getInstance(activity).getDeviceToken());
+//		map.put(Const.Params.DEVICE_TYPE, Const.DEVICE_TYPE_ANDROID);
+//		map.put(Const.Params.ADDRESS, etAddress.getText().toString());
+//		map.put(Const.Params.BIO, etBio.getText().toString());
+//		map.put(Const.Params.ZIPCODE, etZipCode.getText().toString());
+//		map.put(Const.Params.STATE, "");
+//		map.put(Const.Params.COUNTRY, "");
+//		map.put(Const.Params.LOGIN_BY, type);
+//		// if(!TextUtils.isEmpty(ettimezone.getText())&&timezone_pos!=-1)
+//		// map.put(Const.Params.TIMEZONE, ettimezone.getText().toString());
+//		map.put(Const.Params.TIMEZONE, timezone_value[timezone_pos]);
+//
+//		AndyUtils.showCustomProgressDialog(activity,
+//				getString(R.string.text_registering), true, null);
+//		new MultiPartRequester(activity, map, Const.ServiceCode.REGISTER, this);
+//	}
 
 	@Override
 	public void onTaskCompleted(String response, int serviceCode) {

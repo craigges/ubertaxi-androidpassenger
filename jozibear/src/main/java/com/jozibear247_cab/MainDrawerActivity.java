@@ -166,9 +166,16 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 												DialogInterface dialog,
 												int which) {
 											// continue with delete
+											HashMap<String, String> map = new HashMap<String, String>();
+											map.put(Const.URL, Const.ServiceType.LOGOUT);
+											map.put(Const.Params.TOKEN,
+													PreferenceHelper.getInstance(MainDrawerActivity.this).getSessionToken());
+											map.put(Const.Params.ID,
+													PreferenceHelper.getInstance(MainDrawerActivity.this).getUserId());
+											new HttpRequester(context, map, Const.ServiceCode.LOGOUT, MainDrawerActivity.this);
+
 											PreferenceHelper.getInstance(MainDrawerActivity.this).Logout();
 											goToMainActivity();
-
 										}
 									})
 							.setNegativeButton("CANCEL",
@@ -477,15 +484,15 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 	}
 
 	public void gotoTripFragment(Driver driver) {
-		if(tripFrag == null) {
+//		if(tripFrag == null) {
 			tripFrag = new UberTripFragment();
 			Bundle bundle = new Bundle();
 			bundle.putParcelable(Const.DRIVER, driver);
 			tripFrag.setArguments(bundle);
 			addFragment(tripFrag, false, Const.FRAGMENT_TRIP);
-		} else {
-			tripFrag.onResume();
-		}
+//		} else {
+//			tripFrag.onResume();
+//		}
 	}
 
 	public void gotoRateFragment(final Driver driver) {
@@ -493,9 +500,8 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 			if (TextUtils.isEmpty(driver.getLastTime()))
 				driver.setLastTime(0 + " " + getString(R.string.text_mins));
 			if (TextUtils.isEmpty(driver.getLastDistance()))
-				driver.setLastDistance(0.0 + " "
-						+ getString(R.string.text_miles));
-			driver.getBill().setPayment_mode("1");
+				driver.setLastDistance(0.0 + " " + getString(R.string.text_kms));
+//			driver.getBill().setPayment_mode("1");
 			UberFeedbackFragment feedBack = new UberFeedbackFragment();
 			Bundle bundle = new Bundle();
 			bundle.putParcelable(Const.DRIVER, driver);

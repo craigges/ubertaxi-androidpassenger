@@ -73,6 +73,7 @@ public class UberFeedbackFragment extends UberBaseFragment {
 		// TODO Auto-generated method stub
 		activity.setTitle(getString(R.string.text_feedback));
 		View view = inflater.inflate(R.layout.feedback, container, false);
+		DecimalFormat decimalFormat = new DecimalFormat("0.00");
 		tvClientName = (TextView) view.findViewById(R.id.tvClientName);
 		etComment = (EditText) view.findViewById(R.id.etComment);
 		rtBar = (RatingBar) view.findViewById(R.id.ratingBar);
@@ -82,7 +83,7 @@ public class UberFeedbackFragment extends UberBaseFragment {
 		tvDistance = (TextView) view.findViewById(R.id.tvDistance);
 		tvTime = (TextView) view.findViewById(R.id.tvTime);
 		// tvDistance.setText(driver.getLastDistance());
-		tvDistance.setText(driver.getBill().getDistance() + " "
+		tvDistance.setText(decimalFormat.format(Double.parseDouble(driver.getBill().getDistance())) + " "
 				+ driver.getBill().getUnit());
 		tvTime.setText((int) (Double.parseDouble(driver.getBill().getTime()))
 				+ " " + getString(R.string.text_mins));
@@ -106,17 +107,17 @@ public class UberFeedbackFragment extends UberBaseFragment {
 
 			Log.d("mahi", "is paid?" + driver.getBill().getIsPaid());
 			// if (driver.getBill().getIsPaid().equals("1"))
-			if (driver.getBill().getPayment_mode().equals("1")) { // Pay by Cash
+//			if (driver.getBill().getPayment_mode().equals("1")) { // Pay by Cash
 				if (!driver.getBill().getIsPaid().equals("1")) {
 					showBillDialog(driver.getBill());
 				}
-			} else if (driver.getBill().getPayment_mode().equals("2")) {
-				if (!driver.getBill().getIsPaid().equals("1")) {
-					showBillDialog(driver.getBill());
-				}
-			} else {
-				showBillDialog(driver.getBill());
-			}
+//			} else if (driver.getBill().getPayment_mode().equals("2")) {
+//				if (!driver.getBill().getIsPaid().equals("1")) {
+//					showBillDialog(driver.getBill());
+//				}
+//			} else {
+//				showBillDialog(driver.getBill());
+//			}
 		}
 	}
 
@@ -137,14 +138,15 @@ public class UberFeedbackFragment extends UberBaseFragment {
 			break;
 		case R.id.btnSkip:
 			PreferenceHelper.getInstance(activity).clearRequestData();
-//			if(m_bPayResult) {
+			if(m_bPayResult) {
+				activity.removeAllFragment(this, false, "");
 				activity.gotoMapFragment();
-//			} else {
-//				AndyUtils.showToast(
-//						getString(R.string.text_account_blocked), activity);
-//				PreferenceHelper.getInstance(activity).Logout();
-//				activity.goToMainActivity();
-//			}
+			} else {
+				AndyUtils.showToast(
+						getString(R.string.text_account_blocked), activity);
+				PreferenceHelper.getInstance(activity).Logout();
+				activity.goToMainActivity();
+			}
 		default:
 			break;
 		}
@@ -199,6 +201,8 @@ public class UberFeedbackFragment extends UberBaseFragment {
 				if(m_bPayResult) {
 					AndyUtils.showToast(
 							getString(R.string.text_feedback_completed), activity);
+
+					activity.removeAllFragment(this, false, "");
 					activity.gotoMapFragment();
 				} else {
 					AndyUtils.showToast(
@@ -247,7 +251,7 @@ public class UberFeedbackFragment extends UberBaseFragment {
 			((TextView) m_invoiceDlg.findViewById(R.id.tvBillDistancePerMile))
 					.setText(bill.getCurrency()
 							+ "0 "
-							+ getResources().getString(R.string.text_cost_per_mile));
+							+ getResources().getString(R.string.text_cost_per_km));
 		} else
 			((TextView) m_invoiceDlg.findViewById(R.id.tvBillDistancePerMile))
 					.setText(bill.getCurrency()
@@ -255,7 +259,7 @@ public class UberFeedbackFragment extends UberBaseFragment {
 							.parseDouble(bill.getDistanceCost()) / Double
 							.parseDouble(bill.getDistance()))))
 							+ " "
-							+ getResources().getString(R.string.text_cost_per_mile));
+							+ getResources().getString(R.string.text_cost_per_km));
 
 		if (bill.getTime().equals("0.00") || bill.getDistance().equals("0,00") || bill.getTime().equals("0")) {
 			((TextView) m_invoiceDlg.findViewById(R.id.tvBillTimePerHour))
@@ -304,7 +308,9 @@ public class UberFeedbackFragment extends UberBaseFragment {
 //					m_invoiceDlg.dismiss();
 //
 //				} else {
-					m_invoiceDlg.dismiss();
+				AndyUtils.showCustomProgressDialog(activity,
+						getString(R.string.text_waiting_finish_payment), false, null);
+//					m_invoiceDlg.dismiss();
 //				}
 			}
 		});

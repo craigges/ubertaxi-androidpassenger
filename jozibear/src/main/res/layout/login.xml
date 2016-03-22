@@ -16,36 +16,7 @@
         android:paddingLeft="@dimen/activity_vertical_margin"
         android:paddingRight="@dimen/activity_vertical_margin" >
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="@dimen/activity_vertical_margin" >
-
-            <ImageButton
-                android:id="@+id/btnFb"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:background="@null"
-                android:src="@drawable/btn_fb" />
-
-            <ImageButton
-                android:id="@+id/btnGplus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:src="@drawable/btn_google" />
-        </LinearLayout>
-
         <!-- <include layout="@layout/ub__view" /> -->
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="@null"
-            android:src="@drawable/or" />
 
         <com.jozibear247_cab.component.MyFontEdittextView
             android:id="@+id/etEmail"

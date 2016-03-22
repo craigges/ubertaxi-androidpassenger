@@ -34,6 +34,7 @@ public class Const {
 
 		private static final String BASE_URL = HOST_URL + "user/";
 		public static final String LOGIN = BASE_URL + "login";
+		public static final String LOGOUT = BASE_URL + "logout";
 		public static final String REGISTER = BASE_URL + "register";
 		public static final String ADD_CARD = BASE_URL + "addcardtoken";
 		public static final String REMOVE_CARD = BASE_URL + "deletecardtoken";
@@ -143,6 +144,7 @@ public class Const {
 
 		public static final int UPDATE_PAYMENT = 40;
 		public static final int FINISH_PAYMENT = 41;
+		public static final int LOGOUT = 42;
 	}
 
 	// service parameters
@@ -191,6 +193,9 @@ public class Const {
 		public static final String SCHEDULE_ID = "schedule_id";
 		public static final String REQUEST_ID = "request_id";
 		public static final String TIMEZONE = "timezone";
+		public static final String BASE_PRICE = "base_price";
+		public static final String PRICE_PER_UNIT_DISTANCE = "price_per_unit_distance";
+		public static final String PRICE_PER_UNIT_TIME = "price_per_unit_time";
 
 		public static final String COD = "payment_mode";
 		public static final String PAYPAL_DATA = "paypal_id";

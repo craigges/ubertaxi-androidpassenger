@@ -441,9 +441,8 @@ public class ParseContent {
 
 			String time = jsonObject.optString(START_TIME);
 			// "start_time": "2014-11-20 03:27:37"
-			if (!TextUtils.isEmpty(time)) {
+			if (!time.isEmpty()) {
 				try {
-
 					TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
 					Date date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss",
 							Locale.ENGLISH).parse(time);

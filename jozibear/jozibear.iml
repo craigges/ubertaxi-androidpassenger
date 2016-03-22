@@ -90,7 +90,6 @@
     <orderEntry type="library" exported="" name="android-query.0.26.7" level="project" />
     <orderEntry type="library" exported="" name="card.io" level="project" />
     <orderEntry type="library" exported="" name="httpcore-4.3.2" level="project" />
-    <orderEntry type="library" exported="" name="simple.facebook-2.1" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-18.0.0" level="project" />
     <orderEntry type="library" exported="" name="apache-mime4j-core-0.7.2" level="project" />
     <orderEntry type="library" exported="" name="play-services-6.1.71" level="project" />
@@ -99,13 +98,10 @@
     <orderEntry type="library" exported="" name="support-v4-20.0.0" level="project" />
     <orderEntry type="library" exported="" name="mint-4.4.0" level="project" />
     <orderEntry type="library" exported="" name="httpclient-4.3.5" level="project" />
-    <orderEntry type="library" exported="" name="PayPal_MPL" level="project" />
-    <orderEntry type="module" module-name="facebookSDK" exported="" />
     <orderEntry type="module" module-name="library_pinnlistivew" exported="" />
     <orderEntry type="module" module-name="menudrawer" exported="" />
     <orderEntry type="module" module-name="cropLibrary" exported="" />
     <orderEntry type="module" module-name="androidswitchbackport" exported="" />
-    <orderEntry type="module" module-name="googleplayservices_lib_new" exported="" />
     <orderEntry type="module" module-name="devsmartAndroid" exported="" />
     <orderEntry type="module" module-name="circularImageView_Client" exported="" />
     <orderEntry type="module" module-name="stripeLibrary" exported="" />
