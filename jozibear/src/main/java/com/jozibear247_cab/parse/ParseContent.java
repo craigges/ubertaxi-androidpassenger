@@ -473,10 +473,9 @@ public class ParseContent {
 			double distance = Double.parseDouble(jsonObject.getString(DISTANCE));
 			// bill.setDistance(jsonObject.getString(DISTANCE));
 			bill.setUnit(jsonObject.getString(UNIT));
-			if (bill.getUnit().equalsIgnoreCase("kms")) {
-				distance = distance * 0.62137;
-
-			}
+//			if (bill.getUnit().equalsIgnoreCase("kms")) {
+//				distance = distance * 0.62137;
+//			}
 
 			bill.setPayment_mode(jsonObject.getString(PAYMENT_MODE));
 			if (jsonObject.getString(PAYMENT_MODE).equals("2")) {
@@ -489,7 +488,8 @@ public class ParseContent {
 				bill.setSecoundry_amount(ja_secoundry.getString("amount"));
 			}
 
-			bill.setDistance(new DecimalFormat("0.00").format(distance));
+//			bill.setDistance(new DecimalFormat("0.00").format(distance));
+			bill.setDistance(jsonObject.getString(DISTANCE));
 			bill.setDistanceCost(jsonObject.getString(DISTANCE_COST));
 			bill.setTime(jsonObject.getString(TIME));
 			bill.setTimeCost(jsonObject.getString(TIME_COST));
@@ -565,10 +565,11 @@ public class ParseContent {
 				bill.setTotal(jsonObjectBill.getString(TOTAL));
 				bill.setIsPaid(jsonObjectBill.getString(IS_PAID));
 				bill.setUnit(jsonObjectBill.getString(UNIT));
-				double distance = Double.parseDouble(jsonObjectBill.getString(DISTANCE));
+//				double distance = Double.parseDouble(jsonObjectBill.getString(DISTANCE));
 				if (bill.getUnit().equalsIgnoreCase("kms")) {
-					distance = distance * 0.62137;
-					bill.setDistance(new DecimalFormat("0.00").format(distance));
+//					distance = distance * 0.62137;
+//					bill.setDistance(new DecimalFormat("0.00").format(distance));
+					bill.setDistance(jsonObjectBill.getString(DISTANCE));
 				}
 
 				driver.setBill(bill);
@@ -878,17 +879,13 @@ public class ParseContent {
 						history.setId(object.getInt(ID));
 						history.setDate(object.getString(DATE));
 
-						double distance = Double.parseDouble(object
-								.getString(DISTANCE));
-						// bill.setDistance(jsonObject.getString(DISTANCE));
+//						double distance = Double.parseDouble(object.getString(DISTANCE));
 						history.setUnit(object.getString(UNIT));
-						if (history.getUnit().equalsIgnoreCase("kms")) {
-							distance = distance * 0.62137;
-
-						}
-						history.setDistance(new DecimalFormat("0.00")
-								.format(distance));
-
+//						if (history.getUnit().equalsIgnoreCase("kms")) {
+//							distance = distance * 0.62137;
+//						}
+//						history.setDistance(new DecimalFormat("0.00").format(distance));
+						history.setDistance(jsonObject.getString(DISTANCE));
 						history.setUnit(object.getString(UNIT));
 						history.setTime(object.getString(TIME));
 						history.setDistanceCost(object.getString(DISTANCE_COST));

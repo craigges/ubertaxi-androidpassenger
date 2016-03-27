@@ -243,7 +243,7 @@ public class UberFeedbackFragment extends UberBaseFragment {
 
 		((TextView) m_invoiceDlg.findViewById(R.id.tvBasePrice)).setText(bill.getCurrency()
 				+ " " + bill.getBasePrice());
-		if (bill.getDistance().equals("0.00") || bill.getDistance().equals("0")) {
+		if (bill.getDistance().equals("0.00") || bill.getDistance().equals("0,00") || bill.getDistance().equals("0")) {
 			((TextView) m_invoiceDlg.findViewById(R.id.tvBillDistancePerMile))
 					.setText(bill.getCurrency()
 							+ "0 "
@@ -257,7 +257,7 @@ public class UberFeedbackFragment extends UberBaseFragment {
 							+ " "
 							+ getResources().getString(R.string.text_cost_per_mile));
 
-		if (bill.getTime().equals("0.00") || bill.getTime().equals("0")) {
+		if (bill.getTime().equals("0.00") || bill.getDistance().equals("0,00") || bill.getTime().equals("0")) {
 			((TextView) m_invoiceDlg.findViewById(R.id.tvBillTimePerHour))
 					.setText(bill.getCurrency()
 							+ "0 "
