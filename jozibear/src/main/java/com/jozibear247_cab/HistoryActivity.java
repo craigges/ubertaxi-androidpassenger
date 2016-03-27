@@ -114,14 +114,8 @@ public class HistoryActivity extends ActionBarBaseActivitiy implements
 
 		if (mSeparatorsSet.contains(position))
 			return;
-		History history = historyListOrg.get(position);
-		showHistoryBillDialog(history.getTimecost(), history.getTotal(),
-				history.getDistanceCost(), history.getBasePrice(),
-				history.getTime(), history.getDistance(),
-				history.getCurrency(), null, "", "", "", "", "",history.getActual_total(),""); // any prob
-																	// keep only
-																	// till null
-																	// and check,
+
+		showHistoryBillDialog(historyListOrg.get(position)); // any prob
 	}
 
 	/*
@@ -154,7 +148,6 @@ public class HistoryActivity extends ActionBarBaseActivitiy implements
 						SimpleDateFormat dateFormat = new SimpleDateFormat(
 								"yyyy-MM-dd hh:mm:ss");
 						try {
-
 							String firstStrDate = o1.getDate();
 							String secondStrDate = o2.getDate();
 
@@ -165,7 +158,6 @@ public class HistoryActivity extends ActionBarBaseActivitiy implements
 							e.printStackTrace();
 						}
 						return 0;
-
 					}
 				});
 
@@ -179,7 +171,6 @@ public class HistoryActivity extends ActionBarBaseActivitiy implements
 				}
 
 				for (int i = 0; i < dateList.size(); i++) {
-
 					cal.setTime(dateList.get(i));
 					History item = new History();
 					item.setDate(sdf.format(dateList.get(i)));

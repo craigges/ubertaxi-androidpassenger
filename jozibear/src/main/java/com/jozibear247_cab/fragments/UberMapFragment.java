@@ -498,12 +498,6 @@ public class UberMapFragment extends UberBaseFragment implements
 	@Override
 	public void onDestroyView() {
 		super.onDestroyView();
-		if(mapView != null) {
-			ViewGroup parent = (ViewGroup) mapView.getParent();
-			if(parent != null) {
-				parent.removeView(mapView);
-			}
-		}
 		SupportMapFragment f = (SupportMapFragment) getFragmentManager()
 				.findFragmentById(R.id.map);
 		if (f != null) {
@@ -511,6 +505,12 @@ public class UberMapFragment extends UberBaseFragment implements
 				getFragmentManager().beginTransaction().remove(f).commit();
 			} catch (Exception e) {
 				e.printStackTrace();
+			}
+		}
+		if(mapView != null) {
+			ViewGroup parent = (ViewGroup) mapView.getParent();
+			if(parent != null) {
+				parent.removeView(mapView);
 			}
 		}
 
@@ -623,18 +623,22 @@ public class UberMapFragment extends UberBaseFragment implements
 							.isEmpty(enterdestination.getText().toString())) {
 				Log.d("amal", "going to pick up");
 				requestCaps();
+			} else if (destaddlayout.getVisibility() == View.VISIBLE
+					&& TextUtils.isEmpty(enterdestination.getText().toString())) {
+				Toast.makeText(getActivity(), "Enter destination address",
+						Toast.LENGTH_LONG).show();
+
 			} else {
-				AndyUtils.showToast(
-						getResources().getString(
-								R.string.text_waiting_for_destination_address),
-						activity);
+				destaddlayout.setVisibility(View.VISIBLE);
+				destaddlayout.startAnimation(slidedown);
+				Toast.makeText(getActivity(), "Enter destination address",
+						Toast.LENGTH_LONG).show();
 			}
 			break;
 //		case R.id.btnpayment:
 //			selectPayment();
 //			break;
 		case R.id.btnAdddestination:
-
 			destaddlayout.setVisibility(View.VISIBLE);
 			destaddlayout.startAnimation(slidedown);
 			break;
@@ -1033,6 +1037,7 @@ public class UberMapFragment extends UberBaseFragment implements
 					if (btnadddestination.getVisibility() == View.VISIBLE) {
 						btnadddestination.setVisibility(View.GONE);
 					}
+					removeThisFragment();
 					activity.gotoTripFragment(driver);
 					break;
 				case Const.IS_WALKER_RATED:
@@ -1863,8 +1868,13 @@ public class UberMapFragment extends UberBaseFragment implements
 				PreferenceHelper.getInstance(activity).getSessionToken());
 		map.put(Const.Params.ID,
 				PreferenceHelper.getInstance(activity).getUserId());
-		map.put(Const.Params.TIME, String.valueOf(duration));
-		map.put(Const.Params.DISTANCE, String.valueOf(distance));
+		map.put(Const.Params.TIME, duration);
+		map.put(Const.Params.DISTANCE, distance);
+		map.put(Const.Params.BASE_PRICE, listType.get(selectedPostion).getCurrency() + " "
+				+ listType.get(selectedPostion).getBasePrice());
+		map.put(Const.Params.PRICE_PER_UNIT_DISTANCE, listType.get(selectedPostion).getPricePerUnitDistance());
+		map.put(Const.Params.PRICE_PER_UNIT_TIME, listType.get(selectedPostion).getPricePerUnitTime());
+
 		// map.put(Const.Params.TYPE,
 		// String.valueOf(listType.get(selectedPostion).getId()));
 		//

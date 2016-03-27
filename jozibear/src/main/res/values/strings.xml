@@ -42,7 +42,7 @@
     <string name="text_canceling_request">Canceling Request...</string>
     <string name="text_registering">Registering...</string>
     <string name="text_signing">Logging In...</string>
-    <string name="text_waiting_finish_payment">Waiting Finish Payment from Driver...</string>
+    <string name="text_waiting_finish_payment">Please wait while your driver updates\nyour payment...</string>
     <string name="text_rating">Rating...</string>
     <string name="text_cancel">CANCEL</string>
     <string name="text_pickmeup">Pick me up</string>
@@ -57,6 +57,7 @@
     <string name="text_my_location">My Location</string>
     <string name="text_my_destination">DESTINATION</string>
     <string name="text_drive_location">Driver Location</string>
+    <string name="text_kms">KMS</string>
     <string name="text_miles">MILES</string>
     <string name="text_mins">MINS</string>
     <string name="progress_loading">Loading...</string>
@@ -170,7 +171,7 @@
     <string name="text_to_pay">RAND TO PAY</string>
     <string name="text_close">CLOSE</string>
     <string name="text_confirm">CONFIRM</string>
-    <string name="text_cost_per_mile">per mile</string>
+    <string name="text_cost_per_km">per km</string>
     <string name="text_cost_per_min">per min</string>
     <string name="text_no_history">No history to display</string>
     <string name="text_no_card">No cards to display</string>

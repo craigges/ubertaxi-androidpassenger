@@ -72,10 +72,10 @@ public class ParseContent {
 
 	private final String PAYMENT_MODE = "payment_mode";
 
-	private final String DISTANCE_COST = "distance_cost";
 	private final String DISTANCE = "distance";
 	private final String CURRENCY = "currency";
 	private final String UNIT = "unit";
+	private final String DISTANCE_COST = "distance_cost";
 	private final String TIME_COST = "time_cost";
 	private final String TOTAL = "total";
 	private final String IS_PAID = "is_paid";
@@ -441,9 +441,8 @@ public class ParseContent {
 
 			String time = jsonObject.optString(START_TIME);
 			// "start_time": "2014-11-20 03:27:37"
-			if (!TextUtils.isEmpty(time)) {
+			if (!time.isEmpty()) {
 				try {
-
 					TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
 					Date date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss",
 							Locale.ENGLISH).parse(time);
@@ -560,6 +559,8 @@ public class ParseContent {
 				}
 				bill.setActual_total(jsonObjectBill.getDouble("actual_total"));
 				bill.setDiscounted_amount(jsonObjectBill.getDouble("promo_discount"));
+				bill.setPricePerUnitDistance(jsonObjectBill.getString(PRICE_PER_UNIT_DISTANCE));
+				bill.setPricePerUnitTime(jsonObjectBill.getString(PRICE_PER_UNIT_TIME));
 				bill.setTimeCost(jsonObjectBill.getString(TIME_COST));
 				bill.setDistanceCost(jsonObjectBill.getString(DISTANCE_COST));
 				bill.setTotal(jsonObjectBill.getString(TOTAL));
@@ -885,35 +886,29 @@ public class ParseContent {
 //							distance = distance * 0.62137;
 //						}
 //						history.setDistance(new DecimalFormat("0.00").format(distance));
-						history.setDistance(jsonObject.getString(DISTANCE));
+						history.setDistance(object.getString(DISTANCE));
 						history.setUnit(object.getString(UNIT));
 						history.setTime(object.getString(TIME));
+						history.setBasePrice(object.getString(BASE_PRICE));
+						history.setPricePerUnitDistance(object.getString(PRICE_PER_UNIT_DISTANCE));
+						history.setPricePerUnitTime(object.getString(PRICE_PER_UNIT_TIME));
 						history.setDistanceCost(object.getString(DISTANCE_COST));
 						history.setTimecost(object.getString(TIME_COST));
-						history.setBasePrice(object.getString(BASE_PRICE));
 						history.setCurrency(object.getString(CURRENCY));
-						history.setTotal(new DecimalFormat("0.00")
-								.format(Double.parseDouble(object
-										.getString(TOTAL))));
-						history.setActual_total(object
-								.getDouble("actual_total"));
+						history.setTotal(object.getString(TOTAL));
+						history.setActual_total(object.getDouble("actual_total"));
 						history.setType(object.getString(TYPE));
+
 						JSONObject userObject = object.getJSONObject(WALKER);
-						history.setFirstName(userObject
-								.getString(Const.Params.FIRSTNAME));
-						history.setLastName(userObject
-								.getString(Const.Params.LAST_NAME));
-						history.setPhone(userObject
-								.getString(Const.Params.PHONE));
-						history.setPicture(userObject
-								.getString(Const.Params.PICTURE));
-						history.setEmail(userObject
-								.getString(Const.Params.EMAIL));
+						history.setFirstName(userObject.getString(Const.Params.FIRSTNAME));
+						history.setLastName(userObject.getString(Const.Params.LAST_NAME));
+						history.setPhone(userObject.getString(Const.Params.PHONE));
+						history.setPicture(userObject.getString(Const.Params.PICTURE));
+						history.setEmail(userObject.getString(Const.Params.EMAIL));
 						history.setBio(userObject.getString(Const.Params.BIO));
 						list.add(history);
 					}
 				}
-
 			}
 			// else {
 			// AndyUtils.showToast(jsonObject.getString(KEY_ERROR), activity);

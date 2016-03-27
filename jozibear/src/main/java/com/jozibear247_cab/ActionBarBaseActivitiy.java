@@ -25,22 +25,17 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.androidquery.callback.ImageOptions;
 import com.jozibear247_cab.component.MyTitleFontTextView;
 import com.jozibear247_cab.fragments.UberBaseFragmentRegister;
+import com.jozibear247_cab.models.History;
 import com.jozibear247_cab.parse.AsyncTaskCompleteListener;
 import com.jozibear247_cab.parse.HttpRequester;
 import com.jozibear247_cab.utils.AndyUtils;
 import com.jozibear247_cab.utils.Const;
 import com.jozibear247_cab.utils.PreferenceHelper;
-import com.paypal.android.MEP.PayPal;
-import com.paypal.android.MEP.PayPalActivity;
-import com.paypal.android.MEP.PayPalAdvancedPayment;
-import com.paypal.android.MEP.PayPalReceiverDetails;
 
-import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 
@@ -60,7 +55,7 @@ abstract public class ActionBarBaseActivitiy extends ActionBarActivity
 	public AutoCompleteTextView etSource;
 	public String currentFragment = null;
 
-	public final int PAYPAL_RESPONSE = 100;
+//	public final int PAYPAL_RESPONSE = 100;
 
 	protected abstract boolean isValidate();
 
@@ -125,36 +120,36 @@ abstract public class ActionBarBaseActivitiy extends ActionBarActivity
 
 		Log.d("pavan", "response");
 
-		if (requestCode == PAYPAL_RESPONSE) {
-
-			switch (resultCode) {
-			case Activity.RESULT_OK:
-				// The payment succeeded
-				String payKey = data
-						.getStringExtra(PayPalActivity.EXTRA_PAY_KEY);
-				Log.d("pavan", "success " + payKey);
-				sendPaypalData(payKey);
-				Toast.makeText(getApplicationContext(),
-						"Payment done succesfully ", Toast.LENGTH_LONG).show();
-
-				btnConfirm.setText(getString(R.string.text_close));
-				// Tell the user their payment succeeded
-				break;
-			case Activity.RESULT_CANCELED:
-				Toast.makeText(getApplicationContext(),
-						"Payment Canceled , Try again ", Toast.LENGTH_LONG)
-						.show();
-
-				break;
-			case PayPalActivity.RESULT_FAILURE:
-				Toast.makeText(getApplicationContext(),
-						"Payment failed , Try again ", Toast.LENGTH_LONG)
-						.show();
-
-				break;
-			}
-
-		} else {
+//		if (requestCode == PAYPAL_RESPONSE) {
+//
+//			switch (resultCode) {
+//			case Activity.RESULT_OK:
+//				// The payment succeeded
+//				String payKey = data
+//						.getStringExtra(PayPalActivity.EXTRA_PAY_KEY);
+//				Log.d("pavan", "success " + payKey);
+//				sendPaypalData(payKey);
+//				Toast.makeText(getApplicationContext(),
+//						"Payment done succesfully ", Toast.LENGTH_LONG).show();
+//
+//				btnConfirm.setText(getString(R.string.text_close));
+//				// Tell the user their payment succeeded
+//				break;
+//			case Activity.RESULT_CANCELED:
+//				Toast.makeText(getApplicationContext(),
+//						"Payment Canceled , Try again ", Toast.LENGTH_LONG)
+//						.show();
+//
+//				break;
+//			case PayPalActivity.RESULT_FAILURE:
+//				Toast.makeText(getApplicationContext(),
+//						"Payment failed , Try again ", Toast.LENGTH_LONG)
+//						.show();
+//
+//				break;
+//			}
+//
+//		} else {
 
 			if (mFragmentId > 0) {
 				fragment = getSupportFragmentManager().findFragmentById(
@@ -168,7 +163,7 @@ abstract public class ActionBarBaseActivitiy extends ActionBarActivity
 				fragment.onActivityResult(requestCode, resultCode, data);
 			}
 
-		}
+//		}
 
 	}
 
@@ -422,16 +417,8 @@ abstract public class ActionBarBaseActivitiy extends ActionBarActivity
 
 	Button btnConfirm;
 
-	public void showHistoryBillDialog(String timeCost, String total, String distCost,
-							   String basePrice, String time, String distance, String currency,
-							   String btnTitle, final String payment_mode, final String primary_id,
-							   final String secoundry_id, final String primary_amount,
-							   final String secoundry_amount, double actual_total, String is_paid) {
-
+	public void showHistoryBillDialog(History history) {
 		initLibrary();
-
-		Log.d("mahi", "primary_amount:" + primary_amount + ", secoundry_amount:" + secoundry_amount +
-				", Payment mode:" + payment_mode);
 
 		final Dialog mDialog = new Dialog(this,
 				android.R.style.Theme_Translucent_NoTitleBar);
@@ -446,58 +433,40 @@ abstract public class ActionBarBaseActivitiy extends ActionBarActivity
 //		String basePricetmp = String.valueOf(decimalFormat.format(Double
 //				.parseDouble(basePrice)));
 		String totalTmp = String.valueOf(decimalFormat.format(Double
-				.parseDouble(total)));
+				.parseDouble(history.getTotal())));
 		String distCostTmp = String.valueOf(decimalFormat.format(Double
-				.parseDouble(distCost)));
+				.parseDouble(history.getDistanceCost())));
 		String timeCostTmp = String.valueOf(decimalFormat.format(Double
-				.parseDouble(timeCost)));
+				.parseDouble(history.getTimecost())));
 
-		String actualtotal = String.valueOf(decimalFormat.format(actual_total));
-		double yousave=Math.abs(actual_total-Double.parseDouble(total));
+		String actualtotal = String.valueOf(decimalFormat.format(history.getActual_total()));
+		double yousave=Math.abs(history.getActual_total()-Double.parseDouble(history.getTotal()));
 
-		((TextView) mDialog.findViewById(R.id.tvBasePrice)).setText(currency
-				+ " " + basePrice);
-		if (distance.equals("0.00") || distance.equals("0")) {
-			((TextView) mDialog.findViewById(R.id.tvBillDistancePerMile))
-					.setText(currency
-							+ "0 " + getResources().getString(R.string.text_cost_per_mile));
-		} else
-			((TextView) mDialog.findViewById(R.id.tvBillDistancePerMile))
-					.setText(currency
-							+ String.valueOf(perHourFormat.format((Double
-							.parseDouble(distCost) / Double
-							.parseDouble(distance))))
-							+ " "
-							+ getResources().getString(
-							R.string.text_cost_per_mile));
-
-		if (time.equals("0.00") || time.equals("0")) {
-			((TextView) mDialog.findViewById(R.id.tvBillTimePerHour))
-					.setText(currency
-							+ "0 "
-							+ getResources().getString(
-							R.string.text_cost_per_min));
-		} else
-			((TextView) mDialog.findViewById(R.id.tvBillTimePerHour))
-					.setText(currency
-							+ String.valueOf(perHourFormat.format((Double
-							.parseDouble(timeCost) / Double
-							.parseDouble(time))))
-							+ " "
-							+ getResources().getString(
-							R.string.text_cost_per_min));
-		((TextView) mDialog.findViewById(R.id.tvDis1)).setText(currency + " "
+		((TextView) mDialog.findViewById(R.id.tvBasePrice)).setText(history.getCurrency() + " "
+				+ String.valueOf(decimalFormat.format(Double
+				.parseDouble(history.getBasePrice()))));
+		((TextView) mDialog.findViewById(R.id.tvBillDistancePerMile))
+				.setText(history.getCurrency() + " "
+						+ String.valueOf(decimalFormat.format(Double
+						.parseDouble(history.getPricePerUnitDistance())))
+						+ " " + getResources().getString(R.string.text_cost_per_km));
+		((TextView) mDialog.findViewById(R.id.tvBillTimePerHour))
+				.setText(history.getCurrency() + " "
+						+ String.valueOf(decimalFormat.format(Double
+						.parseDouble(history.getPricePerUnitTime()))) + " "
+						+ getResources().getString(R.string.text_cost_per_min));
+		((TextView) mDialog.findViewById(R.id.tvDis1)).setText(history.getCurrency() + " "
 				+ distCostTmp);
 
-		((TextView) mDialog.findViewById(R.id.tvTime1)).setText(currency + " "
+		((TextView) mDialog.findViewById(R.id.tvTime1)).setText(history.getCurrency() + " "
 				+ timeCostTmp);
 
-		((TextView) mDialog.findViewById(R.id.tvTotal1)).setText(currency + " "
+		((TextView) mDialog.findViewById(R.id.tvTotal1)).setText(history.getCurrency() + " "
 				+ totalTmp);
 		((TextView) mDialog.findViewById(R.id.tvtotalcostvalue))
-				.setText(currency + " " + actualtotal);
+				.setText(history.getCurrency() + " " + actualtotal);
 
-		((TextView) mDialog.findViewById(R.id.tvyousavevalue)).setText(currency
+		((TextView) mDialog.findViewById(R.id.tvyousavevalue)).setText(history.getCurrency()
 				+ " "
 				+ String.valueOf(decimalFormat.format(yousave)));
 
@@ -535,58 +504,58 @@ abstract public class ActionBarBaseActivitiy extends ActionBarActivity
 	}
 
 	public void initLibrary() {
-		PayPal pp = PayPal.getInstance();
-		if (pp == null) {
-
-			pp = PayPal.initWithAppID(this, Const.PAYPAL_CLIENT_ID,
-					PayPal.ENV_SANDBOX);
-
-		}
+//		PayPal pp = PayPal.getInstance();
+//		if (pp == null) {
+//
+//			pp = PayPal.initWithAppID(this, Const.PAYPAL_CLIENT_ID,
+//					PayPal.ENV_SANDBOX);
+//
+//		}
 	}
 
-	public void PayPalButtonClick(String primary_id, String primary_amount,
-			String secoundry_id, String secoundry_amount) {
-		// Create a basic PayPal payment
-
-		// PayPalPayment newPayment = new PayPalPayment();
-		// newPayment.setSubtotal(new BigDecimal("1.0"));
-		// newPayment.setCurrencyType("USD");
-		// newPayment.setRecipient("npavankumar34@gmail.com");
-		// newPayment.setMerchantName("My Company");
-		// Log.d("pavan", "calling intent");
-		// if( PayPal.getInstance()!=null){
-		// Log.d("pavan", "in if");
-		// Intent paypalIntent = PayPal.getInstance().checkout(newPayment,
-		// this);
-		// startActivityForResult(paypalIntent, 1);
-		//
-
-		Log.d("pavan", "primary " + primary_id);
-		Log.d("pavan", "primary_amount " + primary_amount);
-
-		Log.d("pavan", "secoundry_amount " + secoundry_amount);
-		Log.d("pavan", "secoundry_id " + secoundry_id);
-
-		PayPalReceiverDetails receiver0, receiver1;
-		receiver0 = new PayPalReceiverDetails();
-		receiver0.setRecipient(primary_id);
-		receiver0.setSubtotal(new BigDecimal(primary_amount));
-
-		receiver1 = new PayPalReceiverDetails();
-		receiver1.setRecipient(secoundry_id);
-		receiver1.setSubtotal(new BigDecimal(secoundry_amount));
-
-		PayPalAdvancedPayment advPayment = new PayPalAdvancedPayment();
-		advPayment.setCurrencyType(Const.CURRENCY_TYPE);
-
-		if (!primary_amount.equals("0"))
-			advPayment.getReceivers().add(receiver0);
-		if (!secoundry_amount.equals("0"))
-			advPayment.getReceivers().add(receiver1);
-		Intent paypalIntent = PayPal.getInstance().checkout(advPayment, this);
-		this.startActivityForResult(paypalIntent, PAYPAL_RESPONSE);
-
-	}
+//	public void PayPalButtonClick(String primary_id, String primary_amount,
+//			String secoundry_id, String secoundry_amount) {
+//		// Create a basic PayPal payment
+//
+//		// PayPalPayment newPayment = new PayPalPayment();
+//		// newPayment.setSubtotal(new BigDecimal("1.0"));
+//		// newPayment.setCurrencyType("USD");
+//		// newPayment.setRecipient("npavankumar34@gmail.com");
+//		// newPayment.setMerchantName("My Company");
+//		// Log.d("pavan", "calling intent");
+//		// if( PayPal.getInstance()!=null){
+//		// Log.d("pavan", "in if");
+//		// Intent paypalIntent = PayPal.getInstance().checkout(newPayment,
+//		// this);
+//		// startActivityForResult(paypalIntent, 1);
+//		//
+//
+//		Log.d("pavan", "primary " + primary_id);
+//		Log.d("pavan", "primary_amount " + primary_amount);
+//
+//		Log.d("pavan", "secoundry_amount " + secoundry_amount);
+//		Log.d("pavan", "secoundry_id " + secoundry_id);
+//
+//		PayPalReceiverDetails receiver0, receiver1;
+//		receiver0 = new PayPalReceiverDetails();
+//		receiver0.setRecipient(primary_id);
+//		receiver0.setSubtotal(new BigDecimal(primary_amount));
+//
+//		receiver1 = new PayPalReceiverDetails();
+//		receiver1.setRecipient(secoundry_id);
+//		receiver1.setSubtotal(new BigDecimal(secoundry_amount));
+//
+//		PayPalAdvancedPayment advPayment = new PayPalAdvancedPayment();
+//		advPayment.setCurrencyType(Const.CURRENCY_TYPE);
+//
+//		if (!primary_amount.equals("0"))
+//			advPayment.getReceivers().add(receiver0);
+//		if (!secoundry_amount.equals("0"))
+//			advPayment.getReceivers().add(receiver1);
+//		Intent paypalIntent = PayPal.getInstance().checkout(advPayment, this);
+//		this.startActivityForResult(paypalIntent, PAYPAL_RESPONSE);
+//
+//	}
 
 	private void sendPaypalData(String resonse) {
 		if (!AndyUtils.isNetworkAvailable(getApplicationContext())) {

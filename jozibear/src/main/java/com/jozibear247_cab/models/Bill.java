@@ -10,7 +10,7 @@ package com.jozibear247_cab.models;
 public class Bill {
 	private String distance;
 	private String time;
-	private String basePrice;
+	private String basePrice, pricePerUnitDistance, pricePerUnitTime;
 	private String distanceCost;
 	private String timeCost;
 	private String total;
@@ -56,6 +56,22 @@ public class Bill {
 
 	public void setBasePrice(String basePrice) {
 		this.basePrice = basePrice;
+	}
+
+	public String getPricePerUnitDistance() {
+		return pricePerUnitDistance;
+	}
+
+	public void setPricePerUnitDistance(String pricePerUnitDistance) {
+		this.pricePerUnitDistance = pricePerUnitDistance;
+	}
+
+	public String getPricePerUnitTime() {
+		return pricePerUnitTime;
+	}
+
+	public void setPricePerUnitTime(String pricePerUnitTime) {
+		this.pricePerUnitTime = pricePerUnitTime;
 	}
 
 	public String getDistanceCost() {
