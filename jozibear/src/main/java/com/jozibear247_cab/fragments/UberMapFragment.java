@@ -623,18 +623,22 @@ public class UberMapFragment extends UberBaseFragment implements
 							.isEmpty(enterdestination.getText().toString())) {
 				Log.d("amal", "going to pick up");
 				requestCaps();
+			} else if (destaddlayout.getVisibility() == View.VISIBLE
+					&& TextUtils.isEmpty(enterdestination.getText().toString())) {
+				Toast.makeText(getActivity(), "Enter destination address",
+						Toast.LENGTH_LONG).show();
+
 			} else {
-				AndyUtils.showToast(
-						getResources().getString(
-								R.string.text_waiting_for_destination_address),
-						activity);
+				destaddlayout.setVisibility(View.VISIBLE);
+				destaddlayout.startAnimation(slidedown);
+				Toast.makeText(getActivity(), "Enter destination address",
+						Toast.LENGTH_LONG).show();
 			}
 			break;
 //		case R.id.btnpayment:
 //			selectPayment();
 //			break;
 		case R.id.btnAdddestination:
-
 			destaddlayout.setVisibility(View.VISIBLE);
 			destaddlayout.startAnimation(slidedown);
 			break;

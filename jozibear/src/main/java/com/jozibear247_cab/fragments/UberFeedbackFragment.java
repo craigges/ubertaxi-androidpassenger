@@ -246,34 +246,19 @@ public class UberFeedbackFragment extends UberBaseFragment {
 		AppLog.Log("Distance:", bill.getDistance() + ", Time:" + bill.getTime());
 
 		((TextView) m_invoiceDlg.findViewById(R.id.tvBasePrice)).setText(bill.getCurrency()
-				+ " " + bill.getBasePrice());
-		if (bill.getDistance().equals("0.00") || bill.getDistance().equals("0,00") || bill.getDistance().equals("0")) {
-			((TextView) m_invoiceDlg.findViewById(R.id.tvBillDistancePerMile))
-					.setText(bill.getCurrency()
-							+ "0 "
-							+ getResources().getString(R.string.text_cost_per_km));
-		} else
-			((TextView) m_invoiceDlg.findViewById(R.id.tvBillDistancePerMile))
-					.setText(bill.getCurrency()
-							+ String.valueOf(perHourFormat.format((Double
-							.parseDouble(bill.getDistanceCost()) / Double
-							.parseDouble(bill.getDistance()))))
-							+ " "
-							+ getResources().getString(R.string.text_cost_per_km));
-
-		if (bill.getTime().equals("0.00") || bill.getDistance().equals("0,00") || bill.getTime().equals("0")) {
-			((TextView) m_invoiceDlg.findViewById(R.id.tvBillTimePerHour))
-					.setText(bill.getCurrency()
-							+ "0 "
-							+ getResources().getString(R.string.text_cost_per_min));
-		} else
-			((TextView) m_invoiceDlg.findViewById(R.id.tvBillTimePerHour))
-					.setText(bill.getCurrency()
-							+ String.valueOf(perHourFormat.format((Double
-							.parseDouble(bill.getTimeCost()) / Double
-							.parseDouble(bill.getTime()))))
-							+ " "
-							+ getResources().getString(R.string.text_cost_per_min));
+				+ " " + decimalFormat.format(Double.parseDouble(bill.getBasePrice())));
+		((TextView) m_invoiceDlg.findViewById(R.id.tvBillDistancePerMile))
+				.setText(bill.getCurrency() + " "
+						+ String.valueOf(decimalFormat.format(Double
+						.parseDouble(bill.getPricePerUnitDistance())))
+						+ " "
+						+ getResources().getString(R.string.text_cost_per_km));
+		((TextView) m_invoiceDlg.findViewById(R.id.tvBillTimePerHour))
+				.setText(bill.getCurrency() + " "
+						+ String.valueOf(perHourFormat.format(Double
+						.parseDouble(bill.getPricePerUnitTime())))
+						+ " "
+						+ getResources().getString(R.string.text_cost_per_min));
 		((TextView) m_invoiceDlg.findViewById(R.id.tvDis1)).setText(bill.getCurrency() + " "
 				+ distCostTmp);
 		((TextView) m_invoiceDlg.findViewById(R.id.tvTime1)).setText(bill.getCurrency() + " "

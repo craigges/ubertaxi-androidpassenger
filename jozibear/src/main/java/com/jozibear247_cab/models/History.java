@@ -10,7 +10,7 @@ package com.jozibear247_cab.models;
 public class History {
 
 	private int id;
-	private String date, distance, time, basePrice, distanceCost, timecost,
+	private String date, distance, time, basePrice, pricePerUnitDistance, pricePerUnitTime, distanceCost, timecost,
 			total, firstName, lastName, phone, email, picture, bio, type, unit,
 			currency;
 	private double discounted_amount,actual_total;
@@ -104,6 +104,22 @@ public class History {
 	 */
 	public void setBasePrice(String basePrice) {
 		this.basePrice = basePrice;
+	}
+
+	public String getPricePerUnitDistance() {
+		return pricePerUnitDistance;
+	}
+
+	public void setPricePerUnitDistance(String pricePerUnitDistance) {
+		this.pricePerUnitDistance = pricePerUnitDistance;
+	}
+
+	public String getPricePerUnitTime() {
+		return pricePerUnitTime;
+	}
+
+	public void setPricePerUnitTime(String pricePerUnitTime) {
+		this.pricePerUnitTime = pricePerUnitTime;
 	}
 
 	/**

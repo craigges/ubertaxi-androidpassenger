@@ -40,36 +40,28 @@ public class Const {
 		public static final String REMOVE_CARD = BASE_URL + "deletecardtoken";
 		public static final String PAYGATE_URL = BASE_URL + "paygate";
 
-		public static final String PAYMENT_OPTIONS = BASE_URL
-				+ "payment_options?";
+		public static final String PAYMENT_OPTIONS = BASE_URL + "payment_options?";
 		public static final String CREATE_REQUEST = BASE_URL + "createrequest";
 		public static final String PAY_DEBT = BASE_URL + "paydebt";
 
-		public static final String GET_REQUEST_LOCATION = BASE_URL
-				+ "getrequestlocation?";
-		public static final String GET_REQUEST_STATUS = BASE_URL
-				+ "getrequest?";
+		public static final String GET_REQUEST_LOCATION = BASE_URL + "getrequestlocation?";
+		public static final String GET_REQUEST_STATUS = BASE_URL + "getrequest?";
 		public static final String SEND_ETA = BASE_URL + "send_eta?";
 
 		public static final String REGISTER_MYTHING = BASE_URL + "thing?";
-		public static final String REQUEST_IN_PROGRESS = BASE_URL
-				+ "requestinprogress?";
+		public static final String REQUEST_IN_PROGRESS = BASE_URL + "requestinprogress?";
 		public static final String RATING = BASE_URL + "rating";
 		public static final String CANCEL_REQUEST = BASE_URL + "cancelrequest";
 		public static final String GET_PAGES = HOST_URL + "application/pages";
-		public static final String GET_PAGES_DETAIL = HOST_URL
-				+ "application/page/";
-		public static final String GET_VEHICAL_TYPES = HOST_URL
-				+ "application/types";
-		public static final String FORGET_PASSWORD = HOST_URL
-				+ "application/forgot-password";
+		public static final String GET_PAGES_DETAIL = HOST_URL + "application/page/";
+		public static final String GET_VEHICAL_TYPES = HOST_URL + "application/types";
+		public static final String FORGET_PASSWORD = HOST_URL + "application/forgot-password";
 		public static final String UPDATE_PROFILE = BASE_URL + "update";
 		public static final String GET_CARDS = BASE_URL + "cards?";
 		public static final String HISTORY = BASE_URL + "history?";
 		public static final String GET_PATH = BASE_URL + "requestpath?";
 		public static final String GET_REFERRAL = BASE_URL + "referral?";
-		public static final String APPLY_REFFRAL_CODE = BASE_URL
-				+ "apply-referral";
+		public static final String APPLY_REFFRAL_CODE = BASE_URL + "apply-referral";
 		public static final String GOOGLE_MAP_API = "http://maps.googleapis.com/maps/api/distancematrix/json?";
 		public static final String GOOGLE_LOCATION = "http://maps.googleapis.com/maps/api/geocode/json?latlng=";
 		public static final String GOOGLE_ADDRESS = "http://maps.googleapis.com/maps/api/geocode/json?address=";

@@ -29,6 +29,7 @@ import android.widget.TextView;
 import com.androidquery.callback.ImageOptions;
 import com.jozibear247_cab.component.MyTitleFontTextView;
 import com.jozibear247_cab.fragments.UberBaseFragmentRegister;
+import com.jozibear247_cab.models.History;
 import com.jozibear247_cab.parse.AsyncTaskCompleteListener;
 import com.jozibear247_cab.parse.HttpRequester;
 import com.jozibear247_cab.utils.AndyUtils;
@@ -416,16 +417,8 @@ abstract public class ActionBarBaseActivitiy extends ActionBarActivity
 
 	Button btnConfirm;
 
-	public void showHistoryBillDialog(String timeCost, String total, String distCost,
-							   String basePrice, String time, String distance, String currency,
-							   String btnTitle, final String payment_mode, final String primary_id,
-							   final String secoundry_id, final String primary_amount,
-							   final String secoundry_amount, double actual_total, String is_paid) {
-
+	public void showHistoryBillDialog(History history) {
 		initLibrary();
-
-		Log.d("mahi", "primary_amount:" + primary_amount + ", secoundry_amount:" + secoundry_amount +
-				", Payment mode:" + payment_mode);
 
 		final Dialog mDialog = new Dialog(this,
 				android.R.style.Theme_Translucent_NoTitleBar);
@@ -440,58 +433,40 @@ abstract public class ActionBarBaseActivitiy extends ActionBarActivity
 //		String basePricetmp = String.valueOf(decimalFormat.format(Double
 //				.parseDouble(basePrice)));
 		String totalTmp = String.valueOf(decimalFormat.format(Double
-				.parseDouble(total)));
+				.parseDouble(history.getTotal())));
 		String distCostTmp = String.valueOf(decimalFormat.format(Double
-				.parseDouble(distCost)));
+				.parseDouble(history.getDistanceCost())));
 		String timeCostTmp = String.valueOf(decimalFormat.format(Double
-				.parseDouble(timeCost)));
+				.parseDouble(history.getTimecost())));
 
-		String actualtotal = String.valueOf(decimalFormat.format(actual_total));
-		double yousave=Math.abs(actual_total-Double.parseDouble(total));
+		String actualtotal = String.valueOf(decimalFormat.format(history.getActual_total()));
+		double yousave=Math.abs(history.getActual_total()-Double.parseDouble(history.getTotal()));
 
-		((TextView) mDialog.findViewById(R.id.tvBasePrice)).setText(currency
-				+ " " + basePrice);
-		if (distance.equals("0.00") || distance.equals("0")) {
-			((TextView) mDialog.findViewById(R.id.tvBillDistancePerMile))
-					.setText(currency
-							+ "0 " + getResources().getString(R.string.text_cost_per_km));
-		} else
-			((TextView) mDialog.findViewById(R.id.tvBillDistancePerMile))
-					.setText(currency
-							+ String.valueOf(perHourFormat.format((Double
-							.parseDouble(distCost) / Double
-							.parseDouble(distance))))
-							+ " "
-							+ getResources().getString(
-							R.string.text_cost_per_km));
-
-		if (time.equals("0.00") || time.equals("0")) {
-			((TextView) mDialog.findViewById(R.id.tvBillTimePerHour))
-					.setText(currency
-							+ "0 "
-							+ getResources().getString(
-							R.string.text_cost_per_min));
-		} else
-			((TextView) mDialog.findViewById(R.id.tvBillTimePerHour))
-					.setText(currency
-							+ String.valueOf(perHourFormat.format((Double
-							.parseDouble(timeCost) / Double
-							.parseDouble(time))))
-							+ " "
-							+ getResources().getString(
-							R.string.text_cost_per_min));
-		((TextView) mDialog.findViewById(R.id.tvDis1)).setText(currency + " "
+		((TextView) mDialog.findViewById(R.id.tvBasePrice)).setText(history.getCurrency() + " "
+				+ String.valueOf(decimalFormat.format(Double
+				.parseDouble(history.getBasePrice()))));
+		((TextView) mDialog.findViewById(R.id.tvBillDistancePerMile))
+				.setText(history.getCurrency() + " "
+						+ String.valueOf(decimalFormat.format(Double
+						.parseDouble(history.getPricePerUnitDistance())))
+						+ " " + getResources().getString(R.string.text_cost_per_km));
+		((TextView) mDialog.findViewById(R.id.tvBillTimePerHour))
+				.setText(history.getCurrency() + " "
+						+ String.valueOf(decimalFormat.format(Double
+						.parseDouble(history.getPricePerUnitTime()))) + " "
+						+ getResources().getString(R.string.text_cost_per_min));
+		((TextView) mDialog.findViewById(R.id.tvDis1)).setText(history.getCurrency() + " "
 				+ distCostTmp);
 
-		((TextView) mDialog.findViewById(R.id.tvTime1)).setText(currency + " "
+		((TextView) mDialog.findViewById(R.id.tvTime1)).setText(history.getCurrency() + " "
 				+ timeCostTmp);
 
-		((TextView) mDialog.findViewById(R.id.tvTotal1)).setText(currency + " "
+		((TextView) mDialog.findViewById(R.id.tvTotal1)).setText(history.getCurrency() + " "
 				+ totalTmp);
 		((TextView) mDialog.findViewById(R.id.tvtotalcostvalue))
-				.setText(currency + " " + actualtotal);
+				.setText(history.getCurrency() + " " + actualtotal);
 
-		((TextView) mDialog.findViewById(R.id.tvyousavevalue)).setText(currency
+		((TextView) mDialog.findViewById(R.id.tvyousavevalue)).setText(history.getCurrency()
 				+ " "
 				+ String.valueOf(decimalFormat.format(yousave)));
 
