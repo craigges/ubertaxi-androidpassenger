@@ -126,7 +126,7 @@ public class UberMapFragment extends UberBaseFragment implements
 	// private Animation topToBottomAnimation, bottomToTopAnimation,
 	// buttonTopToBottomAnimation;
 
-	private MyFontButton btnSelectService, btnconfirmservice,
+	private MyFontButton btnSelectService, btnRequestCap,
 			btnratecard, btnfareestimate, btnpromocard;
 	private static MyFontButton bubble;
 	private static SlidingDrawer drawer;
@@ -145,6 +145,7 @@ public class UberMapFragment extends UberBaseFragment implements
 	private LatLng destlatlng_places;
 	private View mapView;
 	// PopupWindow window;
+	private AlertDialog promoCodeDlg;
 
 	public static UberMapFragment newInstance() {
 		UberMapFragment mapFragment = new UberMapFragment();
@@ -203,9 +204,9 @@ public class UberMapFragment extends UberBaseFragment implements
 				.findViewById(R.id.btnSelectService);
 		btnSelectService.setOnClickListener(this);
 
-		btnconfirmservice = (MyFontButton) mapView
-				.findViewById(R.id.btnconfirmservice);
-		btnconfirmservice.setOnClickListener(this);
+		btnRequestCap = (MyFontButton) mapView
+				.findViewById(R.id.btn_request_cap);
+		btnRequestCap.setOnClickListener(this);
 //		btnpayment = (MyFontButton) mapView.findViewById(R.id.btnpayment);
 //		btnpayment.setOnClickListener(this);
 		enterdestination = (AutoCompleteTextView) mapView
@@ -556,29 +557,43 @@ public class UberMapFragment extends UberBaseFragment implements
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-
 		case R.id.markerBubblePickMeUp:
-
 			if (isValidate()) {
-				setmarkerInvisibile();
-				setpickpopupVisible();
-				gettime();
-
-				try {
-					btnconfirmservice.setText("Request "
-							+ listType.get(selectedPostion).getName());
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
+				new AlertDialog.Builder(getActivity())
+						.setTitle("")
+						.setMessage(
+								"Cash Only Accepted")
+						.setPositiveButton(android.R.string.ok,
+								new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog,
+														int which) {
+										setmarkerInvisibile();
+										setpickpopupVisible();
+										gettime();
+										try {
+											btnRequestCap.setText("Request "
+													+ listType.get(selectedPostion).getName());
+										} catch (Exception e) {
+											// TODO Auto-generated catch block
+											e.printStackTrace();
+										}
+									}
+								})
+						.setNegativeButton(android.R.string.cancel,
+								new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog,
+														int which) {
+										dialog.cancel();
+									}
+								})
+						.setIcon(android.R.drawable.ic_dialog_alert)
+						.show();
 			}
 
 			// getCards(); modified by amal
 			/*
 			 * if (isValidate()) { requestCaps(); //modified by amal }
 			 */
-
 			break;
 		case R.id.btnSelectService:
 			if (drawer.isOpened()) {
@@ -590,14 +605,14 @@ public class UberMapFragment extends UberBaseFragment implements
 			}
 			break;
 
-		case R.id.btnconfirmservice:
+		case R.id.btn_request_cap:
 //			payment_type = 3; // PayGate
 //			Log.d("amal", Integer.toString(payment_type));
-			btnconfirmservice.setEnabled(false);
-			btnconfirmservice.postDelayed(new Runnable() {
+			btnRequestCap.setEnabled(false);
+			btnRequestCap.postDelayed(new Runnable() {
 				@Override
 				public void run() {
-					btnconfirmservice.setEnabled(true);
+					btnRequestCap.setEnabled(true);
 				}
 			}, 3000);
 //			if (payment_type == -1) {
@@ -622,17 +637,36 @@ public class UberMapFragment extends UberBaseFragment implements
 					&& */!TextUtils
 							.isEmpty(enterdestination.getText().toString())) {
 				Log.d("amal", "going to pick up");
-				requestCaps();
+				new AlertDialog.Builder(getActivity())
+						.setTitle("")
+						.setMessage(
+								"Estimated Fare = ZAR")
+						.setPositiveButton(android.R.string.ok,
+								new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog,
+											int which) {
+										requestCaps();
+									}
+								})
+						.setNegativeButton(android.R.string.cancel,
+								new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog,
+														int which) {
+										dialog.cancel();
+									}
+								})
+						.setIcon(android.R.drawable.ic_dialog_alert)
+						.show();
 			} else if (destaddlayout.getVisibility() == View.VISIBLE
 					&& TextUtils.isEmpty(enterdestination.getText().toString())) {
 				Toast.makeText(getActivity(), "Enter destination address",
 						Toast.LENGTH_LONG).show();
 
 			} else {
-				destaddlayout.setVisibility(View.VISIBLE);
-				destaddlayout.startAnimation(slidedown);
 				Toast.makeText(getActivity(), "Enter destination address",
 						Toast.LENGTH_LONG).show();
+				destaddlayout.setVisibility(View.VISIBLE);
+				destaddlayout.startAnimation(slidedown);
 			}
 			break;
 //		case R.id.btnpayment:
@@ -1432,7 +1466,7 @@ public class UberMapFragment extends UberBaseFragment implements
 				editorpromo.commit();
 				Toast.makeText(activity, "PromoCode entered successfully",
 						Toast.LENGTH_LONG).show();
-
+				promoCodeDlg.cancel();
 			}
 
 			AndyUtils.removeCustomProgressDialog();
@@ -1771,8 +1805,8 @@ public class UberMapFragment extends UberBaseFragment implements
 		View contentview = inflate.inflate(R.layout.promocard, null);
 		View titleview = inflate.inflate(R.layout.promocodecustomtitle, null);
 		builder.setView(contentview).setCustomTitle(titleview);
-		final AlertDialog mdialog = builder.create();
-		mdialog.show();
+		promoCodeDlg = builder.create();
+		promoCodeDlg.show();
 		MyFontButton apply, cancel;
 
 		final MyFontEdittextView promofield;
@@ -1793,7 +1827,7 @@ public class UberMapFragment extends UberBaseFragment implements
 
 			@Override
 			public void onClick(View v) {
-				mdialog.dismiss();
+				promoCodeDlg.dismiss();
 
 			}
 		});

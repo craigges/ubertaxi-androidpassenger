@@ -59,7 +59,7 @@
     </LinearLayout>
 
     <com.jozibear247_cab.component.MyFontButton
-        android:id="@+id/btnconfirmservice"
+        android:id="@+id/btn_request_cap"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -78,7 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/btnconfirmservice"
+        android:layout_below="@+id/btn_request_cap"
         android:layout_marginTop="5dp"
         android:gravity="center_vertical|center_horizontal"
         android:text="PICK UP TIME IS APROXIMATELY 2 MIN"
