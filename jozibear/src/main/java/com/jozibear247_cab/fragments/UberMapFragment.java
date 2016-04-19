@@ -146,6 +146,7 @@ public class UberMapFragment extends UberBaseFragment implements
 	private View mapView;
 	// PopupWindow window;
 	private AlertDialog promoCodeDlg;
+	private boolean isRequestCapNow;
 
 	public static UberMapFragment newInstance() {
 		UberMapFragment mapFragment = new UberMapFragment();
@@ -231,6 +232,7 @@ public class UberMapFragment extends UberBaseFragment implements
 		// etSource = (AutoCompleteTextView)
 		// view.findViewById(R.id.etEnterSouce);
 		drawer = (SlidingDrawer) mapView.findViewById(R.id.drawer);
+		isRequestCapNow = false;
 		setUpMapIfNeeded();
 		hideKeyboard();
 
@@ -637,26 +639,8 @@ public class UberMapFragment extends UberBaseFragment implements
 					&& */!TextUtils
 							.isEmpty(enterdestination.getText().toString())) {
 				Log.d("amal", "going to pick up");
-				new AlertDialog.Builder(getActivity())
-						.setTitle("")
-						.setMessage(
-								"Estimated Fare = ZAR")
-						.setPositiveButton(android.R.string.ok,
-								new DialogInterface.OnClickListener() {
-									public void onClick(DialogInterface dialog,
-											int which) {
-										requestCaps();
-									}
-								})
-						.setNegativeButton(android.R.string.cancel,
-								new DialogInterface.OnClickListener() {
-									public void onClick(DialogInterface dialog,
-														int which) {
-										dialog.cancel();
-									}
-								})
-						.setIcon(android.R.drawable.ic_dialog_alert)
-						.show();
+				isRequestCapNow = true;
+				getDistance();
 			} else if (destaddlayout.getVisibility() == View.VISIBLE
 					&& TextUtils.isEmpty(enterdestination.getText().toString())) {
 				Toast.makeText(getActivity(), "Enter destination address",
@@ -680,6 +664,7 @@ public class UberMapFragment extends UberBaseFragment implements
 			if (enterdestination.getVisibility() == View.VISIBLE
 					&& !TextUtils
 							.isEmpty(enterdestination.getText().toString())) {
+				isRequestCapNow = false;
 				getDistance();
 			} else if (destaddlayout.getVisibility() == View.VISIBLE
 					&& TextUtils.isEmpty(enterdestination.getText().toString())) {
@@ -1287,7 +1272,6 @@ public class UberMapFragment extends UberBaseFragment implements
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-
 			}
 
 			AndyUtils.removeCustomProgressDialog();
@@ -1300,12 +1284,32 @@ public class UberMapFragment extends UberBaseFragment implements
 				try {
 					JSONObject jObject = new JSONObject(response);
 					if (jObject.getString("success").equals("true")) {
-
-						ShowFare(jObject.getString("estimated_fare"),
-								jObject.getString("currency"));
-
+						if(isRequestCapNow) {
+							new AlertDialog.Builder(getActivity())
+									.setTitle("")
+									.setMessage(
+											"Estimated Fare = " + jObject.getString("currency") + " " + jObject.getString("estimated_fare"))
+									.setPositiveButton(android.R.string.ok,
+											new DialogInterface.OnClickListener() {
+												public void onClick(DialogInterface dialog,
+																	int which) {
+													requestCaps();
+												}
+											})
+									.setNegativeButton(android.R.string.cancel,
+											new DialogInterface.OnClickListener() {
+												public void onClick(DialogInterface dialog,
+																	int which) {
+													dialog.cancel();
+												}
+											})
+									.setIcon(android.R.drawable.ic_dialog_alert)
+									.show();
+						} else {
+							ShowFare(jObject.getString("estimated_fare"),
+									jObject.getString("currency"));
+						}
 					}
-
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -1904,10 +1908,12 @@ public class UberMapFragment extends UberBaseFragment implements
 				PreferenceHelper.getInstance(activity).getUserId());
 		map.put(Const.Params.TIME, duration);
 		map.put(Const.Params.DISTANCE, distance);
-		map.put(Const.Params.BASE_PRICE, listType.get(selectedPostion).getCurrency() + " "
-				+ listType.get(selectedPostion).getBasePrice());
+		map.put(Const.Params.BASE_PRICE, listType.get(selectedPostion).getBasePrice());
 		map.put(Const.Params.PRICE_PER_UNIT_DISTANCE, listType.get(selectedPostion).getPricePerUnitDistance());
 		map.put(Const.Params.PRICE_PER_UNIT_TIME, listType.get(selectedPostion).getPricePerUnitTime());
+		if (promopref.getString("promocode", "") != "") {
+			map.put(Const.Params.PROMO_CODE, promopref.getString("promocode", ""));
+		}
 
 		// map.put(Const.Params.TYPE,
 		// String.valueOf(listType.get(selectedPostion).getId()));
