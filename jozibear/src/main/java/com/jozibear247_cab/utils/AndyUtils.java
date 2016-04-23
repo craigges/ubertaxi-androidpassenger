@@ -359,6 +359,10 @@ public class AndyUtils {
 		Toast.makeText(ctx, msg, Toast.LENGTH_SHORT).show();
 	}
 
+	public static void showToastLong(String msg, Context ctx) {
+		Toast.makeText(ctx, msg, Toast.LENGTH_LONG).show();
+	}
+
 	public static String UppercaseFirstLetters(String str) {
 		boolean prevWasWhiteSp = true;
 		char[] chars = str.toCharArray();

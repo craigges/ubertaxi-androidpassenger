@@ -147,11 +147,6 @@ public class ForgetPasswordFragment extends UberBaseFragmentRegister implements
 		return false;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.automated.taxinow.fragments.UberBaseFragmentRegister#onResume()
-	 */
 	@Override
 	public void onResume() {
 		// TODO Auto-generated method stub

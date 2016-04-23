@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/star_feedback" />
 
-        <com.automated.taxinow.component.MyFontTextView
+        <com.jozibear247_cab.component.MyFontTextView
             android:id="@+id/tvRate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -246,7 +246,7 @@ public class ParseContent {
 
 				return true;
 			} else {
-				AndyUtils.showToast(jsonObject.getString(KEY_ERROR), activity);
+				AndyUtils.showToastLong(jsonObject.getString(KEY_ERROR), activity);
 				// AndyUtils.showErrorToast(jsonObject.getInt(KEY_ERROR_CODE),
 				// activity);
 				return false;

@@ -37,7 +37,7 @@
 
 
 
-<!--  <com.automated.taxinow.component.MyFontTextView xmlns:android="http://schemas.android.com/apk/res/android"
+<!--  <com.jozibear247_cab.component.MyFontTextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/markerBubblePickMeUp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

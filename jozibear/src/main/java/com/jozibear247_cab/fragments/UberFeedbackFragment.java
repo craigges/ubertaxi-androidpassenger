@@ -205,7 +205,7 @@ public class UberFeedbackFragment extends UberBaseFragment {
 					activity.removeAllFragment(this, false, "");
 					activity.gotoMapFragment();
 				} else {
-					AndyUtils.showToast(
+					AndyUtils.showToastLong(
 							getString(R.string.text_account_blocked), activity);
 					PreferenceHelper.getInstance(activity).Logout();
 					activity.goToMainActivity();

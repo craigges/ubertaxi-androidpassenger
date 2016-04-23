@@ -844,7 +844,7 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 				if(!TextUtils.isEmpty(edit_referal_code.getText().toString())){
 					String update_refCode = edit_referal_code.getText().toString();
 					Intent sharingIntent = new Intent(Intent.ACTION_SEND);
-					sharingIntent.setType("text/plain");
+					sharingIntent.setType("text/html");
 					sharingIntent.putExtra(Intent.EXTRA_HTML_TEXT,
 							"Use my promo code, "+ update_refCode
 									+ ", and get exciting offers "

@@ -263,19 +263,16 @@ abstract public class ActionBarBaseActivitiy extends ActionBarActivity
 			Bundle options) {
 		// TODO Auto-generated method stub
 		super.startActivityForResult(intent, requestCode, options);
-	}
+}
 
 	@Override
 	public void onTaskCompleted(String response, int serviceCode) {
 		// TODO Auto-generated method stub
 
 		Log.d("pavan", "Response is " + response);
-
 	}
 
-	public void addFragment(Fragment fragment, boolean addToBackStack,
-			String tag) {
-
+	public void addFragment(Fragment fragment, boolean addToBackStack, String tag) {
 		FragmentManager manager = getSupportFragmentManager();
 		FragmentTransaction ft = manager.beginTransaction();
 		ft.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left,
@@ -341,25 +338,20 @@ abstract public class ActionBarBaseActivitiy extends ActionBarActivity
 		}
 		ft.replace(R.id.content_frame, replaceFragment);
 		ft.commit();
-
 	}
 
 	public void clearBackStackImmidiate() {
 
 		FragmentManager manager = getSupportFragmentManager();
 
-		manager.popBackStackImmediate(null,
-				FragmentManager.POP_BACK_STACK_INCLUSIVE);
-
+		manager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
 	}
 
 	public void clearBackStack() {
 		FragmentManager manager = getSupportFragmentManager();
 		if (manager.getBackStackEntryCount() > 0) {
-			FragmentManager.BackStackEntry first = manager
-					.getBackStackEntryAt(0);
-			manager.popBackStack(first.getId(),
-					FragmentManager.POP_BACK_STACK_INCLUSIVE);
+			FragmentManager.BackStackEntry first = manager.getBackStackEntryAt(0);
+			manager.popBackStack(first.getId(), FragmentManager.POP_BACK_STACK_INCLUSIVE);
 		}
 	}
 
@@ -384,7 +376,6 @@ abstract public class ActionBarBaseActivitiy extends ActionBarActivity
 			super.onBackPressed();
 		}
 		overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-
 	}
 
 	/*

@@ -9,11 +9,14 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -24,6 +27,8 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.Interpolator;
+import android.view.animation.LinearInterpolator;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -48,6 +53,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnCameraChangeListener;
 import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationChangeListener;
+import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
@@ -2055,6 +2061,43 @@ public class UberMapFragment extends UberBaseFragment implements
 			inputManager.hideSoftInputFromWindow(view.getWindowToken(),
 					InputMethodManager.HIDE_NOT_ALWAYS);
 		}
+	}
+
+	public void animateMarker(final Marker marker, final LatLng toPosition,
+							   final boolean hideMarker) {
+		final Handler handler = new Handler();
+		final long start = SystemClock.uptimeMillis();
+		Projection proj = map.getProjection();
+		Point startPoint = proj.toScreenLocation(marker.getPosition());
+		final LatLng startLatLng = proj.fromScreenLocation(startPoint);
+		final long duration = 500;
+
+		final Interpolator interpolator = new LinearInterpolator();
+
+		handler.post(new Runnable() {
+			@Override
+			public void run() {
+				long elapsed = SystemClock.uptimeMillis() - start;
+				float t = interpolator.getInterpolation((float) elapsed
+						/ duration);
+				double lng = t * toPosition.longitude + (1 - t)
+						* startLatLng.longitude;
+				double lat = t * toPosition.latitude + (1 - t)
+						* startLatLng.latitude;
+				marker.setPosition(new LatLng(lat, lng));
+
+				if (t < 1.0) {
+					// Post again 16ms later.
+					handler.postDelayed(this, 16);
+				} else {
+					if (hideMarker) {
+						marker.setVisible(false);
+					} else {
+						marker.setVisible(true);
+					}
+				}
+			}
+		});
 	}
 
 	private ArrayList<walkerinfo_marker> walkerarrayformarker;

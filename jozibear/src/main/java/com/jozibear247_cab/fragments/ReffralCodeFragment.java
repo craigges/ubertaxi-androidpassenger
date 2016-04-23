@@ -28,13 +28,6 @@ public class ReffralCodeFragment extends UberBaseFragmentRegister implements
 	private String token, id;
 	private ParseContent parseContent;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * com.automated.taxinow.fragments.UberBaseFragmentRegister#onCreate(android
-	 * .os.Bundle)
-	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -71,11 +64,6 @@ public class ReffralCodeFragment extends UberBaseFragmentRegister implements
 		// R.string.text_forget_password));
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.automated.taxinow.fragments.UberBaseFragmentRegister#onResume()
-	 */
 	@Override
 	public void onResume() {
 		// TODO Auto-generated method stub
