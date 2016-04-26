@@ -263,7 +263,7 @@ abstract public class ActionBarBaseActivitiy extends ActionBarActivity
 			Bundle options) {
 		// TODO Auto-generated method stub
 		super.startActivityForResult(intent, requestCode, options);
-}
+	}
 
 	@Override
 	public void onTaskCompleted(String response, int serviceCode) {

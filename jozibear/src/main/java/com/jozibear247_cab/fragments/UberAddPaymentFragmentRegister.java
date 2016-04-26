@@ -12,12 +12,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.jozibear247_cab.MainActivity;
 import com.jozibear247_cab.MainDrawerActivity;
 import com.jozibear247_cab.R;
 import com.jozibear247_cab.parse.HttpRequester;
 import com.jozibear247_cab.parse.ParseContent;
 import com.jozibear247_cab.utils.AndyUtils;
 import com.jozibear247_cab.utils.Const;
+import com.jozibear247_cab.utils.PreferenceHelper;
 import com.stripe.android.Stripe;
 import com.stripe.android.TokenCallback;
 import com.stripe.android.model.Card;
@@ -449,19 +451,31 @@ public class UberAddPaymentFragmentRegister extends UberBaseFragmentRegister {
 			if (pContent.isSuccess(response)) {
 				AndyUtils.showToast(getString(R.string.text_add_card_scucess),
 						activity);
-				activity.startActivity(new Intent(activity,
-						MainDrawerActivity.class));
+				String userId = PreferenceHelper.getInstance(activity).getUserId();
+				if(userId == null || userId.isEmpty()) {
+					goToMainActivity();
+				} else {
+					activity.startActivity(new Intent(activity,
+							MainDrawerActivity.class));
+				}
 			} else
 				AndyUtils.showToast(
 						getString(R.string.text_not_add_card_unscucess),
 						activity);
 //			activity.finish();
-			// activity.removeAllFragment(new UberMainFragment(), false,
-			// Const.FRAGMENT_MAIN);
+//			activity.removeAllFragment(new UberMainFragment(), false, Const.FRAGMENT_MAIN);
 			break;
 		default:
 			break;
 		}
+	}
+
+	public void goToMainActivity() {
+		Intent i = new Intent(activity, MainActivity.class);
+		i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+		i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+		startActivity(i);
+		activity.finish();
 	}
 
 }
