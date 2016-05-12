@@ -55,6 +55,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.jozibear247_cab.ContactListActivity;
 import com.jozibear247_cab.R;
 import com.jozibear247_cab.component.MyFontButton;
 import com.jozibear247_cab.component.MyFontPopUpTextView;
@@ -296,15 +297,14 @@ public class UberTripFragment extends UberBaseFragment {
 			showDriverStatusNotification();
 			break;
 		case R.id.btnshareeta:
-//			if (driver.getD_latitude() == 0.0 && driver.getD_longitude() == 0.0) {
-//				Toast.makeText(activity, "Destination not set",
-//						Toast.LENGTH_LONG).show();
-//			} else {
-//				getTime();
-//				Intent intent = new Intent(activity, ContactListActivity.class);
-//				activity.startActivityForResult(intent, PICK_MULTIPLE_CONTACT,
-//						Const.FRAGMENT_TRIP);
-//			}
+			if (driver.getD_latitude() == 0.0 && driver.getD_longitude() == 0.0) {
+				Toast.makeText(activity, "Destination not set", Toast.LENGTH_LONG).show();
+			} else {
+				getTime();
+				Intent intent = new Intent(activity, ContactListActivity.class);
+				activity.startActivityForResult(intent, PICK_MULTIPLE_CONTACT,
+						Const.FRAGMENT_TRIP);
+			}
 			/*
 			 * Intent intent = new Intent(Intent.ACTION_PICK,
 			 * Contacts.CONTENT_URI); activity.startActivityForResult(intent,

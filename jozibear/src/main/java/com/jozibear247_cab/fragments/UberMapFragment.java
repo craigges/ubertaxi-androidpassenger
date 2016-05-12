@@ -97,7 +97,7 @@ import java.util.TimerTask;
 
 public class UberMapFragment extends UberBaseFragment implements
 		OnProgressCancelListener {
-
+	private static UberMapFragment instance;
 	private PlacesAutoCompleteAdapter adapter;
 	private AutoCompleteTextView etSource, enterdestination;
 	private ParseContent pContent;
@@ -154,9 +154,15 @@ public class UberMapFragment extends UberBaseFragment implements
 	private AlertDialog promoCodeDlg;
 	private boolean isRequestCapNow;
 
+	private UberMapFragment() {
+	}
+
 	public static UberMapFragment newInstance() {
-		UberMapFragment mapFragment = new UberMapFragment();
-		return mapFragment;
+		if(instance == null) {
+			instance = new UberMapFragment();
+		}
+
+		return instance;
 	}
 
 	TextView markerBubblePickMeUp;
@@ -166,10 +172,8 @@ public class UberMapFragment extends UberBaseFragment implements
 			Bundle savedInstanceState) {
 		mapView = inflater.inflate(R.layout.fragment_map, container, false);
 		isLocationFound = false;
-		inflater = (LayoutInflater) activity
-				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		markerBubblePickMeUp = (TextView) mapView
-				.findViewById(R.id.markerBubblePickMeUp);
+		inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		markerBubblePickMeUp = (TextView) mapView.findViewById(R.id.markerBubblePickMeUp);
 		markerBubblePickMeUp.setOnClickListener(this);
 
 		bubble = (MyFontButton) mapView.findViewById(R.id.markerBubblePickMeUp);
@@ -177,8 +181,7 @@ public class UberMapFragment extends UberBaseFragment implements
 
 		listViewType = (GridView) mapView.findViewById(R.id.gvTypes);
 
-		promopref = getActivity().getSharedPreferences("promocode",
-				Context.MODE_PRIVATE);
+		promopref = getActivity().getSharedPreferences("promocode", Context.MODE_PRIVATE);
 		editorpromo = promopref.edit();
 
 		markers = (LinearLayout) mapView.findViewById(R.id.layoutMarker);
@@ -203,38 +206,30 @@ public class UberMapFragment extends UberBaseFragment implements
 					break;
 				}
 				return true;
-
 			}
 		});
 		btnMyLocation = (ImageButton) mapView.findViewById(R.id.btnMyLocation);
-		btnSelectService = (MyFontButton) mapView
-				.findViewById(R.id.btnSelectService);
+		btnSelectService = (MyFontButton) mapView.findViewById(R.id.btnSelectService);
 		btnSelectService.setOnClickListener(this);
 
-		btnRequestCap = (MyFontButton) mapView
-				.findViewById(R.id.btn_request_cap);
+		btnRequestCap = (MyFontButton) mapView.findViewById(R.id.btn_request_cap);
 		btnRequestCap.setOnClickListener(this);
 //		btnpayment = (MyFontButton) mapView.findViewById(R.id.btnpayment);
 //		btnpayment.setOnClickListener(this);
-		enterdestination = (AutoCompleteTextView) mapView
-				.findViewById(R.id.EnterDestination);
-		destaddlayout = (RelativeLayout) mapView
-				.findViewById(R.id.destinationaddlayout);
+		enterdestination = (AutoCompleteTextView) mapView.findViewById(R.id.EnterDestination);
+		destaddlayout = (RelativeLayout) mapView.findViewById(R.id.destinationaddlayout);
 		clearfield = (ImageButton) mapView.findViewById(R.id.clearfield);
 		clearfield.setOnClickListener(this);
 
-		btnfareestimate = (MyFontButton) mapView
-				.findViewById(R.id.btnfareestimate);
+		btnfareestimate = (MyFontButton) mapView.findViewById(R.id.btnfareestimate);
 		btnfareestimate.setOnClickListener(this);
 		eta = (TextView) mapView.findViewById(R.id.eta);
 		btnratecard = (MyFontButton) mapView.findViewById(R.id.btnratecard);
 		btnratecard.setOnClickListener(this);
 		btnpromocard = (MyFontButton) mapView.findViewById(R.id.btnpromocode);
 		btnpromocard.setOnClickListener(this);
-		slidedown = AnimationUtils.loadAnimation(getActivity(),
-				R.anim.destaddtopbottom);
-		slideup = AnimationUtils.loadAnimation(getActivity(),
-				R.anim.destaddbottomtop);
+		slidedown = AnimationUtils.loadAnimation(getActivity(), R.anim.destaddtopbottom);
+		slideup = AnimationUtils.loadAnimation(getActivity(), R.anim.destaddbottomtop);
 		// etSource = (AutoCompleteTextView)
 		// view.findViewById(R.id.etEnterSouce);
 		drawer = (SlidingDrawer) mapView.findViewById(R.id.drawer);
@@ -249,7 +244,6 @@ public class UberMapFragment extends UberBaseFragment implements
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-
 		drivermarkers = new ArrayList<Marker>();
 
 		btnadddestination = activity.btnadddestination;
@@ -266,7 +260,6 @@ public class UberMapFragment extends UberBaseFragment implements
 
 		walkerlist = new ArrayList<Walkerinfo>();
 		walkerarrayformarker = new ArrayList<UberMapFragment.walkerinfo_marker>();
-
 	}
 
 	@Override
@@ -274,8 +267,7 @@ public class UberMapFragment extends UberBaseFragment implements
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
 
-		adapter = new PlacesAutoCompleteAdapter(activity,
-				R.layout.autocomplete_list_text);
+		adapter = new PlacesAutoCompleteAdapter(activity, R.layout.autocomplete_list_text);
 		etSource.setAdapter(adapter);
 
 		enterdestination.setAdapter(adapter);
@@ -314,7 +306,6 @@ public class UberMapFragment extends UberBaseFragment implements
 						// TODO Auto-generated method stub
 						final LatLng latlng = getLocationFromAddress(selectedDestPlace);
 						if (latlng != null) {
-
 							getActivity().runOnUiThread(new Runnable() {
 
 								@Override
@@ -326,15 +317,11 @@ public class UberMapFragment extends UberBaseFragment implements
 
 									animateCameraToMarker(latlng);
 									getallproviders();
-
 								}
 							});
-
 						}
-
 					}
 				}).start();
-
 			}
 		});
 		listType = new ArrayList<VehicalType>();
@@ -365,10 +352,8 @@ public class UberMapFragment extends UberBaseFragment implements
 					drawer.animateClose();
 					drawer.unlock();
 				}
-
 			}
 		});
-
 	}
 
 	/*
@@ -384,7 +369,6 @@ public class UberMapFragment extends UberBaseFragment implements
 		activity.btnNotification.setVisibility(View.INVISIBLE);
 		etSource.setVisibility(View.VISIBLE);
 		startCheckingStatusUpdate();
-
 	}
 
 	private void setUpMapIfNeeded() {
@@ -420,13 +404,10 @@ public class UberMapFragment extends UberBaseFragment implements
 					// TODO Auto-generated method stub
 					Location loc = map.getMyLocation();
 					if (loc != null) {
-						LatLng latLang = new LatLng(loc.getLatitude(), loc
-								.getLongitude());
-
+						LatLng latLang = new LatLng(loc.getLatitude(), loc.getLongitude());
 						animateCameraToMarker(latLang);
 						getallproviders();
 					}
-
 				}
 			});
 
@@ -448,7 +429,6 @@ public class UberMapFragment extends UberBaseFragment implements
 						// if (pickuppop.getVisibility() == View.VISIBLE)
 						// gettime();
 						getAddressFromLocation(camPos.target, etSource);
-
 					}
 					isMapTouched = false;
 					// setMarker(camPos.target);
@@ -471,18 +451,15 @@ public class UberMapFragment extends UberBaseFragment implements
 			@Override
 			public void onConnected(Bundle connectionHint) {
 				// TODO Auto-generated method stub
-
 				Location loc = client.getLastLocation();
 
 				if (loc != null) {
-
 					LatLng latLang = new LatLng(loc.getLatitude(),
 							loc.getLongitude());
 					animateCameraToMarker(latLang);
 				} else {
 					activity.showLocationOffDialog();
 				}
-
 			}
 		}, new OnConnectionFailedListener() {
 
@@ -499,9 +476,7 @@ public class UberMapFragment extends UberBaseFragment implements
 	public void onPause() {
 		// TODO Auto-generated method stub
 		stopCheckingStatusUpdate();
-
 		super.onPause();
-
 	}
 
 	@Override
@@ -522,7 +497,6 @@ public class UberMapFragment extends UberBaseFragment implements
 				parent.removeView(mapView);
 			}
 		}
-
 		map = null;
 	}
 
@@ -530,8 +504,7 @@ public class UberMapFragment extends UberBaseFragment implements
 	public void onDestroy() {
 		super.onDestroy();
 
-		LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(
-				walkerReceiver);
+		LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(walkerReceiver);
 		activity.tvTitle.setVisibility(View.VISIBLE);
 		etSource.setVisibility(View.GONE);
 	}
@@ -552,7 +525,6 @@ public class UberMapFragment extends UberBaseFragment implements
 		MainDrawerActivity.popon = true;
 		pickuppop.setVisibility(View.VISIBLE);
 		btnadddestination.setVisibility(View.VISIBLE);
-
 	}
 
 	public static void setpickpopupInvisible() {
@@ -569,8 +541,7 @@ public class UberMapFragment extends UberBaseFragment implements
 			if (isValidate()) {
 				new AlertDialog.Builder(getActivity())
 						.setTitle("")
-						.setMessage(
-								"Cash Only Accepted")
+						.setMessage("Cash Only Accepted")
 						.setPositiveButton(android.R.string.ok,
 								new DialogInterface.OnClickListener() {
 									public void onClick(DialogInterface dialog,
@@ -642,8 +613,7 @@ public class UberMapFragment extends UberBaseFragment implements
 			if (/*payment_type == 1
 					|| payment_type == 2
 					|| payment_type == 3
-					&& */!TextUtils
-							.isEmpty(enterdestination.getText().toString())) {
+					&& */!TextUtils.isEmpty(enterdestination.getText().toString())) {
 				Log.d("amal", "going to pick up");
 				isRequestCapNow = true;
 				getDistance();
@@ -668,15 +638,13 @@ public class UberMapFragment extends UberBaseFragment implements
 			break;
 		case R.id.btnfareestimate:
 			if (enterdestination.getVisibility() == View.VISIBLE
-					&& !TextUtils
-							.isEmpty(enterdestination.getText().toString())) {
+					&& !TextUtils.isEmpty(enterdestination.getText().toString())) {
 				isRequestCapNow = false;
 				getDistance();
 			} else if (destaddlayout.getVisibility() == View.VISIBLE
 					&& TextUtils.isEmpty(enterdestination.getText().toString())) {
 				Toast.makeText(getActivity(), "Enter destination address",
 						Toast.LENGTH_LONG).show();
-
 			} else {
 				destaddlayout.setVisibility(View.VISIBLE);
 				destaddlayout.startAnimation(slidedown);
@@ -701,23 +669,16 @@ public class UberMapFragment extends UberBaseFragment implements
 			AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 			LayoutInflater inflate = getActivity().getLayoutInflater();
 			View contentview = inflate.inflate(R.layout.ratecard, null);
-			View titleview = inflate
-					.inflate(R.layout.ratecardcustomtitle, null);
+			View titleview = inflate.inflate(R.layout.ratecardcustomtitle, null);
 			builder.setView(contentview).setCustomTitle(titleview);
 			final AlertDialog mDialog = builder.create();
 
 			MyFontTextView ratecardtitle;
-			TextView baseprice,
-			distanceprice,
-			timeprice;
-			baseprice = (TextView) contentview
-					.findViewById(R.id.Basepricefield);
-			distanceprice = (TextView) contentview
-					.findViewById(R.id.Distancepricefield);
-			timeprice = (TextView) contentview
-					.findViewById(R.id.Timepricefield);
-			ratecardtitle = (MyFontTextView) titleview
-					.findViewById(R.id.ratecardtitle);
+			TextView baseprice, distanceprice, timeprice;
+			baseprice = (TextView) contentview.findViewById(R.id.Basepricefield);
+			distanceprice = (TextView) contentview.findViewById(R.id.Distancepricefield);
+			timeprice = (TextView) contentview.findViewById(R.id.Timepricefield);
+			ratecardtitle = (MyFontTextView) titleview.findViewById(R.id.ratecardtitle);
 
 			baseprice.setText(listType.get(selectedPostion).getCurrency() + " "
 					+ listType.get(selectedPostion).getBasePrice());
@@ -738,14 +699,11 @@ public class UberMapFragment extends UberBaseFragment implements
 
 		case R.id.clearfield:
 			if (TextUtils.isEmpty(enterdestination.getText().toString())) {
-
 				destaddlayout.startAnimation(slideup);
 				destaddlayout.setVisibility(View.GONE);
-
 			}
 			if (!TextUtils.isEmpty(enterdestination.getText().toString()))
 				enterdestination.setText("");
-
 			break;
 		default:
 			break;
@@ -758,11 +716,9 @@ public class UberMapFragment extends UberBaseFragment implements
 		Log.d("pavan", "in show option");
 		listViewType.setVisibility(View.GONE);
 		drawer.setVisibility(View.GONE);
-
 	}
 
 	private void getAddressFromLocation(final LatLng latlng, final EditText et) {
-
 		et.setText("Waiting for Address");
 		et.setTextColor(Color.GRAY);
 		new Thread(new Runnable() {
@@ -770,7 +726,6 @@ public class UberMapFragment extends UberBaseFragment implements
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-
 				Geocoder gCoder = new Geocoder(getActivity());
 				try {
 					final List<Address> list = gCoder.getFromLocation(
@@ -779,7 +734,6 @@ public class UberMapFragment extends UberBaseFragment implements
 						Address address = list.get(0);
 						StringBuilder sb = new StringBuilder();
 						if (address.getAddressLine(0) != null) {
-
 							sb.append(address.getAddressLine(0)).append(", ");
 						}
 						sb.append(address.getLocality()).append(", ");
@@ -800,20 +754,16 @@ public class UberMapFragment extends UberBaseFragment implements
 								et.setFocusable(false);
 								et.setFocusableInTouchMode(false);
 								et.setText(strAddress);
-								et.setTextColor(getResources().getColor(
-										android.R.color.black));
+								et.setTextColor(getResources().getColor(android.R.color.black));
 								et.setFocusable(true);
 								et.setFocusableInTouchMode(true);
-
 							} else {
 								et.setText("");
-								et.setTextColor(getResources().getColor(
-										android.R.color.black));
+								et.setTextColor(getResources().getColor(android.R.color.black));
 							}
 							etSource.setEnabled(true);
 						}
 					});
-
 				} catch (IOException exc) {
 					exc.printStackTrace();
 					getAddressFromGooleApi(latlng);
@@ -821,7 +771,6 @@ public class UberMapFragment extends UberBaseFragment implements
 			}
 
 		}).start();
-
 	}
 
 	private void animateCameraToMarker(LatLng latLng) {
@@ -841,15 +790,10 @@ public class UberMapFragment extends UberBaseFragment implements
 		Geocoder gCoder = new Geocoder(getActivity());
 		try {
 			final List<Address> list = gCoder.getFromLocationName(place, 1);
-
 			// TODO Auto-generated method stub
 			if (list != null && list.size() > 0) {
-
-				loc = new LatLng(list.get(0).getLatitude(), list.get(0)
-						.getLongitude());
-
+				loc = new LatLng(list.get(0).getLatitude(), list.get(0).getLongitude());
 			}
-
 		} catch (IOException e) {
 			getlocfromaddressfromGoogleApi(place);
 			if (destlatlng_places != null)
@@ -864,29 +808,24 @@ public class UberMapFragment extends UberBaseFragment implements
 	public void onProgressCancel() {
 		stopCheckingStatusUpdate();
 		cancleRequest();
-
 		// stopCheckingStatusUpdate();
 	}
 
 	private void getAddressFromGooleApi(LatLng latlong) {
-
 		// call google api here
 		AndyUtils.removeCustomProgressDialog();
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put(Const.URL, Const.ServiceType.GOOGLE_LOCATION + latlong.latitude
 				+ "," + latlong.longitude);
 		AppLog.Log("pavan", Const.URL);
-		new HttpRequester(activity, map, Const.ServiceCode.GET_ADDRESS, true,
-				this);
+		new HttpRequester(activity, map, Const.ServiceCode.GET_ADDRESS, true, this);
 	}
 
 	private void getlocfromaddressfromGoogleApi(String address) {
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put(Const.URL, Const.ServiceType.GOOGLE_ADDRESS + address);
 		AppLog.Log("pavan", Const.URL);
-		new HttpRequester(activity, map, Const.ServiceCode.GET_LOCATION, true,
-				this);
-
+		new HttpRequester(activity, map, Const.ServiceCode.GET_LOCATION, true, this);
 	}
 
 	/*
@@ -903,10 +842,8 @@ public class UberMapFragment extends UberBaseFragment implements
 		} else if (selectedPostion == -1) {
 			msg = getString(R.string.text_select_type);
 		} else if (TextUtils.isEmpty(etSource.getText().toString())
-				|| etSource.getText().toString()
-						.equalsIgnoreCase("Waiting for Address")) {
+				|| etSource.getText().toString().equalsIgnoreCase("Waiting for Address")) {
 			msg = getString(R.string.text_waiting_for_address);
-
 		}
 		if (msg == null)
 			return true;
@@ -917,47 +854,39 @@ public class UberMapFragment extends UberBaseFragment implements
 	private void paydebt() {
 		Log.d("amal", "in here");
 		if (!AndyUtils.isNetworkAvailable(activity)) {
-			AndyUtils.showToast(getResources().getString(R.string.no_internet),
-					activity);
+			AndyUtils.showToast(getResources().getString(R.string.no_internet), activity);
 			return;
 		}
 		AndyUtils.showCustomProgressDialog(activity,
 				getString(R.string.text_creating_request), true, null);
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put(Const.URL, Const.ServiceType.PAY_DEBT);
-		map.put(Const.Params.TOKEN,
-				PreferenceHelper.getInstance(activity).getSessionToken());
+		map.put(Const.Params.TOKEN, PreferenceHelper.getInstance(activity).getSessionToken());
 		map.put(Const.Params.ID, PreferenceHelper.getInstance(activity).getUserId());
 		new HttpRequester(activity, map, Const.ServiceCode.PAY_DEBT, this);
-
 	}
 
 	private void requestCaps() {
 		if (!AndyUtils.isNetworkAvailable(activity)) {
-			AndyUtils.showToast(getResources().getString(R.string.no_internet),
-					activity);
+			AndyUtils.showToast(getResources().getString(R.string.no_internet), activity);
 			return;
 		}
 		AndyUtils.showCustomProgressDialog(activity,
 				getString(R.string.text_creating_request), true, null);
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put(Const.URL, Const.ServiceType.CREATE_REQUEST);
-		map.put(Const.Params.TOKEN,
-				PreferenceHelper.getInstance(activity).getSessionToken());
+		map.put(Const.Params.TOKEN, PreferenceHelper.getInstance(activity).getSessionToken());
 		map.put(Const.Params.ID, PreferenceHelper.getInstance(activity).getUserId());
 		map.put(Const.Params.LATITUDE, String.valueOf(curretLatLng.latitude));
 		map.put(Const.Params.LONGITUDE, String.valueOf(curretLatLng.longitude));
-		map.put(Const.Params.TYPE,
-				String.valueOf(listType.get(selectedPostion).getId()));
+		map.put(Const.Params.TYPE, String.valueOf(listType.get(selectedPostion).getId()));
 		if (enterdestination.getVisibility() == View.VISIBLE
 				&& !TextUtils.isEmpty(enterdestination.getText().toString())) {
 			LatLng destlatlng = getLocationFromAddress(enterdestination
 					.getText().toString());
 			if (destlatlng != null) {
-				map.put(Const.Params.DEST_LATITUDE,
-						String.valueOf(destlatlng.latitude));
-				map.put(Const.Params.DEST_LONGITUDE,
-						String.valueOf(destlatlng.longitude));
+				map.put(Const.Params.DEST_LATITUDE, String.valueOf(destlatlng.latitude));
+				map.put(Const.Params.DEST_LONGITUDE, String.valueOf(destlatlng.longitude));
 			} else {
 				AndyUtils.removeCustomProgressDialog();
 				Toast.makeText(activity, "Please Enter The Address Correctly",
@@ -974,7 +903,6 @@ public class UberMapFragment extends UberBaseFragment implements
 		map.put(Const.Params.DISTANCE, "1");
 		Log.d("xxx", "map " + map.toString());
 		new HttpRequester(activity, map, Const.ServiceCode.CREATE_REQUEST, this);
-
 	}
 
 	/*
@@ -1014,8 +942,7 @@ public class UberMapFragment extends UberBaseFragment implements
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					AlertDialog.Builder debtalert = new AlertDialog.Builder(
-							activity);
+					AlertDialog.Builder debtalert = new AlertDialog.Builder(activity);
 					debtalert
 							.setTitle("Could not request ride")
 							.setMessage(errormsg)
@@ -1029,7 +956,6 @@ public class UberMapFragment extends UberBaseFragment implements
 											// TODO Auto-generated method stub
 											paydebt_indicator = 1;
 											getCards();
-
 										}
 
 									});
@@ -1044,12 +970,10 @@ public class UberMapFragment extends UberBaseFragment implements
 								}
 							});
 					debtalert.show();
-
 				}
 			}
 			break;
 		case Const.ServiceCode.GET_REQUEST_STATUS:
-
 			if (activity.pContent.isSuccess(response)) {
 				switch (activity.pContent.checkRequestStatus(response)) {
 				case Const.IS_WALK_STARTED:
@@ -1074,8 +998,7 @@ public class UberMapFragment extends UberBaseFragment implements
 				case Const.IS_REQEUST_CREATED:
 					if (PreferenceHelper.getInstance(activity).getRequestId() != Const.NO_REQUEST)
 						AndyUtils.showCustomProgressDialog(activity,
-								getString(R.string.text_contacting), false,
-								this);
+								getString(R.string.text_contacting), false, this);
 					isContinueRequest = true;
 					break;
 				case Const.NO_REQUEST:
@@ -1118,9 +1041,7 @@ public class UberMapFragment extends UberBaseFragment implements
 			}
 			break;
 		case Const.ServiceCode.CANCEL_REQUEST:
-
 			Log.d("mahi", "response in cancel request" + response);
-
 			if (activity.pContent.isSuccess(response)) {
 
 			}
@@ -1142,31 +1063,25 @@ public class UberMapFragment extends UberBaseFragment implements
 			break;
 		/* added by amal */
 		case Const.ServiceCode.GET_CARDS:
-
 			Log.d("amal", "GET CARD" + response);
-
 			if (pContent.isSuccess(response)) {
 				ArrayList<Card> listCards;
 				listCards = new ArrayList<Card>();
 				listCards.clear();
 				pContent.parseCards(response, listCards);
 				if (listCards.size() > 0) {
-
 					if (paydebt_indicator == 1) {
 						paydebt();
 						paydebt_indicator = 0;
 					} else
 						requestCaps();
-
 				}
 				adapter.notifyDataSetChanged();
 			} else {
 				Log.d("yyy", "in else of 0 card");
 				startActivity(new Intent(getActivity(),
 						UberViewPaymentActivity.class));
-
 			}
-
 			AndyUtils.removeCustomProgressDialog();
 			break;
 
@@ -1184,95 +1099,60 @@ public class UberMapFragment extends UberBaseFragment implements
 			AndyUtils.removeCustomProgressDialog();
 			Log.d("amal", "in distance success" + response);
 			if (response != null) {
-
 				try {
 					JSONObject jObject = new JSONObject(response);
-
 					if (jObject.getString("status").equals("OK")) {
-
 						JSONArray jaArray = jObject.getJSONArray("rows");
-
 						for (int i = 0; i < jaArray.length(); i++) {
-
 							JSONObject jobj = jaArray.getJSONObject(i);
-
 							JSONArray jaArray2 = jobj.getJSONArray("elements");
-
 							for (int j = 0; j < jaArray2.length(); j++) {
-
 								JSONObject jobj1 = jaArray2.getJSONObject(j);
-
-								JSONObject jobj_distance = jobj1
-										.getJSONObject("distance");
+								JSONObject jobj_distance = jobj1.getJSONObject("distance");
 								Log.d("amal",
 										"distance "
-												+ jobj_distance
-														.getString("text")
+												+ jobj_distance.getString("text")
 												+ " , "
-												+ jobj_distance
-														.getString("value"));
+												+ jobj_distance.getString("value"));
 
-								JSONObject jobj_duration = jobj1
-										.getJSONObject("duration");
+								JSONObject jobj_duration = jobj1.getJSONObject("duration");
 								Log.d("amal",
 										"distance "
-												+ jobj_duration
-														.getString("text")
+												+ jobj_duration.getString("text")
 												+ " , "
-												+ jobj_duration
-														.getString("value"));
+												+ jobj_duration.getString("value"));
 
 								duration = jobj_duration.getString("value");
 								distance = jobj_distance.getString("value");
 								getEstimation(distance, duration);
-
 							}
-
 						}
-
 					}
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-
 			}
 
 			break;
 		case Const.ServiceCode.GET_MAP_TIME:
 			if (response != null) {
-
 				try {
 					JSONObject jObject = new JSONObject(response);
-
 					if (jObject.getString("status").equals("OK")) {
-
 						JSONArray jaArray = jObject.getJSONArray("rows");
-
 						for (int i = 0; i < jaArray.length(); i++) {
-
 							JSONObject jobj = jaArray.getJSONObject(i);
-
 							JSONArray jaArray2 = jobj.getJSONArray("elements");
-
 							for (int j = 0; j < jaArray2.length(); j++) {
-
 								JSONObject jobj1 = jaArray2.getJSONObject(j);
-
-								JSONObject jobj_distance = jobj1
-										.getJSONObject("distance");
-
-								JSONObject jobj_duration = jobj1
-										.getJSONObject("duration");
-
+								JSONObject jobj_distance = jobj1.getJSONObject("distance");
+								JSONObject jobj_duration = jobj1.getJSONObject("duration");
 								duration = jobj_duration.getString("text");
 								eta.setText("Pick up time is approximately "
 										+ duration);
-
 							}
-
 						}
-
 					}
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block

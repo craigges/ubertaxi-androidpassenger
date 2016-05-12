@@ -94,7 +94,6 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 		dbHelper = new DBHelper(getApplicationContext());
 		User user = dbHelper.getUser();
 		aQuery = new AQuery(this);
-		Mint.initAndStartSession(MainDrawerActivity.this, "b18b0b2f"); 
 
 		mMenuDrawer = MenuDrawer.attach(this, MenuDrawer.MENU_DRAG_WINDOW);
 		mMenuDrawer.setContentView(R.layout.activity_map);
