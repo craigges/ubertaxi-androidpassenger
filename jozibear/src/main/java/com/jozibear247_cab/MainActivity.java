@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.jozibear247_cab.db.DBHelper;
 import com.jozibear247_cab.utils.AndyUtils;
 import com.jozibear247_cab.utils.PreferenceHelper;
 import com.splunk.mint.Mint;
@@ -29,8 +30,10 @@ public class MainActivity extends Activity implements OnClickListener {
 
 //		BugSenseHandler.initAndStartSession(MainActivity.this, "49793880");
 		Mint.initAndStartSession(MainActivity.this, "d839b367");
-
-		if (PreferenceHelper.getInstance(this).getEmailActivation() == 1 && !TextUtils.isEmpty(PreferenceHelper.getInstance(this).getUserId())) {
+		DBHelper dbHelper = new DBHelper(getApplicationContext());
+		if (dbHelper.getUser() != null
+				&& PreferenceHelper.getInstance(this).getEmailActivation() == 1
+				&& !TextUtils.isEmpty(PreferenceHelper.getInstance(this).getUserId())) {
 			startActivity(new Intent(this, MainDrawerActivity.class));
 			this.finish();
 			return;

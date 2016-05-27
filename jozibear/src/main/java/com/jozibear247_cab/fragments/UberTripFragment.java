@@ -560,7 +560,7 @@ public class UberTripFragment extends UberBaseFragment {
 			}
 		}
 
-		map = null;
+//		map = null;
 	}
 
 	@SuppressLint("NewApi")

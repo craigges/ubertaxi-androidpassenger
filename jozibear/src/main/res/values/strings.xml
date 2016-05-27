@@ -190,7 +190,7 @@
     <string name="text_forget_pass_small">Forgot Password</string>
     <string name="text_continue">CONTINUE</string>
     <string name="text_feedback_completed">Thank you for feedback!</string>
-    <string name="text_account_blocked">Your account has been blocked. Please contact support@jozibear247.com for a prompt resolution!</string>
+    <string name="text_account_blocked">Your account has been blocked. Please contact jozibear247@gmail.com for a prompt resolution!</string>
     <string name="text_empty_feedback">Please Enter Feedback</string>
     <string name="text_estimate_fare">Estimated Fare</string>
     <string name="pay_with_paypal">Pay With PayPal</string>

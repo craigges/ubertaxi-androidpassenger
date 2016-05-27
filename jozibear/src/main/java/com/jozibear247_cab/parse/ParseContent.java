@@ -547,8 +547,8 @@ public class ParseContent {
 			driver.setRating(jsonObject.getDouble(Const.Params.RATING));
 			JSONObject jsonObjectBill = new JSONObject(response)
 					.optJSONObject(BILL);
+			Bill bill = new Bill();
 			if (jsonObjectBill != null && jsonObjectBill.has(CURRENCY)) {
-				Bill bill = new Bill();
 				bill.setCurrency(jsonObjectBill.getString(CURRENCY));
 				bill.setDistance(new DecimalFormat("0.00").format(Double
 						.parseDouble(jsonObjectBill.getString(DISTANCE))));
@@ -572,9 +572,8 @@ public class ParseContent {
 //					bill.setDistance(new DecimalFormat("0.00").format(distance));
 					bill.setDistance(jsonObjectBill.getString(DISTANCE));
 				}
-
-				driver.setBill(bill);
 			}
+			driver.setBill(bill);
 			// driver.getBill().setUnit(object.getString(UNIT));
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
@@ -757,26 +756,26 @@ public class ParseContent {
 		applicationPages.setData("");
 		list.add(applicationPages);
 
-		applicationPages = new ApplicationPages();
-		applicationPages.setId(-2);
-		applicationPages.setTitle("Payment");
-		applicationPages.setData("");
-		list.add(applicationPages);
+//		applicationPages = new ApplicationPages();
+//		applicationPages.setId(-2);
+//		applicationPages.setTitle("Payment");
+//		applicationPages.setData("");
+//		list.add(applicationPages);
 
 		applicationPages = new ApplicationPages();
-		applicationPages.setId(-3);
+		applicationPages.setId(-2);
 		applicationPages.setTitle("History");
 		applicationPages.setData("");
 		list.add(applicationPages);
 
-		applicationPages = new ApplicationPages();
-		applicationPages.setId(-4);
-		applicationPages.setTitle("Free Rides");
-		applicationPages.setData("");
-		list.add(applicationPages);
+//		applicationPages = new ApplicationPages();
+//		applicationPages.setId(-4);
+//		applicationPages.setTitle("Free Rides");
+//		applicationPages.setData("");
+//		list.add(applicationPages);
 
 		applicationPages = new ApplicationPages();
-		applicationPages.setId(-5);
+		applicationPages.setId(-3);
 		applicationPages.setTitle("Promotions");
 		applicationPages.setData("");
 		list.add(applicationPages);

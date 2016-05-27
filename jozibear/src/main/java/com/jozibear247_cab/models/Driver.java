@@ -190,7 +190,6 @@ public class Driver implements Parcelable {
 
 	public static final Parcelable.Creator<Driver> CREATOR = new Parcelable.Creator() {
 
-		//writeToParcel() 메소드에서 썼던 순서대로 읽어 오는 것입니다.
 		@Override
 		public Object createFromParcel(Parcel source) {
 			return new Driver(source);

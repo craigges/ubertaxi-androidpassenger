@@ -14,6 +14,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
+import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
@@ -142,16 +143,15 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 				if (position == 0) {
 					startActivity(new Intent(MainDrawerActivity.this,
 							ProfileActivity.class));
+//				} else if (position == 1) {
+//					startActivity(new Intent(MainDrawerActivity.this,
+//							UberViewPaymentActivity.class));
 				} else if (position == 1) {
 					startActivity(new Intent(MainDrawerActivity.this,
-							UberViewPaymentActivity.class));
-				} else if (position == 2) {
-					startActivity(new Intent(MainDrawerActivity.this,
 							HistoryActivity.class));
-				} else if (position == 3) {
-					getReferralCode();
-
-				} else if (position == 4) {
+//				} else if (position == 3) {
+//					getReferralCode();
+				} else if (position == 2) {
 					startActivity(new Intent(MainDrawerActivity.this,
 							promotionActivity.class));
 				} else if (position == (listMenu.size() - 1)) {
@@ -483,8 +483,9 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 	}
 
 	public void gotoTripFragment(Driver driver) {
-//		if(tripFrag == null) {
+		if(tripFrag == null) {
 			tripFrag = new UberTripFragment();
+		}
 			Bundle bundle = new Bundle();
 			bundle.putParcelable(Const.DRIVER, driver);
 			tripFrag.setArguments(bundle);
@@ -850,7 +851,7 @@ public class MainDrawerActivity extends ActionBarBaseActivitiy {
 									+ System.getProperty("line.separator")
 									+ " https://play.google.com/store/apps/details?id=com.jozibear247_cab");
 					startActivity(Intent.createChooser(sharingIntent,
-							"Share Referral Code"));
+							Html.fromHtml("Share Referral Code")));
 				} else {
 					Toast.makeText(context, "Please add a Referral Code", Toast.LENGTH_LONG).show();
 				}
