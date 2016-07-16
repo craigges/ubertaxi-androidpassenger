@@ -362,9 +362,9 @@ public class ProfileActivity extends ActionBarBaseActivitiy implements
 			showPictureDialog();
 			break;
 		case R.id.btnActionNotification:
-			// onBackPressed();
-			startActivity(new Intent(ProfileActivity.this,
-					MainDrawerActivity.class));
+			onBackPressed();
+//			startActivity(new Intent(ProfileActivity.this,
+//					MainDrawerActivity.class));
 			break;
 		case R.id.etprofileTimezone:
 			AlertDialog.Builder timezonebuilder = new Builder(this);
@@ -579,6 +579,6 @@ public class ProfileActivity extends ActionBarBaseActivitiy implements
 	public void onBackPressed() {
 
 		super.onBackPressed();
-		startActivity(new Intent(ProfileActivity.this, MainDrawerActivity.class));
+//		startActivity(new Intent(ProfileActivity.this, MainDrawerActivity.class));
 	}
 }

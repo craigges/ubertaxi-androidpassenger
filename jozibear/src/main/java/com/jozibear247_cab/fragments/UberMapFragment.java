@@ -128,13 +128,13 @@ public class UberMapFragment extends UberBaseFragment implements
 	private int selectedPostion = -1;
 	private boolean isGettingVehicalType = true;
 
-	private boolean isLocationFound;
+//	private boolean isLocationFound;
 	// private Animation topToBottomAnimation, bottomToTopAnimation,
 	// buttonTopToBottomAnimation;
 
 	private MyFontButton btnSelectService, btnRequestCap,
 			btnratecard, btnfareestimate, btnpromocard;
-	private static MyFontButton bubble;
+//	private static MyFontButton bubble;
 	private static SlidingDrawer drawer;
 	private static LinearLayout markers;
 	private static RelativeLayout pickuppop;
@@ -165,18 +165,18 @@ public class UberMapFragment extends UberBaseFragment implements
 		return instance;
 	}
 
-	TextView markerBubblePickMeUp;
+	static TextView markerBubblePickMeUp;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		mapView = inflater.inflate(R.layout.fragment_map, container, false);
-		isLocationFound = false;
+//		isLocationFound = false;
 		inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		markerBubblePickMeUp = (TextView) mapView.findViewById(R.id.markerBubblePickMeUp);
+		markerBubblePickMeUp = (MyFontButton) mapView.findViewById(R.id.markerBubblePickMeUp);
 		markerBubblePickMeUp.setOnClickListener(this);
 
-		bubble = (MyFontButton) mapView.findViewById(R.id.markerBubblePickMeUp);
+//		bubble = (MyFontButton) mapView.findViewById(R.id.markerBubblePickMeUp);
 		selectedPostion = 0;/* modified by Amal *//* reverted back */
 
 		listViewType = (GridView) mapView.findViewById(R.id.gvTypes);
@@ -511,17 +511,17 @@ public class UberMapFragment extends UberBaseFragment implements
 
 	public static void setmarkerVisibile() {
 		// markers.setVisibility(View.VISIBLE);
-		bubble.setVisibility(View.VISIBLE);
+		markerBubblePickMeUp.setVisibility(View.VISIBLE);
 		drawer.setVisibility(View.VISIBLE);
 	}
 
-	public static void setmarkerInvisibile() {
+	public void setmarkerInvisibile() {
 		// markers.setVisibility(View.INVISIBLE);
-		bubble.setVisibility(View.INVISIBLE);
+		markerBubblePickMeUp.setVisibility(View.INVISIBLE);
 		drawer.setVisibility(View.INVISIBLE);
 	}
 
-	public static void setpickpopupVisible() {
+	public void setpickpopupVisible() {
 		MainDrawerActivity.popon = true;
 		pickuppop.setVisibility(View.VISIBLE);
 		btnadddestination.setVisibility(View.VISIBLE);

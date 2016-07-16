@@ -106,8 +106,8 @@ public class UberTripFragment extends UberBaseFragment {
 	private boolean isContinueDriverRequest;
 	private Timer timer, timerDriverLocation;
 	private LocationClient client;
-	private final int LOCATION_SCHEDULE = 10 * 1000;
-//	private final int LOCATION_SCHEDULE = 5 * 1000;
+//	private final int LOCATION_SCHEDULE = 10 * 1000;
+	private final int LOCATION_SCHEDULE = 5 * 1000;
 	private String strDistance;
 	private Polyline polyLine;
 	private AlertDialog alertnew;
@@ -154,6 +154,7 @@ public class UberTripFragment extends UberBaseFragment {
 				Const.TAG);
 		wakeLock.acquire();
 		driver = (Driver) getArguments().getParcelable(Const.DRIVER);
+		getArguments().remove(Const.DRIVER); //added 7/14
 		points = new ArrayList<LatLng>();
 		route = new Route();
 		IntentFilter filter = new IntentFilter(Const.INTENT_WALKER_STATUS);
@@ -391,6 +392,7 @@ public class UberTripFragment extends UberBaseFragment {
 		// if (PreferenceHelper.getInstance(activity).getRequestTime() == Const.NO_TIME)
 		// setRequestTime(SystemClock.e);
 		activity.btnNotification.setVisibility(View.VISIBLE);
+
 		startUpdateDriverLocation();
 		startCheckingStatusUpdate();
 	}
