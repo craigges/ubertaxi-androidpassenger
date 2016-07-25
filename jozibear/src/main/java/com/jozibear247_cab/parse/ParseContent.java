@@ -540,6 +540,11 @@ public class ParseContent {
 			if(jsonObject.has(Const.Params.DEST_LONGITUDE)) {
 				driver.setD_longitude(jsonObject.getDouble(Const.Params.DEST_LONGITUDE));
 			}
+
+			driver.setMake(jsonObject.getString(Const.Params.MAKE));
+			driver.setColor(jsonObject.getString(Const.Params.COLOR));
+			driver.setRegno(jsonObject.getString(Const.Params.REGNO));
+			driver.setPicture_car(jsonObject.getString(Const.Params.PICTURECAR));
 			Log.d("getDriverDetail", "[DST latD:" + driver.getD_latitude() + ", longD:"
 					+ driver.getD_longitude() + "] [SRC lat:" + driver.getLatitude() + ", long:"
 					+ driver.getLongitude() + "]");

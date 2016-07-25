@@ -30,6 +30,11 @@ public class Driver implements Parcelable {
 	private String lastDistance;
 	private Bill bill;
 
+	private String make;
+	private String regno;
+	private String color;
+	private String picture_car;
+
 	public Driver() {
 
 	}
@@ -47,6 +52,12 @@ public class Driver implements Parcelable {
 		this.rating = in.readDouble();
 		this.lastTime = in.readString();
 		this.lastDistance = in.readString();
+
+		this.make = in.readString();
+		this.regno = in.readString();
+		this.color = in.readString();
+		this.picture_car = in.readString();
+
 		this.bill = (Bill) in.readValue(Bill.class.getClassLoader());
 	}
 
@@ -154,6 +165,38 @@ public class Driver implements Parcelable {
 		this.d_longitude = d_longitude;
 	}
 
+	public void setMake(String make) {
+		this.make = make;
+	}
+
+	public void setRegno(String regno) {
+		this.regno = regno;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public void setPicture_car(String picture_car) {
+		this.picture_car = picture_car;
+	}
+
+	public String getPicture_car() {
+		return picture_car;
+	}
+
+	public String getMake() {
+		return make;
+	}
+
+	public String getRegno() {
+		return regno;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
 	/*
 	 * (non-Javadoc)
 	 *
@@ -185,7 +228,12 @@ public class Driver implements Parcelable {
 		dest.writeDouble(this.rating);
 		dest.writeString(this.lastTime);
 		dest.writeString(this.lastDistance);
+		dest.writeString(this.make);
+		dest.writeString(this.regno);
+		dest.writeString(this.color);
+		dest.writeSerializable(this.picture_car);
 		dest.writeValue(this.bill);
+
 	}
 
 	public static final Parcelable.Creator<Driver> CREATOR = new Parcelable.Creator() {

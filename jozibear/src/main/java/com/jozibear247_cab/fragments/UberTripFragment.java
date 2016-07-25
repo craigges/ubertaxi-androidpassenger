@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.location.Address;
 import android.location.Geocoder;
@@ -96,11 +97,11 @@ public class UberTripFragment extends UberBaseFragment {
 	private Route route;
 	ArrayList<LatLng> points;
 	private ParseContent parseContent;
-	private TextView tvTime, tvDist, tvDriverName, tvDriverPhone, tvRate,
-			tvStatus;
+	private TextView tvTime, tvDist, tvDriverName, tvDriverPhone, tvRate, tvStatus,
+					tvMake, tvColor, tvRegno, tvColorRect;
 	private Driver driver;
 	private Marker myMarker, markerDriver, destinationmarker;
-	private ImageView ivDriverPhoto;
+	private ImageView ivDriverPhoto, ivCarPhoto;
 	private LocationHelper locHelper;
 	private boolean isContinueStatusRequest;
 	private boolean isContinueDriverRequest;
@@ -198,9 +199,22 @@ public class UberTripFragment extends UberBaseFragment {
 		ratingBarTrip = (RatingBar) tripFragmentView.findViewById(R.id.ratingBarTrip);
 		ratingBarTrip.setRating((float) driver.getRating());
 
+		tvColor = (MyFontTextView)tripFragmentView.findViewById(R.id.tvColor);
+		tvColorRect = (MyFontTextView)tripFragmentView.findViewById(R.id.tvColorRect);
+		tvMake = (MyFontTextView)tripFragmentView.findViewById(R.id.tvMake);
+		tvRegno = (MyFontTextView)tripFragmentView.findViewById(R.id.tvRegNo);
+		ivCarPhoto = (ImageView)tripFragmentView.findViewById(R.id.ivCarPhoto);
+
+		tvMake.setText("Make: "+driver.getMake());
+		tvRegno.setText("Reg.No: "+driver.getRegno());
+//		tvColor.setText("Colour: "+driver.getColor());
+		try{
+			tvColorRect.setBackgroundColor(Color.parseColor(driver.getColor()));
+		}catch (Exception e) {
+			tvColorRect.setBackgroundColor(Color.BLACK);
+		}
 		tvDriverPhone.setText(driver.getPhone());
-		tvDriverName
-				.setText(driver.getFirstName() + " " + driver.getLastName());
+		tvDriverName.setText(driver.getFirstName() + " " + driver.getLastName());
 		tvStatus = (TextView) tripFragmentView.findViewById(R.id.tvStatus);
 		if (driver.getD_latitude() == 0.0 && driver.getD_longitude() == 0.0) {
 			shareeta.setVisibility(View.GONE);
@@ -213,8 +227,8 @@ public class UberTripFragment extends UberBaseFragment {
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 		// tvDist.setText(strDistance + "");
-		new AQuery(activity).id(ivDriverPhoto).progress(R.id.pBar)
-				.image(driver.getPicture(), true, true);
+		new AQuery(activity).id(ivDriverPhoto).progress(R.id.pBar).image(driver.getPicture(), true, true);
+		new AQuery(activity).id(ivCarPhoto).progress(R.id.pBar1).image(driver.getPicture_car(), true, true);
 		locHelper = new LocationHelper(activity);
 		locHelper.setLocationReceivedLister(new OnLocationReceived() {
 

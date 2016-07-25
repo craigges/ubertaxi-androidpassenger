@@ -16,17 +16,62 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/bg_name"
-            android:gravity="center_vertical"
             android:orientation="vertical" >
 
             <com.jozibear247_cab.component.MyFontTextView
                 android:id="@+id/tvDriverName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="@dimen/margin_legt_name_star"
-                android:text="Medium Text"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Name: Mandla Zuma"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/white" />
+
+            <com.jozibear247_cab.component.MyFontTextView
+                android:id="@+id/tvRegNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="@dimen/margin_legt_name_star"
+                android:text="Reg.No: YHX467GP"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/white" />
+
+            <com.jozibear247_cab.component.MyFontTextView
+                android:id="@+id/tvMake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="@dimen/margin_legt_name_star"
+                android:text="Toyota Corolla"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal" >
+                <com.jozibear247_cab.component.MyFontTextView
+                    android:id="@+id/tvColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_legt_name_star"
+                    android:text="Color: "
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/white" />
+
+                <com.jozibear247_cab.component.MyFontTextView
+                    android:id="@+id/tvColorRect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:ems="3"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
 
             <com.jozibear247_cab.component.MyFontTextView
                 android:id="@+id/tvDriverPhone"
@@ -89,7 +134,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/popup_margin_left" >
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"  >
 
         <include
             android:layout_width="wrap_content"
@@ -102,6 +148,28 @@
             android:layout_width="@dimen/width"
             android:layout_height="@dimen/height"
             android:layout_centerInParent="true"
+            android:src="@drawable/default_user"
+            app:border_color="@color/white"
+            app:border_width="2dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp" >
+
+        <include
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            layout="@layout/progressbar1" />
+
+        <com.mikhaellopez.circularimageview.CircleImageView
+            android:id="@+id/ivCarPhoto"
+            android:layout_width="@dimen/width"
+            android:layout_height="@dimen/height"
             android:src="@drawable/default_user"
             app:border_color="@color/white"
             app:border_width="2dp" />
