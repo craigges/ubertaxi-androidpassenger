@@ -15,10 +15,6 @@ import android.os.Parcelable;
 @SuppressWarnings("serial")
 public class Driver implements Parcelable {
 
-	/**
-	 * 
-	 */
-
 	private String firstName;
 	private String lastName;
 
@@ -33,6 +29,37 @@ public class Driver implements Parcelable {
 	private String lastTime;
 	private String lastDistance;
 	private Bill bill;
+
+	private String make;
+	private String regno;
+	private String color;
+	private String picture_car;
+
+	public Driver() {
+
+	}
+
+	public Driver(Parcel in) {
+		this.firstName = in.readString();
+		this.lastName = in.readString();
+		this.phone = in.readString();
+		this.bio = in.readString();
+		this.picture = in.readString();
+		this.latitude = in.readDouble();
+		this.longitude = in.readDouble();
+		this.d_latitude = in.readDouble();
+		this.d_longitude = in.readDouble();
+		this.rating = in.readDouble();
+		this.lastTime = in.readString();
+		this.lastDistance = in.readString();
+
+		this.make = in.readString();
+		this.regno = in.readString();
+		this.color = in.readString();
+		this.picture_car = in.readString();
+
+		this.bill = (Bill) in.readValue(Bill.class.getClassLoader());
+	}
 
 	public Bill getBill() {
 		return bill;
@@ -122,9 +149,57 @@ public class Driver implements Parcelable {
 		this.lastDistance = lastDistance;
 	}
 
+	public double getD_latitude() {
+		return d_latitude;
+	}
+
+	public void setD_latitude(double d_latitude) {
+		this.d_latitude = d_latitude;
+	}
+
+	public double getD_longitude() {
+		return d_longitude;
+	}
+
+	public void setD_longitude(double d_longitude) {
+		this.d_longitude = d_longitude;
+	}
+
+	public void setMake(String make) {
+		this.make = make;
+	}
+
+	public void setRegno(String regno) {
+		this.regno = regno;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public void setPicture_car(String picture_car) {
+		this.picture_car = picture_car;
+	}
+
+	public String getPicture_car() {
+		return picture_car;
+	}
+
+	public String getMake() {
+		return make;
+	}
+
+	public String getRegno() {
+		return regno;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see android.os.Parcelable#describeContents()
 	 */
 	@Override
@@ -141,22 +216,37 @@ public class Driver implements Parcelable {
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
 		// TODO Auto-generated method stub
+		dest.writeString(this.firstName);
+		dest.writeString(this.lastName);
+		dest.writeString(this.phone);
+		dest.writeString(this.bio);
+		dest.writeString(this.picture);
+		dest.writeDouble(this.latitude);
+		dest.writeDouble(this.longitude);
+		dest.writeDouble(this.d_latitude);
+		dest.writeDouble(this.d_longitude);
+		dest.writeDouble(this.rating);
+		dest.writeString(this.lastTime);
+		dest.writeString(this.lastDistance);
+		dest.writeString(this.make);
+		dest.writeString(this.regno);
+		dest.writeString(this.color);
+		dest.writeSerializable(this.picture_car);
+		dest.writeValue(this.bill);
 
 	}
 
-	public double getD_latitude() {
-		return d_latitude;
-	}
+	public static final Parcelable.Creator<Driver> CREATOR = new Parcelable.Creator() {
 
-	public void setD_latitude(double d_latitude) {
-		this.d_latitude = d_latitude;
-	}
+		@Override
+		public Object createFromParcel(Parcel source) {
+			return new Driver(source);
+		}
 
-	public double getD_longitude() {
-		return d_longitude;
-	}
+		@Override
+		public Object[] newArray(int size) {
+			return new Driver[size];
+		}
 
-	public void setD_longitude(double d_longitude) {
-		this.d_longitude = d_longitude;
-	}
+	};
 }

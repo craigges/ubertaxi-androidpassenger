@@ -148,9 +148,8 @@ public class ProfileActivity extends ActionBarBaseActivitiy implements
 		// TODO Auto-generated method stub
 		dbHelper = new DBHelper(getApplicationContext());
 		User user = dbHelper.getUser();
-		if (user.getPicture() != null)
-			aQuery.id(ivProfile).progress(R.id.pBar)
-					.image(user.getPicture(), imageOptions);
+//		if (!user.getPicture().isEmpty())
+			aQuery.id(ivProfile).progress(R.id.pBar).image(user.getPicture(), imageOptions);
 		etProfileFname.setText(user.getFname());
 		etProfileLName.setText(user.getLname());
 		etProfileEmail.setText(user.getEmail());
@@ -183,7 +182,7 @@ public class ProfileActivity extends ActionBarBaseActivitiy implements
 		} else etProfileZipcode.setText(user.getZipcode());
 		
 		Log.d("xxx", "from profile user   " + user.getPicture());
-		if (user.getPicture() != null) {
+		if (!user.getPicture().isEmpty()) {
 			aQuery.id(R.id.ivProfileProfile).image(user.getPicture(), true,
 					true, 200, 0, new BitmapAjaxCallback() {
 
@@ -197,12 +196,9 @@ public class ProfileActivity extends ActionBarBaseActivitiy implements
 								AppLog.Log(TAG, "URL path FROM AQUERY::" + url);
 								iv.setImageBitmap(bm);
 							}
-
 						}
-
 					});
 		}
-
 	}
 
 	private void onUpdateButtonClick() {
@@ -362,9 +358,9 @@ public class ProfileActivity extends ActionBarBaseActivitiy implements
 			showPictureDialog();
 			break;
 		case R.id.btnActionNotification:
-			// onBackPressed();
-			startActivity(new Intent(ProfileActivity.this,
-					MainDrawerActivity.class));
+			onBackPressed();
+//			startActivity(new Intent(ProfileActivity.this,
+//					MainDrawerActivity.class));
 			break;
 		case R.id.etprofileTimezone:
 			AlertDialog.Builder timezonebuilder = new Builder(this);
@@ -579,6 +575,6 @@ public class ProfileActivity extends ActionBarBaseActivitiy implements
 	public void onBackPressed() {
 
 		super.onBackPressed();
-		startActivity(new Intent(ProfileActivity.this, MainDrawerActivity.class));
+//		startActivity(new Intent(ProfileActivity.this, MainDrawerActivity.class));
 	}
 }

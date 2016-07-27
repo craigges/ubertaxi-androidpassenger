@@ -57,7 +57,7 @@ public class PlacesAutoCompleteAdapter extends ArrayAdapter<String> implements
 			@Override
 			protected FilterResults performFiltering(CharSequence constraint) {
 				FilterResults filterResults = new FilterResults();
-				if (constraint != null) {
+				if (constraint != null && constraint.toString().endsWith(" ")) {
 					// Retrieve the autocomplete results.
 					resultList = autocomplete(constraint.toString());
 

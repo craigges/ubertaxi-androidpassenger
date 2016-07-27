@@ -28,7 +28,6 @@ public class Const {
 		// private static final String HOST_URL =
 		// "http://192.168.0.19/uber_auto/public/";
 
-		//private static final String HOST_URL = "http://52.25.104.97/";
 //		public static final String HOST_URL = "http://52.49.122.63/";
 		public static final String HOST_URL = "http://www.jozibear247.com/";
 
@@ -188,6 +187,11 @@ public class Const {
 		public static final String BASE_PRICE = "base_price";
 		public static final String PRICE_PER_UNIT_DISTANCE = "price_per_unit_distance";
 		public static final String PRICE_PER_UNIT_TIME = "price_per_unit_time";
+
+		public static final String MAKE = "make";
+		public static final String COLOR = "color";
+		public static final String REGNO = "regno";
+		public static final String PICTURECAR = "picture_car";
 
 		public static final String COD = "payment_mode";
 		public static final String PAYPAL_DATA = "paypal_id";

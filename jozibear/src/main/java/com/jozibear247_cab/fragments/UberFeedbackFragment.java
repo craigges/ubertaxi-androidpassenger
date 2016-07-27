@@ -54,10 +54,11 @@ public class UberFeedbackFragment extends UberBaseFragment {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		driver = (Driver) getArguments().getParcelable(Const.DRIVER);
+		getArguments().remove(Const.DRIVER); //added 7/14
 		IntentFilter filter = new IntentFilter(Const.INTENT_PAYMENT_RESULT);
-		paymentResultReceiver = new PaymentResultReceiver();
-		LocalBroadcastManager.getInstance(getActivity()).registerReceiver(
-				paymentResultReceiver, filter);
+//		paymentResultReceiver = new PaymentResultReceiver();
+//		LocalBroadcastManager.getInstance(getActivity()).registerReceiver(
+//				paymentResultReceiver, filter);
 	}
 
 	@Override
@@ -205,7 +206,7 @@ public class UberFeedbackFragment extends UberBaseFragment {
 					activity.removeAllFragment(this, false, "");
 					activity.gotoMapFragment();
 				} else {
-					AndyUtils.showToast(
+					AndyUtils.showToastLong(
 							getString(R.string.text_account_blocked), activity);
 					PreferenceHelper.getInstance(activity).Logout();
 					activity.goToMainActivity();
@@ -292,11 +293,12 @@ public class UberFeedbackFragment extends UberBaseFragment {
 //					showBillWebDialog();
 //					m_invoiceDlg.dismiss();
 //
-//				} else {
-				AndyUtils.showCustomProgressDialog(activity,
-						getString(R.string.text_waiting_finish_payment), false, null);
+//				AndyUtils.showCustomProgressDialog(activity,
+//						getString(R.string.text_waiting_finish_payment), false, null);
 //					m_invoiceDlg.dismiss();
 //				}
+				m_bPayResult = true;
+				m_invoiceDlg.dismiss();
 			}
 		});
 

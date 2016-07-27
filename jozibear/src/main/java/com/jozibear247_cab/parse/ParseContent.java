@@ -246,7 +246,7 @@ public class ParseContent {
 
 				return true;
 			} else {
-				AndyUtils.showToast(jsonObject.getString(KEY_ERROR), activity);
+				AndyUtils.showToastLong(jsonObject.getString(KEY_ERROR), activity);
 				// AndyUtils.showErrorToast(jsonObject.getInt(KEY_ERROR_CODE),
 				// activity);
 				return false;
@@ -540,6 +540,11 @@ public class ParseContent {
 			if(jsonObject.has(Const.Params.DEST_LONGITUDE)) {
 				driver.setD_longitude(jsonObject.getDouble(Const.Params.DEST_LONGITUDE));
 			}
+
+			driver.setMake(jsonObject.getString(Const.Params.MAKE));
+			driver.setColor(jsonObject.getString(Const.Params.COLOR));
+			driver.setRegno(jsonObject.getString(Const.Params.REGNO));
+			driver.setPicture_car(jsonObject.getString(Const.Params.PICTURECAR));
 			Log.d("getDriverDetail", "[DST latD:" + driver.getD_latitude() + ", longD:"
 					+ driver.getD_longitude() + "] [SRC lat:" + driver.getLatitude() + ", long:"
 					+ driver.getLongitude() + "]");
@@ -547,8 +552,8 @@ public class ParseContent {
 			driver.setRating(jsonObject.getDouble(Const.Params.RATING));
 			JSONObject jsonObjectBill = new JSONObject(response)
 					.optJSONObject(BILL);
+			Bill bill = new Bill();
 			if (jsonObjectBill != null && jsonObjectBill.has(CURRENCY)) {
-				Bill bill = new Bill();
 				bill.setCurrency(jsonObjectBill.getString(CURRENCY));
 				bill.setDistance(new DecimalFormat("0.00").format(Double
 						.parseDouble(jsonObjectBill.getString(DISTANCE))));
@@ -572,9 +577,8 @@ public class ParseContent {
 //					bill.setDistance(new DecimalFormat("0.00").format(distance));
 					bill.setDistance(jsonObjectBill.getString(DISTANCE));
 				}
-
-				driver.setBill(bill);
 			}
+			driver.setBill(bill);
 			// driver.getBill().setUnit(object.getString(UNIT));
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
@@ -757,26 +761,26 @@ public class ParseContent {
 		applicationPages.setData("");
 		list.add(applicationPages);
 
-		applicationPages = new ApplicationPages();
-		applicationPages.setId(-2);
-		applicationPages.setTitle("Payment");
-		applicationPages.setData("");
-		list.add(applicationPages);
+//		applicationPages = new ApplicationPages();
+//		applicationPages.setId(-2);
+//		applicationPages.setTitle("Payment");
+//		applicationPages.setData("");
+//		list.add(applicationPages);
 
 		applicationPages = new ApplicationPages();
-		applicationPages.setId(-3);
+		applicationPages.setId(-2);
 		applicationPages.setTitle("History");
 		applicationPages.setData("");
 		list.add(applicationPages);
 
-		applicationPages = new ApplicationPages();
-		applicationPages.setId(-4);
-		applicationPages.setTitle("Free Rides");
-		applicationPages.setData("");
-		list.add(applicationPages);
+//		applicationPages = new ApplicationPages();
+//		applicationPages.setId(-4);
+//		applicationPages.setTitle("Free Rides");
+//		applicationPages.setData("");
+//		list.add(applicationPages);
 
 		applicationPages = new ApplicationPages();
-		applicationPages.setId(-5);
+		applicationPages.setId(-3);
 		applicationPages.setTitle("Promotions");
 		applicationPages.setData("");
 		list.add(applicationPages);

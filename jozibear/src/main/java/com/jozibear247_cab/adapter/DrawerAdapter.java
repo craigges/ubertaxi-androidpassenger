@@ -21,6 +21,8 @@ import com.jozibear247_cab.models.ApplicationPages;
  */
 public class DrawerAdapter extends BaseAdapter {
 
+//	private int images[] = { R.drawable.nav_profile, R.drawable.nav_payment,
+//			R.drawable.nav_support, R.drawable.nav_share };
 	private int images[] = { R.drawable.nav_profile, R.drawable.nav_payment,
 			R.drawable.nav_support, R.drawable.nav_share };
 
@@ -77,14 +79,14 @@ public class DrawerAdapter extends BaseAdapter {
 		}
 		if (position == 0) {
 			aQuery.id(holder.ivMenuImage).image(R.drawable.nav_profile);
+//		} else if (position == 1) {
+//			aQuery.id(holder.ivMenuImage).image(R.drawable.nav_payment);
 		} else if (position == 1) {
-			aQuery.id(holder.ivMenuImage).image(R.drawable.nav_payment);
-		} else if (position == 2) {
 			aQuery.id(holder.ivMenuImage).image(R.drawable.ub__nav_history);
 
-		} else if (position == 3) {
-			aQuery.id(holder.ivMenuImage).image(R.drawable.nav_referral);
-		} else if (position == 4) {
+//		} else if (position == 3) {
+//			aQuery.id(holder.ivMenuImage).image(R.drawable.nav_referral);
+		} else if (position == 2) {
 			aQuery.id(holder.ivMenuImage).image(R.drawable.promo);
 		} else if (position == (listMenu.size() - 1)) {
 

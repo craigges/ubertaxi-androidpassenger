@@ -25,7 +25,7 @@
     <!-- Towber Resolution -->
     <dimen name="map_margin_bottom">50dp</dimen>
     <dimen name="gridview_height">280dp</dimen>
-    <dimen name="margin_legt_name_star">130dp</dimen>
+    <dimen name="margin_legt_name_star">100dp</dimen>
 
     <!-- Newly Added for Profile Screen -->
 

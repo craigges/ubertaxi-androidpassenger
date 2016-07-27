@@ -701,10 +701,10 @@ public class UberRegisterFragment extends UberBaseFragmentRegister
 			if (pContent.isSuccessWithStoreId(response)) {
 				Toast.makeText(activity,
 						getString(R.string.toast_register_success),
-						Toast.LENGTH_SHORT).show();
+						Toast.LENGTH_LONG).show();
 				// PreferenceHelper.getInstance(activity).putPassword(etPassword.getText().toString());
-				pContent.parseUserAndStoreToDb(response);
-				PreferenceHelper.getInstance(activity).putPassword(etPassword.getText().toString());
+//				pContent.parseUserAndStoreToDb(response);
+//				PreferenceHelper.getInstance(activity).putPassword(etPassword.getText().toString());
 				// JSONObject jsonObject;
 				// try {
 				// jsonObject = new JSONObject(response);

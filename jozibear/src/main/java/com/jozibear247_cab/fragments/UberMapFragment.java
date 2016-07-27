@@ -9,11 +9,14 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -24,6 +27,8 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.Interpolator;
+import android.view.animation.LinearInterpolator;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -48,6 +53,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnCameraChangeListener;
 import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationChangeListener;
+import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
@@ -91,7 +97,7 @@ import java.util.TimerTask;
 
 public class UberMapFragment extends UberBaseFragment implements
 		OnProgressCancelListener {
-
+	private static UberMapFragment instance;
 	private PlacesAutoCompleteAdapter adapter;
 	private AutoCompleteTextView etSource, enterdestination;
 	private ParseContent pContent;
@@ -122,13 +128,13 @@ public class UberMapFragment extends UberBaseFragment implements
 	private int selectedPostion = -1;
 	private boolean isGettingVehicalType = true;
 
-	private boolean isLocationFound;
+//	private boolean isLocationFound;
 	// private Animation topToBottomAnimation, bottomToTopAnimation,
 	// buttonTopToBottomAnimation;
 
-	private MyFontButton btnSelectService, btnconfirmservice,
+	private MyFontButton btnSelectService, btnRequestCap,
 			btnratecard, btnfareestimate, btnpromocard;
-	private static MyFontButton bubble;
+//	private static MyFontButton bubble;
 	private static SlidingDrawer drawer;
 	private static LinearLayout markers;
 	private static RelativeLayout pickuppop;
@@ -145,32 +151,37 @@ public class UberMapFragment extends UberBaseFragment implements
 	private LatLng destlatlng_places;
 	private View mapView;
 	// PopupWindow window;
+	private AlertDialog promoCodeDlg;
+	private boolean isRequestCapNow;
 
-	public static UberMapFragment newInstance() {
-		UberMapFragment mapFragment = new UberMapFragment();
-		return mapFragment;
+	private UberMapFragment() {
 	}
 
-	TextView markerBubblePickMeUp;
+	public static UberMapFragment newInstance() {
+		if(instance == null) {
+			instance = new UberMapFragment();
+		}
+
+		return instance;
+	}
+
+	static TextView markerBubblePickMeUp;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		mapView = inflater.inflate(R.layout.fragment_map, container, false);
-		isLocationFound = false;
-		inflater = (LayoutInflater) activity
-				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		markerBubblePickMeUp = (TextView) mapView
-				.findViewById(R.id.markerBubblePickMeUp);
+//		isLocationFound = false;
+		inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		markerBubblePickMeUp = (MyFontButton) mapView.findViewById(R.id.markerBubblePickMeUp);
 		markerBubblePickMeUp.setOnClickListener(this);
 
-		bubble = (MyFontButton) mapView.findViewById(R.id.markerBubblePickMeUp);
+//		bubble = (MyFontButton) mapView.findViewById(R.id.markerBubblePickMeUp);
 		selectedPostion = 0;/* modified by Amal *//* reverted back */
 
 		listViewType = (GridView) mapView.findViewById(R.id.gvTypes);
 
-		promopref = getActivity().getSharedPreferences("promocode",
-				Context.MODE_PRIVATE);
+		promopref = getActivity().getSharedPreferences("promocode", Context.MODE_PRIVATE);
 		editorpromo = promopref.edit();
 
 		markers = (LinearLayout) mapView.findViewById(R.id.layoutMarker);
@@ -195,41 +206,34 @@ public class UberMapFragment extends UberBaseFragment implements
 					break;
 				}
 				return true;
-
 			}
 		});
 		btnMyLocation = (ImageButton) mapView.findViewById(R.id.btnMyLocation);
-		btnSelectService = (MyFontButton) mapView
-				.findViewById(R.id.btnSelectService);
+		btnSelectService = (MyFontButton) mapView.findViewById(R.id.btnSelectService);
 		btnSelectService.setOnClickListener(this);
 
-		btnconfirmservice = (MyFontButton) mapView
-				.findViewById(R.id.btnconfirmservice);
-		btnconfirmservice.setOnClickListener(this);
+		btnRequestCap = (MyFontButton) mapView.findViewById(R.id.btn_request_cap);
+		btnRequestCap.setOnClickListener(this);
 //		btnpayment = (MyFontButton) mapView.findViewById(R.id.btnpayment);
 //		btnpayment.setOnClickListener(this);
-		enterdestination = (AutoCompleteTextView) mapView
-				.findViewById(R.id.EnterDestination);
-		destaddlayout = (RelativeLayout) mapView
-				.findViewById(R.id.destinationaddlayout);
+		enterdestination = (AutoCompleteTextView) mapView.findViewById(R.id.EnterDestination);
+		destaddlayout = (RelativeLayout) mapView.findViewById(R.id.destinationaddlayout);
 		clearfield = (ImageButton) mapView.findViewById(R.id.clearfield);
 		clearfield.setOnClickListener(this);
 
-		btnfareestimate = (MyFontButton) mapView
-				.findViewById(R.id.btnfareestimate);
+		btnfareestimate = (MyFontButton) mapView.findViewById(R.id.btnfareestimate);
 		btnfareestimate.setOnClickListener(this);
 		eta = (TextView) mapView.findViewById(R.id.eta);
 		btnratecard = (MyFontButton) mapView.findViewById(R.id.btnratecard);
 		btnratecard.setOnClickListener(this);
 		btnpromocard = (MyFontButton) mapView.findViewById(R.id.btnpromocode);
 		btnpromocard.setOnClickListener(this);
-		slidedown = AnimationUtils.loadAnimation(getActivity(),
-				R.anim.destaddtopbottom);
-		slideup = AnimationUtils.loadAnimation(getActivity(),
-				R.anim.destaddbottomtop);
+		slidedown = AnimationUtils.loadAnimation(getActivity(), R.anim.destaddtopbottom);
+		slideup = AnimationUtils.loadAnimation(getActivity(), R.anim.destaddbottomtop);
 		// etSource = (AutoCompleteTextView)
 		// view.findViewById(R.id.etEnterSouce);
 		drawer = (SlidingDrawer) mapView.findViewById(R.id.drawer);
+		isRequestCapNow = false;
 		setUpMapIfNeeded();
 		hideKeyboard();
 
@@ -240,7 +244,6 @@ public class UberMapFragment extends UberBaseFragment implements
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-
 		drivermarkers = new ArrayList<Marker>();
 
 		btnadddestination = activity.btnadddestination;
@@ -257,7 +260,6 @@ public class UberMapFragment extends UberBaseFragment implements
 
 		walkerlist = new ArrayList<Walkerinfo>();
 		walkerarrayformarker = new ArrayList<UberMapFragment.walkerinfo_marker>();
-
 	}
 
 	@Override
@@ -265,8 +267,7 @@ public class UberMapFragment extends UberBaseFragment implements
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
 
-		adapter = new PlacesAutoCompleteAdapter(activity,
-				R.layout.autocomplete_list_text);
+		adapter = new PlacesAutoCompleteAdapter(activity, R.layout.autocomplete_list_text);
 		etSource.setAdapter(adapter);
 
 		enterdestination.setAdapter(adapter);
@@ -305,7 +306,6 @@ public class UberMapFragment extends UberBaseFragment implements
 						// TODO Auto-generated method stub
 						final LatLng latlng = getLocationFromAddress(selectedDestPlace);
 						if (latlng != null) {
-
 							getActivity().runOnUiThread(new Runnable() {
 
 								@Override
@@ -317,15 +317,11 @@ public class UberMapFragment extends UberBaseFragment implements
 
 									animateCameraToMarker(latlng);
 									getallproviders();
-
 								}
 							});
-
 						}
-
 					}
 				}).start();
-
 			}
 		});
 		listType = new ArrayList<VehicalType>();
@@ -356,10 +352,8 @@ public class UberMapFragment extends UberBaseFragment implements
 					drawer.animateClose();
 					drawer.unlock();
 				}
-
 			}
 		});
-
 	}
 
 	/*
@@ -375,7 +369,6 @@ public class UberMapFragment extends UberBaseFragment implements
 		activity.btnNotification.setVisibility(View.INVISIBLE);
 		etSource.setVisibility(View.VISIBLE);
 		startCheckingStatusUpdate();
-
 	}
 
 	private void setUpMapIfNeeded() {
@@ -411,13 +404,10 @@ public class UberMapFragment extends UberBaseFragment implements
 					// TODO Auto-generated method stub
 					Location loc = map.getMyLocation();
 					if (loc != null) {
-						LatLng latLang = new LatLng(loc.getLatitude(), loc
-								.getLongitude());
-
+						LatLng latLang = new LatLng(loc.getLatitude(), loc.getLongitude());
 						animateCameraToMarker(latLang);
 						getallproviders();
 					}
-
 				}
 			});
 
@@ -439,7 +429,6 @@ public class UberMapFragment extends UberBaseFragment implements
 						// if (pickuppop.getVisibility() == View.VISIBLE)
 						// gettime();
 						getAddressFromLocation(camPos.target, etSource);
-
 					}
 					isMapTouched = false;
 					// setMarker(camPos.target);
@@ -462,18 +451,15 @@ public class UberMapFragment extends UberBaseFragment implements
 			@Override
 			public void onConnected(Bundle connectionHint) {
 				// TODO Auto-generated method stub
-
 				Location loc = client.getLastLocation();
 
 				if (loc != null) {
-
 					LatLng latLang = new LatLng(loc.getLatitude(),
 							loc.getLongitude());
 					animateCameraToMarker(latLang);
 				} else {
 					activity.showLocationOffDialog();
 				}
-
 			}
 		}, new OnConnectionFailedListener() {
 
@@ -490,9 +476,7 @@ public class UberMapFragment extends UberBaseFragment implements
 	public void onPause() {
 		// TODO Auto-generated method stub
 		stopCheckingStatusUpdate();
-
 		super.onPause();
-
 	}
 
 	@Override
@@ -513,7 +497,6 @@ public class UberMapFragment extends UberBaseFragment implements
 				parent.removeView(mapView);
 			}
 		}
-
 		map = null;
 	}
 
@@ -521,29 +504,27 @@ public class UberMapFragment extends UberBaseFragment implements
 	public void onDestroy() {
 		super.onDestroy();
 
-		LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(
-				walkerReceiver);
+		LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(walkerReceiver);
 		activity.tvTitle.setVisibility(View.VISIBLE);
 		etSource.setVisibility(View.GONE);
 	}
 
 	public static void setmarkerVisibile() {
 		// markers.setVisibility(View.VISIBLE);
-		bubble.setVisibility(View.VISIBLE);
+		markerBubblePickMeUp.setVisibility(View.VISIBLE);
 		drawer.setVisibility(View.VISIBLE);
 	}
 
-	public static void setmarkerInvisibile() {
+	public void setmarkerInvisibile() {
 		// markers.setVisibility(View.INVISIBLE);
-		bubble.setVisibility(View.INVISIBLE);
+		markerBubblePickMeUp.setVisibility(View.INVISIBLE);
 		drawer.setVisibility(View.INVISIBLE);
 	}
 
-	public static void setpickpopupVisible() {
+	public void setpickpopupVisible() {
 		MainDrawerActivity.popon = true;
 		pickuppop.setVisibility(View.VISIBLE);
 		btnadddestination.setVisibility(View.VISIBLE);
-
 	}
 
 	public static void setpickpopupInvisible() {
@@ -556,29 +537,42 @@ public class UberMapFragment extends UberBaseFragment implements
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-
 		case R.id.markerBubblePickMeUp:
-
 			if (isValidate()) {
-				setmarkerInvisibile();
-				setpickpopupVisible();
-				gettime();
-
-				try {
-					btnconfirmservice.setText("Request "
-							+ listType.get(selectedPostion).getName());
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
+				new AlertDialog.Builder(getActivity())
+						.setTitle("")
+						.setMessage("Cash Only Accepted")
+						.setPositiveButton(android.R.string.ok,
+								new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog,
+														int which) {
+										setmarkerInvisibile();
+										setpickpopupVisible();
+										gettime();
+										try {
+											btnRequestCap.setText("Request "
+													+ listType.get(selectedPostion).getName());
+										} catch (Exception e) {
+											// TODO Auto-generated catch block
+											e.printStackTrace();
+										}
+									}
+								})
+						.setNegativeButton(android.R.string.cancel,
+								new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog,
+														int which) {
+										dialog.cancel();
+									}
+								})
+						.setIcon(android.R.drawable.ic_dialog_alert)
+						.show();
 			}
 
 			// getCards(); modified by amal
 			/*
 			 * if (isValidate()) { requestCaps(); //modified by amal }
 			 */
-
 			break;
 		case R.id.btnSelectService:
 			if (drawer.isOpened()) {
@@ -590,14 +584,14 @@ public class UberMapFragment extends UberBaseFragment implements
 			}
 			break;
 
-		case R.id.btnconfirmservice:
+		case R.id.btn_request_cap:
 //			payment_type = 3; // PayGate
 //			Log.d("amal", Integer.toString(payment_type));
-			btnconfirmservice.setEnabled(false);
-			btnconfirmservice.postDelayed(new Runnable() {
+			btnRequestCap.setEnabled(false);
+			btnRequestCap.postDelayed(new Runnable() {
 				@Override
 				public void run() {
-					btnconfirmservice.setEnabled(true);
+					btnRequestCap.setEnabled(true);
 				}
 			}, 3000);
 //			if (payment_type == -1) {
@@ -619,20 +613,20 @@ public class UberMapFragment extends UberBaseFragment implements
 			if (/*payment_type == 1
 					|| payment_type == 2
 					|| payment_type == 3
-					&& */!TextUtils
-							.isEmpty(enterdestination.getText().toString())) {
+					&& */!TextUtils.isEmpty(enterdestination.getText().toString())) {
 				Log.d("amal", "going to pick up");
-				requestCaps();
+				isRequestCapNow = true;
+				getDistance();
 			} else if (destaddlayout.getVisibility() == View.VISIBLE
 					&& TextUtils.isEmpty(enterdestination.getText().toString())) {
 				Toast.makeText(getActivity(), "Enter destination address",
 						Toast.LENGTH_LONG).show();
 
 			} else {
-				destaddlayout.setVisibility(View.VISIBLE);
-				destaddlayout.startAnimation(slidedown);
 				Toast.makeText(getActivity(), "Enter destination address",
 						Toast.LENGTH_LONG).show();
+				destaddlayout.setVisibility(View.VISIBLE);
+				destaddlayout.startAnimation(slidedown);
 			}
 			break;
 //		case R.id.btnpayment:
@@ -644,14 +638,13 @@ public class UberMapFragment extends UberBaseFragment implements
 			break;
 		case R.id.btnfareestimate:
 			if (enterdestination.getVisibility() == View.VISIBLE
-					&& !TextUtils
-							.isEmpty(enterdestination.getText().toString())) {
+					&& !TextUtils.isEmpty(enterdestination.getText().toString())) {
+				isRequestCapNow = false;
 				getDistance();
 			} else if (destaddlayout.getVisibility() == View.VISIBLE
 					&& TextUtils.isEmpty(enterdestination.getText().toString())) {
 				Toast.makeText(getActivity(), "Enter destination address",
 						Toast.LENGTH_LONG).show();
-
 			} else {
 				destaddlayout.setVisibility(View.VISIBLE);
 				destaddlayout.startAnimation(slidedown);
@@ -676,23 +669,16 @@ public class UberMapFragment extends UberBaseFragment implements
 			AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 			LayoutInflater inflate = getActivity().getLayoutInflater();
 			View contentview = inflate.inflate(R.layout.ratecard, null);
-			View titleview = inflate
-					.inflate(R.layout.ratecardcustomtitle, null);
+			View titleview = inflate.inflate(R.layout.ratecardcustomtitle, null);
 			builder.setView(contentview).setCustomTitle(titleview);
 			final AlertDialog mDialog = builder.create();
 
 			MyFontTextView ratecardtitle;
-			TextView baseprice,
-			distanceprice,
-			timeprice;
-			baseprice = (TextView) contentview
-					.findViewById(R.id.Basepricefield);
-			distanceprice = (TextView) contentview
-					.findViewById(R.id.Distancepricefield);
-			timeprice = (TextView) contentview
-					.findViewById(R.id.Timepricefield);
-			ratecardtitle = (MyFontTextView) titleview
-					.findViewById(R.id.ratecardtitle);
+			TextView baseprice, distanceprice, timeprice;
+			baseprice = (TextView) contentview.findViewById(R.id.Basepricefield);
+			distanceprice = (TextView) contentview.findViewById(R.id.Distancepricefield);
+			timeprice = (TextView) contentview.findViewById(R.id.Timepricefield);
+			ratecardtitle = (MyFontTextView) titleview.findViewById(R.id.ratecardtitle);
 
 			baseprice.setText(listType.get(selectedPostion).getCurrency() + " "
 					+ listType.get(selectedPostion).getBasePrice());
@@ -713,14 +699,11 @@ public class UberMapFragment extends UberBaseFragment implements
 
 		case R.id.clearfield:
 			if (TextUtils.isEmpty(enterdestination.getText().toString())) {
-
 				destaddlayout.startAnimation(slideup);
 				destaddlayout.setVisibility(View.GONE);
-
 			}
 			if (!TextUtils.isEmpty(enterdestination.getText().toString()))
 				enterdestination.setText("");
-
 			break;
 		default:
 			break;
@@ -733,11 +716,9 @@ public class UberMapFragment extends UberBaseFragment implements
 		Log.d("pavan", "in show option");
 		listViewType.setVisibility(View.GONE);
 		drawer.setVisibility(View.GONE);
-
 	}
 
 	private void getAddressFromLocation(final LatLng latlng, final EditText et) {
-
 		et.setText("Waiting for Address");
 		et.setTextColor(Color.GRAY);
 		new Thread(new Runnable() {
@@ -745,7 +726,6 @@ public class UberMapFragment extends UberBaseFragment implements
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-
 				Geocoder gCoder = new Geocoder(getActivity());
 				try {
 					final List<Address> list = gCoder.getFromLocation(
@@ -754,7 +734,6 @@ public class UberMapFragment extends UberBaseFragment implements
 						Address address = list.get(0);
 						StringBuilder sb = new StringBuilder();
 						if (address.getAddressLine(0) != null) {
-
 							sb.append(address.getAddressLine(0)).append(", ");
 						}
 						sb.append(address.getLocality()).append(", ");
@@ -775,20 +754,16 @@ public class UberMapFragment extends UberBaseFragment implements
 								et.setFocusable(false);
 								et.setFocusableInTouchMode(false);
 								et.setText(strAddress);
-								et.setTextColor(getResources().getColor(
-										android.R.color.black));
+								et.setTextColor(getResources().getColor(android.R.color.black));
 								et.setFocusable(true);
 								et.setFocusableInTouchMode(true);
-
 							} else {
 								et.setText("");
-								et.setTextColor(getResources().getColor(
-										android.R.color.black));
+								et.setTextColor(getResources().getColor(android.R.color.black));
 							}
 							etSource.setEnabled(true);
 						}
 					});
-
 				} catch (IOException exc) {
 					exc.printStackTrace();
 					getAddressFromGooleApi(latlng);
@@ -796,7 +771,6 @@ public class UberMapFragment extends UberBaseFragment implements
 			}
 
 		}).start();
-
 	}
 
 	private void animateCameraToMarker(LatLng latLng) {
@@ -816,15 +790,10 @@ public class UberMapFragment extends UberBaseFragment implements
 		Geocoder gCoder = new Geocoder(getActivity());
 		try {
 			final List<Address> list = gCoder.getFromLocationName(place, 1);
-
 			// TODO Auto-generated method stub
 			if (list != null && list.size() > 0) {
-
-				loc = new LatLng(list.get(0).getLatitude(), list.get(0)
-						.getLongitude());
-
+				loc = new LatLng(list.get(0).getLatitude(), list.get(0).getLongitude());
 			}
-
 		} catch (IOException e) {
 			getlocfromaddressfromGoogleApi(place);
 			if (destlatlng_places != null)
@@ -839,29 +808,24 @@ public class UberMapFragment extends UberBaseFragment implements
 	public void onProgressCancel() {
 		stopCheckingStatusUpdate();
 		cancleRequest();
-
 		// stopCheckingStatusUpdate();
 	}
 
 	private void getAddressFromGooleApi(LatLng latlong) {
-
 		// call google api here
 		AndyUtils.removeCustomProgressDialog();
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put(Const.URL, Const.ServiceType.GOOGLE_LOCATION + latlong.latitude
 				+ "," + latlong.longitude);
 		AppLog.Log("pavan", Const.URL);
-		new HttpRequester(activity, map, Const.ServiceCode.GET_ADDRESS, true,
-				this);
+		new HttpRequester(activity, map, Const.ServiceCode.GET_ADDRESS, true, this);
 	}
 
 	private void getlocfromaddressfromGoogleApi(String address) {
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put(Const.URL, Const.ServiceType.GOOGLE_ADDRESS + address);
 		AppLog.Log("pavan", Const.URL);
-		new HttpRequester(activity, map, Const.ServiceCode.GET_LOCATION, true,
-				this);
-
+		new HttpRequester(activity, map, Const.ServiceCode.GET_LOCATION, true, this);
 	}
 
 	/*
@@ -878,10 +842,8 @@ public class UberMapFragment extends UberBaseFragment implements
 		} else if (selectedPostion == -1) {
 			msg = getString(R.string.text_select_type);
 		} else if (TextUtils.isEmpty(etSource.getText().toString())
-				|| etSource.getText().toString()
-						.equalsIgnoreCase("Waiting for Address")) {
+				|| etSource.getText().toString().equalsIgnoreCase("Waiting for Address")) {
 			msg = getString(R.string.text_waiting_for_address);
-
 		}
 		if (msg == null)
 			return true;
@@ -892,47 +854,39 @@ public class UberMapFragment extends UberBaseFragment implements
 	private void paydebt() {
 		Log.d("amal", "in here");
 		if (!AndyUtils.isNetworkAvailable(activity)) {
-			AndyUtils.showToast(getResources().getString(R.string.no_internet),
-					activity);
+			AndyUtils.showToast(getResources().getString(R.string.no_internet), activity);
 			return;
 		}
 		AndyUtils.showCustomProgressDialog(activity,
 				getString(R.string.text_creating_request), true, null);
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put(Const.URL, Const.ServiceType.PAY_DEBT);
-		map.put(Const.Params.TOKEN,
-				PreferenceHelper.getInstance(activity).getSessionToken());
+		map.put(Const.Params.TOKEN, PreferenceHelper.getInstance(activity).getSessionToken());
 		map.put(Const.Params.ID, PreferenceHelper.getInstance(activity).getUserId());
 		new HttpRequester(activity, map, Const.ServiceCode.PAY_DEBT, this);
-
 	}
 
 	private void requestCaps() {
 		if (!AndyUtils.isNetworkAvailable(activity)) {
-			AndyUtils.showToast(getResources().getString(R.string.no_internet),
-					activity);
+			AndyUtils.showToast(getResources().getString(R.string.no_internet), activity);
 			return;
 		}
 		AndyUtils.showCustomProgressDialog(activity,
 				getString(R.string.text_creating_request), true, null);
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put(Const.URL, Const.ServiceType.CREATE_REQUEST);
-		map.put(Const.Params.TOKEN,
-				PreferenceHelper.getInstance(activity).getSessionToken());
+		map.put(Const.Params.TOKEN, PreferenceHelper.getInstance(activity).getSessionToken());
 		map.put(Const.Params.ID, PreferenceHelper.getInstance(activity).getUserId());
 		map.put(Const.Params.LATITUDE, String.valueOf(curretLatLng.latitude));
 		map.put(Const.Params.LONGITUDE, String.valueOf(curretLatLng.longitude));
-		map.put(Const.Params.TYPE,
-				String.valueOf(listType.get(selectedPostion).getId()));
+		map.put(Const.Params.TYPE, String.valueOf(listType.get(selectedPostion).getId()));
 		if (enterdestination.getVisibility() == View.VISIBLE
 				&& !TextUtils.isEmpty(enterdestination.getText().toString())) {
 			LatLng destlatlng = getLocationFromAddress(enterdestination
 					.getText().toString());
 			if (destlatlng != null) {
-				map.put(Const.Params.DEST_LATITUDE,
-						String.valueOf(destlatlng.latitude));
-				map.put(Const.Params.DEST_LONGITUDE,
-						String.valueOf(destlatlng.longitude));
+				map.put(Const.Params.DEST_LATITUDE, String.valueOf(destlatlng.latitude));
+				map.put(Const.Params.DEST_LONGITUDE, String.valueOf(destlatlng.longitude));
 			} else {
 				AndyUtils.removeCustomProgressDialog();
 				Toast.makeText(activity, "Please Enter The Address Correctly",
@@ -949,7 +903,6 @@ public class UberMapFragment extends UberBaseFragment implements
 		map.put(Const.Params.DISTANCE, "1");
 		Log.d("xxx", "map " + map.toString());
 		new HttpRequester(activity, map, Const.ServiceCode.CREATE_REQUEST, this);
-
 	}
 
 	/*
@@ -989,8 +942,7 @@ public class UberMapFragment extends UberBaseFragment implements
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					AlertDialog.Builder debtalert = new AlertDialog.Builder(
-							activity);
+					AlertDialog.Builder debtalert = new AlertDialog.Builder(activity);
 					debtalert
 							.setTitle("Could not request ride")
 							.setMessage(errormsg)
@@ -1004,7 +956,6 @@ public class UberMapFragment extends UberBaseFragment implements
 											// TODO Auto-generated method stub
 											paydebt_indicator = 1;
 											getCards();
-
 										}
 
 									});
@@ -1019,12 +970,10 @@ public class UberMapFragment extends UberBaseFragment implements
 								}
 							});
 					debtalert.show();
-
 				}
 			}
 			break;
 		case Const.ServiceCode.GET_REQUEST_STATUS:
-
 			if (activity.pContent.isSuccess(response)) {
 				switch (activity.pContent.checkRequestStatus(response)) {
 				case Const.IS_WALK_STARTED:
@@ -1049,8 +998,7 @@ public class UberMapFragment extends UberBaseFragment implements
 				case Const.IS_REQEUST_CREATED:
 					if (PreferenceHelper.getInstance(activity).getRequestId() != Const.NO_REQUEST)
 						AndyUtils.showCustomProgressDialog(activity,
-								getString(R.string.text_contacting), false,
-								this);
+								getString(R.string.text_contacting), false, this);
 					isContinueRequest = true;
 					break;
 				case Const.NO_REQUEST:
@@ -1093,9 +1041,7 @@ public class UberMapFragment extends UberBaseFragment implements
 			}
 			break;
 		case Const.ServiceCode.CANCEL_REQUEST:
-
 			Log.d("mahi", "response in cancel request" + response);
-
 			if (activity.pContent.isSuccess(response)) {
 
 			}
@@ -1117,31 +1063,25 @@ public class UberMapFragment extends UberBaseFragment implements
 			break;
 		/* added by amal */
 		case Const.ServiceCode.GET_CARDS:
-
 			Log.d("amal", "GET CARD" + response);
-
 			if (pContent.isSuccess(response)) {
 				ArrayList<Card> listCards;
 				listCards = new ArrayList<Card>();
 				listCards.clear();
 				pContent.parseCards(response, listCards);
 				if (listCards.size() > 0) {
-
 					if (paydebt_indicator == 1) {
 						paydebt();
 						paydebt_indicator = 0;
 					} else
 						requestCaps();
-
 				}
 				adapter.notifyDataSetChanged();
 			} else {
 				Log.d("yyy", "in else of 0 card");
 				startActivity(new Intent(getActivity(),
 						UberViewPaymentActivity.class));
-
 			}
-
 			AndyUtils.removeCustomProgressDialog();
 			break;
 
@@ -1159,101 +1099,65 @@ public class UberMapFragment extends UberBaseFragment implements
 			AndyUtils.removeCustomProgressDialog();
 			Log.d("amal", "in distance success" + response);
 			if (response != null) {
-
 				try {
 					JSONObject jObject = new JSONObject(response);
-
 					if (jObject.getString("status").equals("OK")) {
-
 						JSONArray jaArray = jObject.getJSONArray("rows");
-
 						for (int i = 0; i < jaArray.length(); i++) {
-
 							JSONObject jobj = jaArray.getJSONObject(i);
-
 							JSONArray jaArray2 = jobj.getJSONArray("elements");
-
 							for (int j = 0; j < jaArray2.length(); j++) {
-
 								JSONObject jobj1 = jaArray2.getJSONObject(j);
-
-								JSONObject jobj_distance = jobj1
-										.getJSONObject("distance");
+								JSONObject jobj_distance = jobj1.getJSONObject("distance");
 								Log.d("amal",
 										"distance "
-												+ jobj_distance
-														.getString("text")
+												+ jobj_distance.getString("text")
 												+ " , "
-												+ jobj_distance
-														.getString("value"));
+												+ jobj_distance.getString("value"));
 
-								JSONObject jobj_duration = jobj1
-										.getJSONObject("duration");
+								JSONObject jobj_duration = jobj1.getJSONObject("duration");
 								Log.d("amal",
 										"distance "
-												+ jobj_duration
-														.getString("text")
+												+ jobj_duration.getString("text")
 												+ " , "
-												+ jobj_duration
-														.getString("value"));
+												+ jobj_duration.getString("value"));
 
 								duration = jobj_duration.getString("value");
 								distance = jobj_distance.getString("value");
 								getEstimation(distance, duration);
-
 							}
-
 						}
-
 					}
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-
 			}
 
 			break;
 		case Const.ServiceCode.GET_MAP_TIME:
 			if (response != null) {
-
 				try {
 					JSONObject jObject = new JSONObject(response);
-
 					if (jObject.getString("status").equals("OK")) {
-
 						JSONArray jaArray = jObject.getJSONArray("rows");
-
 						for (int i = 0; i < jaArray.length(); i++) {
-
 							JSONObject jobj = jaArray.getJSONObject(i);
-
 							JSONArray jaArray2 = jobj.getJSONArray("elements");
-
 							for (int j = 0; j < jaArray2.length(); j++) {
-
 								JSONObject jobj1 = jaArray2.getJSONObject(j);
-
-								JSONObject jobj_distance = jobj1
-										.getJSONObject("distance");
-
-								JSONObject jobj_duration = jobj1
-										.getJSONObject("duration");
-
+								JSONObject jobj_distance = jobj1.getJSONObject("distance");
+								JSONObject jobj_duration = jobj1.getJSONObject("duration");
 								duration = jobj_duration.getString("text");
 								eta.setText("Pick up time is approximately "
 										+ duration);
-
 							}
-
 						}
-
 					}
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-
 			}
 
 			AndyUtils.removeCustomProgressDialog();
@@ -1266,12 +1170,32 @@ public class UberMapFragment extends UberBaseFragment implements
 				try {
 					JSONObject jObject = new JSONObject(response);
 					if (jObject.getString("success").equals("true")) {
-
-						ShowFare(jObject.getString("estimated_fare"),
-								jObject.getString("currency"));
-
+						if(isRequestCapNow) {
+							new AlertDialog.Builder(getActivity())
+									.setTitle("")
+									.setMessage(
+											"Estimated Fare = " + jObject.getString("currency") + " " + jObject.getString("estimated_fare"))
+									.setPositiveButton(android.R.string.ok,
+											new DialogInterface.OnClickListener() {
+												public void onClick(DialogInterface dialog,
+																	int which) {
+													requestCaps();
+												}
+											})
+									.setNegativeButton(android.R.string.cancel,
+											new DialogInterface.OnClickListener() {
+												public void onClick(DialogInterface dialog,
+																	int which) {
+													dialog.cancel();
+												}
+											})
+									.setIcon(android.R.drawable.ic_dialog_alert)
+									.show();
+						} else {
+							ShowFare(jObject.getString("estimated_fare"),
+									jObject.getString("currency"));
+						}
 					}
-
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -1432,7 +1356,7 @@ public class UberMapFragment extends UberBaseFragment implements
 				editorpromo.commit();
 				Toast.makeText(activity, "PromoCode entered successfully",
 						Toast.LENGTH_LONG).show();
-
+				promoCodeDlg.cancel();
 			}
 
 			AndyUtils.removeCustomProgressDialog();
@@ -1771,8 +1695,8 @@ public class UberMapFragment extends UberBaseFragment implements
 		View contentview = inflate.inflate(R.layout.promocard, null);
 		View titleview = inflate.inflate(R.layout.promocodecustomtitle, null);
 		builder.setView(contentview).setCustomTitle(titleview);
-		final AlertDialog mdialog = builder.create();
-		mdialog.show();
+		promoCodeDlg = builder.create();
+		promoCodeDlg.show();
 		MyFontButton apply, cancel;
 
 		final MyFontEdittextView promofield;
@@ -1793,7 +1717,7 @@ public class UberMapFragment extends UberBaseFragment implements
 
 			@Override
 			public void onClick(View v) {
-				mdialog.dismiss();
+				promoCodeDlg.dismiss();
 
 			}
 		});
@@ -1870,10 +1794,12 @@ public class UberMapFragment extends UberBaseFragment implements
 				PreferenceHelper.getInstance(activity).getUserId());
 		map.put(Const.Params.TIME, duration);
 		map.put(Const.Params.DISTANCE, distance);
-		map.put(Const.Params.BASE_PRICE, listType.get(selectedPostion).getCurrency() + " "
-				+ listType.get(selectedPostion).getBasePrice());
+		map.put(Const.Params.BASE_PRICE, listType.get(selectedPostion).getBasePrice());
 		map.put(Const.Params.PRICE_PER_UNIT_DISTANCE, listType.get(selectedPostion).getPricePerUnitDistance());
 		map.put(Const.Params.PRICE_PER_UNIT_TIME, listType.get(selectedPostion).getPricePerUnitTime());
+		if (promopref.getString("promocode", "") != "") {
+			map.put(Const.Params.PROMO_CODE, promopref.getString("promocode", ""));
+		}
 
 		// map.put(Const.Params.TYPE,
 		// String.valueOf(listType.get(selectedPostion).getId()));
